@@ -1,0 +1,84 @@
+<section class="vh-100" style="background-color: #f6f6f6;">
+    <div class="container py-5 h-100" >
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col col-xl-10">
+          <div class="card" style="border-radius: 1rem;">
+            <div class="row g-0" style="box-shadow: 0px 1px 19px black;">
+              <div class="col-md-6 col-lg-5 d-none d-md-block">
+                <img src="/assets/icon/photo-1613047503507-b8d01ce6af26.jpeg"
+                  alt="login form" class="img-fluid" />
+                  <!-- style="border-radius: 1rem 0 0 1rem;"  -->
+              </div> 
+              <div class="col-md-6 col-lg-7 d-flex align-items-center">
+                <div class="card-body p-4 p-lg-5 text-black">
+  
+                  <form [formGroup]="loginform" (ngSubmit)="onsubmit()">
+  
+                    <div class="d-flex align-items-center mb-3 pb-1">
+                        <img src="/assets/icon/pixel-craze-low-resolution-logo-color-on-transparent-background (1).png" style="height: 20px; width: 120px;" alt="Logo goes here">
+                      
+                    </div>
+  
+                    <h4 class="fw-normal mb-3 pb-3 text-danger fw-bold" style=" letter-spacing: 1px; text-shadow: 0px 1px 1px rgb(0, 0, 0);  ">Sign IN</h4>
+  
+                    <div class="form-outline mb-4">
+                        <label class="form-label text-dark fw-bolder mt-2" for="form2Example17" style="text-shadow: 0px 1px 0px black;">Username</label>
+                       
+                      <input type="email" [ngClass]="{'is-invalid':submit && f.username.errors}" formControlName="username" id="form2Example17" class="form-control " placeholder="Enter the username"/>
+                      <div *ngIf="submit && f.username.errors" class="text-danger">
+                        
+                        <small *ngIf="f.username.errors['required']">Username  is required </small>
+                      </div>
+                     
+                    </div>
+  
+                    <div class="form-outline mb-4">
+                        <label class="form-label text-dark fw-bolder" for="form2Example27" style="text-shadow: 0px 1px 0px black;">Password</label>
+                      <input type="password" id="form2Example27" class="form-control" [ngClass]="{'is-invalid':submit && f.password.errors}"  formControlName="password"  placeholder="enter the password"/>
+                      <div *ngIf="submit && f.password.errors" class="text-danger">
+                        
+                        <small *ngIf="f.password.errors['required']">password  is required  </small>
+                        <small *ngIf="f.password.errors['minlength']">Minimum 5 letters required </small>
+
+                      </div>
+                      
+                    </div>
+                    
+                    <div class="pt-1 mb-4">
+                      <button class="btn btn-dark  btn-block" type="=submit">Login</button>
+                      <!-- <input  type="button" class="btn btn-dark fw-bold" value="Submit"> -->
+                    </div>
+                    <hr>
+                   
+                 
+                       <a class="small  text-danger fw-bold" href="" style="text-decoration: none">Forgot password?</a>
+
+                      
+                   
+                    <p class="mt-3 pb-lg-2" style="color: #393f81;">Don't have an account? <a routerLink="/register"  class=""
+                        style="text-decoration: none; color: #091ad7;">Register here</a></p>
+                        
+                  </form>
+                  <!-- <div class="col s12 m6 offset-m3 center-align">
+                    <a class="oauth-container btn darken-4 white black-text" href="/users/google-oauth/" style="text-transform:none">
+                        <div class="left">
+                            <img width="20px" style="margin-top:7px; margin-right:8px" alt="Google sign-in" 
+                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
+                        </div>
+                        Login with Google
+                    </a>
+                </div> -->
+  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css"> -->
+
+<!-- Compiled and minified JavaScript -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script> -->
+    
+  </section>
