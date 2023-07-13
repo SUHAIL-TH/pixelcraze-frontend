@@ -6,6 +6,10 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { UserRoutingModule } from './user-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
+
+import { ToastrModule } from 'ngx-toastr';
+
 
 
 @NgModule({
@@ -18,7 +22,10 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     UserRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    
+    ToastrModule.forRoot()
   ]
 })
 export class UserModule { }

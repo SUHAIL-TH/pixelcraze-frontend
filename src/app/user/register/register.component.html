@@ -141,7 +141,8 @@
       </div>
     </div>
   </section> -->
-  <section class="" style="background-color: #c8c2c2;">
+  <section class="" style="background-color: #ffffff;">
+
     <div class="container py-5 h-100" >
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col col-xl-10">
@@ -161,7 +162,7 @@
                 <small class="vertical-line"></small>
                 <div class="card-body p-4 p-lg-5 text-black">
   
-                  <form  [formGroup]="registerform" (ngSubmit)="onsubmit()">
+                  <form  [formGroup]="registerform" (ngSubmit)="onsubmit() " >
   
                     <div class="d-flex align-items-center mb-3 pb-1">
                         <img src="/assets/icon/pixel-craze-low-resolution-logo-color-on-transparent-background (1).png" style="height: 20px; width: 120px;" alt="Logo goes here">
@@ -170,62 +171,55 @@
   
                     <h4 class="fw-normal mb-3 pb-3 text-success fw-bold" style=" letter-spacing: 1px; text-shadow: 0px 1px 2px rgb(15, 14, 14);  ">Sign UP</h4>
   
-                    <div class="form-outline mb-4">
+                    <div class="form-outline mb-2">
                         <label class="form-label text-dark fw-bolder mt-2" for="form2Example17"  style="text-shadow: 0px 1px 0px black;">Name</label>
                        
-                      <input type="text" [ngClass]="{'is-invalid':regsubmit && f.name.errors}" formControlName="name" id="name" class="form-control " placeholder="Enter the Name"/>
-                      <div *ngIf="regsubmit && f.name.errors" class="text-danger">
+                      <input type="text" [ngClass]="{'is-invalid':regsubmit && registerform.controls['name'].errors}" name="name" formControlName="name" id="name" class="form-control " placeholder="Enter the Name"/>
+                      <div *ngIf="regsubmit && registerform.controls['name'].errors" class="text-danger">
                         
-                        <small *ngIf="f.name.errors['required']">Name  is required </small>
+                        <small *ngIf="registerform.controls['name'].errors['required']">Name  is required </small>
+                        <!-- <small class="text-danger" *ngIf=" regsubmit||registerform.controls['name'].errors&& (registerform.controls['name'].touched|| registerform.controls['name'].dirty)">Name  is required </smal -->
                       </div>
                      
                     </div>
-  
-                    <div class="form-outline mb-4">
-                        <label class="form-label text-dark fw-bolder" for="form2Example27" style="text-shadow: 0px 1px 0px black;">Email</label>
-                      <input type="email" required  id="email" [ngClass]="{'is-invalid':regsubmit && f.email.errors}" formControlName="email" class="form-control"   placeholder="enter the Email"/>
-                      <div *ngIf="regsubmit && f.email.errors" class="text-danger">
+                    <div class="form-outline mb-2">
+                      <label class="form-label text-dark fw-bolder mt-2" for="form2Example17"  style="text-shadow: 0px 1px 0px black;">Email</label>
+                     
+                    <input type="text" [ngClass]="{'is-invalid':regsubmit && registerform.controls['email'].errors}" name="email" formControlName="email" id="email" class="form-control " placeholder="Enter the Email"/>
+                    <div *ngIf="regsubmit && registerform.controls['email'].errors" class="text-danger">
                         
-                        <small *ngIf="f.email.errors['required']">Email is required</small>
-                        <small *ngIf="f.email.errors['email']">Email should be valid</small>
-                      </div>
-                      
-                    </div>
-                  
-                    <div class="form-outline mb-4">
-                      <label class="form-label text-dark fw-bolder" for="form2Example27" style="text-shadow: 0px 1px 0px black;">Phone</label>
-                    <input type="number" required  id="myNumberInput" [ngClass]="{'is-invalid':regsubmit && f.phone.errors}" formControlName="phone" class="form-control"   placeholder="enter the phone"/>
-                    <div *ngIf="regsubmit && f.phone.errors" class="text-danger">
-                      
-                      <small *ngIf="f.phone.errors['required']">phone is required</small>
-                      <small *ngIf="f.phone.errors['pattern']">Phone number should be valid</small>
-                    </div>
-                    
-                  </div>
-                    <!-- //// -->
-                    <div class="form-outline mb-4 d-flex">
-                      <div class="col-md-6">
-                        <label class="form-label text-dark fw-bolder" for="form2Example27" style="text-shadow: 0px 1px 0px black;">password</label>
-                    <input type="password" required  id="password" [ngClass]="{'is-invalid':regsubmit && f.password.errors}" formControlName="password" class="form-control"   placeholder="Enter the password"/>
-                    <div *ngIf="regsubmit && f.password.errors" class="text-danger">
-                      
-                      <small *ngIf="f.password.errors['required']">password is required</small>
-                      <small *ngIf="f.password.errors['minlength']">Mimum length 5 letters required</small>
-                    </div>
+                      <small *ngIf="registerform.controls['email'].errors['required']">Email is required </small>
+                      <small *ngIf="registerform.controls['email'].errors['email']">Email should be valid</small>
 
-                      </div>
-                      <div class="col-md-6 ms-2">
-                        <label class="form-label text-dark fw-bolder" for="form2Example27" style="text-shadow: 0px 1px 0px black;">Confrim password</label>
-                    <input type="password" required  id="cpassword" [ngClass]="{'is-invalid':regsubmit && f.cpassword.errors}" formControlName="cpassword" class="form-control"   placeholder="Confrim password"/>
-                    <div *ngIf="regsubmit && f.cpassword.errors" class="text-danger">
-                      
-                      <small *ngIf="f.cpassword.errors['required']">confirm password is required</small>
-                      <small *ngIf="f.cpassword.errors['MustMatch']">Password did not match</small>
                     </div>
-                      </div>
-                      
-                    
+                   
                   </div>
+                  <div class="form-outline mb-2">
+                    <label class="form-label text-dark fw-bolder mt-2" for="form2Example17"  style="text-shadow: 0px 1px 0px black;">Phone</label>
+                   
+                  <input type="text" [ngClass]="{'is-invalid':regsubmit && registerform.controls['phone'].errors}" name="phone" formControlName="phone" id="phone" class="form-control " placeholder="Enter the Phone number"/>
+                  <div *ngIf="regsubmit && registerform.controls['phone'].errors" class="text-danger">
+                        
+                    <small *ngIf="registerform.controls['phone'].errors['required']">phone is required </small>
+                    <small *ngIf="registerform.controls['phone'].errors['pattern']">Enter valid phone number</small>
+
+                  </div>
+                 
+                </div>
+                <div class="form-outline mb-4">
+                  <label class="form-label text-dark fw-bolder mt-2" for="form2Example17"  style="text-shadow: 0px 1px 0px black;">Password</label>
+                 
+                <input type="text" [ngClass]="{'is-invalid':regsubmit && registerform.controls['password'].errors}" name="password" formControlName="password" id="password" class="form-control " placeholder="Enter the Email"/>
+                <div *ngIf="regsubmit && registerform.controls['password'].errors" class="text-danger">
+                        
+                  <small *ngIf="registerform.controls['password'].errors['required']">password is required </small>
+                  <small *ngIf="registerform.controls['password'].errors['minlength']">Minimum 6 character required</small>
+
+                </div>
+               
+              </div>
+  
+                    
 
 
            
@@ -233,7 +227,7 @@
                     
                     <div class="pt-1 mb-4">
                       <button class="btn btn-dark  btn-block" type="=submit" style="font-weight: bolder;">Sign Up</button>
-                      <!-- <input  type="button" class="btn btn-dark fw-bold" value="Submit"> -->
+                     
                     </div>
                     <hr>
                     <p class="mt-3 pb-lg-2" style="color: #393f81;">Already have an account? <a routerLink="/login"  class=""

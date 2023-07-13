@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder,private toaster:ToastrService) {}
   submit=false
   
   loginform=this.fb.group({
@@ -18,7 +19,8 @@ export class LoginComponent {
     return this.loginform.controls
   }
   onsubmit(){
-   
+
+    console.log("hiii");
     
     this.submit=true
   }
