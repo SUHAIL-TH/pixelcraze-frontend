@@ -1,0 +1,75 @@
+<section class="" style="background-image: url(../../../assets/icon/wallpaperflare.com_wallpaper\ \(1\).jpg), linear-gradient(180deg,transparent,rgba(37,37,37,0.61),#111); background-size: cover; object-fit: contain; height: 100vh;">
+
+    <div class="container py-5 h-100" >
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col col-md-6 col-lg-4">
+          <div class="card" style="border-radius: 1rem; background-color: #282626d5;"  >
+            <div class="row g-0" style="box-shadow: 0px 2px 19px rgb(0, 0, 0);">
+              
+              
+              <div class="col-md-12  d-flex align-items-center">
+               
+                <div class="card-body p-4 p-lg-5 text-black">
+  
+                  <form  [formGroup]="adminlogform" (ngSubmit)="onsubmit() " >
+  
+                    <div class="d-flex align-items-center mb-3 pb-1">
+                    
+                        <img src="/assets/icon/pixel-craze-low-resolution-logo-color-on-transparent-background (2).png" style="height: 20px; width: 120px;" alt="Logo goes here">
+                      
+                    </div>
+  
+                    <h4 class=" mb-3 pb-3 " style="letter-spacing: 1px; text-shadow: 0px 1px 2px rgb(15, 14, 14); color:rgb(152, 33, 185); font-weight: bold;">LOG IN</h4>
+  
+                    <div class="form-outline mb-2">
+                      <label class="form-label text-white fw-bolder mt-2" for="form2Example17"  style="text-shadow: 0px 1px 0px black;">Email</label>
+                     
+                    <input type="text" [ngClass]="{'is-invalid':regsubmit && adminlogform.controls['email'].errors}" name="email" formControlName="email" id="email" class="form-control " placeholder="Enter the Email"/>
+                    <div *ngIf="regsubmit && adminlogform.controls['email'].errors" class="text-danger">
+                        
+                      <small *ngIf="adminlogform.controls['email'].errors['required']">Email is required </small>
+                      <small *ngIf="adminlogform.controls['email'].errors['email']">Email should be valid</small>
+  
+                    </div>
+                   
+                  </div>
+                  
+                <div class="form-outline mb-4">
+                  <label class="form-label text-white fw-bolder mt-2" for="form2Example17"  style="text-shadow: 0px 1px 0px black;">Password</label>
+                 
+                <input type="text" [ngClass]="{'is-invalid':regsubmit && adminlogform.controls['password'].errors}" name="password" formControlName="password" id="password" class="form-control " placeholder="Enter the Email"/>
+                <div *ngIf="regsubmit && adminlogform.controls['password'].errors" class="text-danger">
+                        
+                  <small *ngIf="adminlogform.controls['password'].errors['required']">password is required </small>
+                  <small *ngIf="adminlogform.controls['password'].errors['minlength']">Minimum 5 character required</small>
+  
+                </div>
+               
+              </div>
+  
+                    
+  
+  
+           
+                   
+                    
+                    <div class="pt-1 mb-4">
+                      <button class="btn btn-success  btn-block" type="=submit" style="font-weight: bolder;">Sign Up</button>
+                     
+                    </div>
+                    <hr>
+                    
+                        
+                  </form>
+                  
+  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+   
+    
+  </section> 
