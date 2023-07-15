@@ -11,6 +11,7 @@ import Swal from 'sweetalert2';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
+
 export class RegisterComponent implements OnInit {
   registerform!:FormGroup 
   regsubmit=false;
@@ -30,25 +31,27 @@ export class RegisterComponent implements OnInit {
   } 
 
   
-
+  
  
   onsubmit(){
     let user=this.registerform.getRawValue()
     
-    
-    this.regsubmit=true
-    // if(this.registerform.invalid){
-    //   return
-    // }
-    
     if(user.name==''||user.email==''||user.password==""||user.phone==''){
-      this.toastr.error('Please filled the fileds' ,'', {
+      this.regsubmit=true
+      this.toastr.error('Please fill the fileds' ,'', {
       progressBar: true
     })
     }else {
       this.http.post("http://localhost:3000/signup",user,{
         withCredentials:true
-      }).subscribe(()=>{this.toastr.success(' Success', 'Registered', { progressBar: true });this.router.navigate(['/'])},(err)=>{
+      }).subscribe((res:any)=>{this.toastr.success('OTP has sent','Successfully', { progressBar: true });
+      const navigationExtras = {
+        queryParams: {
+          data: JSON.stringify(res.data)
+        }
+      };
+
+      this.router.navigate(['/otp'], navigationExtras);},(err)=>{
         this.toastr.error(err.error.message ,'', {
           progressBar: true
         })

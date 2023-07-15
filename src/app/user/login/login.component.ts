@@ -1,27 +1,47 @@
-import { Component } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
-export class LoginComponent {
-  constructor(private fb: FormBuilder,private toaster:ToastrService) {}
+export class LoginComponent implements OnInit {
+  loginform!:FormGroup
   submit=false
+  constructor(private formBuilder: FormBuilder,private toaster:ToastrService,private http:HttpClient,private router:Router) {}
+  ngOnInit(): void {
+    this.loginform=this.formBuilder.group({
+      email:["",Validators.required],
+      password: ['', [Validators.required, Validators.minLength(6)]]
+    })
   
-  loginform=this.fb.group({
-    username:["",Validators.required],
-    password: ['', [Validators.required, Validators.minLength(5)]]
-  })
-
-  get f(){
-    return this.loginform.controls
   }
-  onsubmit(){
+ 
 
-    console.log("hiii");
+  onsubmit(){
+    let user=this.loginform.getRawValue()
+    console.log(user);
     
-    this.submit=true
+    console.log("hii");
+    
+    if(user.email==''||user.password==''){
+      this.submit=true
+      this.toaster.error('Please fill the fields','',{progressBar:true})
+    }else{
+      this.http.post("http://localhost:3000/postlogin",user,{
+        withCredentials:true
+      }).subscribe(()=>{
+        this.toaster.success('Logined' ,'Successfully',{progressBar:true})
+        this.router.navigate(['/'])
+      },(err)=>{
+        this.toaster.error(err.error.message,'Error',{progressBar:true})
+      })
+    }
+    
+    
+    
   }
 }

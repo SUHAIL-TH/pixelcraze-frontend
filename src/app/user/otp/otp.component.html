@@ -1,0 +1,72 @@
+
+<section style="background-image: url(../../../assets/icon/bookworms-haven-flat-lay-illustration-generative-ai_549702-709\ \(1\).jpg), linear-gradient(180deg,transparent,rgba(37,37,37,0.61),#111); background-size: cover; background-position: center; height: 100vh;">
+
+
+      <div
+        class="container height-100 d-flex justify-content-center align-items-center">
+        <div class="position-relative">
+         
+          <div class="card p-2 text-center" style=" border-color: #111;">
+            <div class="d-flex align-items-center mb-3 pb-1">
+              <img src="/assets/icon/pixel-craze-low-resolution-logo-color-on-transparent-background (1).png" style="height: 20px; width: 120px;" alt="Logo goes here">
+            
+          </div>
+            <h6>
+              Please enter the one time password <br />
+              to verify your account
+            </h6>
+            <div>
+                <hr>
+              <span class="">A code has been sent to</span> <small class=""> your Phone number</small>
+            </div>
+            <form [formGroup]="otpform"  (ngSubmit)="submitForm()" >
+              
+                <div id="otp" class="inputs d-flex flex-row justify-content-center mt-2">
+                  <input class="m-2 text-center form-control rounded" style="width: 100px; border-color: rgb(221, 63, 63);"
+                    name="otp"
+                    type="text"
+                    id="otp"
+                    
+                   
+                  
+                    [ngClass]="{'is-invalid':otpsubmit && otpform.controls['otp'].errors}"
+                    formControlName="otp"
+                  />
+                 
+                </div>
+                <div *ngIf="otpsubmit && otpform.controls['otp'].errors" class="text-danger">
+                      
+                    <small class="text-danger" style="text-shadow: 0px 1px 0px red;" *ngIf="otpform.controls['otp'].errors['required']">Otp is required</small>
+                    <small class="text-danger"  style="text-shadow: 0px 1px 0px red;" *ngIf="otpform.controls['otp'].errors['minlength']">Please enter the 6 digits</small>
+
+                  </div>
+
+
+              
+                <div class="mt-4">
+                  <button class="btn btn-dark px-4" type="submit">Validate</button>
+                </div>
+              </form>
+            <div class="mt-2"> 
+              
+              
+          </div>
+            
+            
+          </div>
+          <div class="card-2" >
+            <div
+              class="content d-flex justify-content-center align-items-center">
+              <span class=" " style="font-weight: bolder;"> Thank you for joining our family</span>
+              <!-- <span>Didn't get the cod</span>
+              <a href="#" class="text-decoration-none ms-3">Resend(1/3)</a> -->
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </section>
+   
+  
+
+
