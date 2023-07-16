@@ -32,8 +32,7 @@ export class LoginComponent {
  
   onsubmit(){
     let user=this.adminlogform.getRawValue()
-    console.log(user);
-    
+   
     if(user.email==''||user.password==""){
       this.regsubmit=true
       this.toastr.error('Please fill the fileds' ,'', {
@@ -44,8 +43,9 @@ export class LoginComponent {
         withCredentials:true
       }).subscribe((res:any)=>{this.toastr.success('Logined','Successfully', { progressBar: true });
       
-
-      this.router.navigate(['/dashboard']);},(err)=>{
+      console.log("hiii");
+      
+      this.router.navigate(['/admin/dashboard'])},(err)=>{
         this.toastr.error(err.error.message ,'', {
           progressBar: true
         })

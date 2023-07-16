@@ -1,0 +1,7 @@
+body{
+    font-family: 'Poppins', sans-serif;
+}
+.ho :hover{
+    background-color: rgb(135, 19, 19);
+    font-weight: bold;
+}

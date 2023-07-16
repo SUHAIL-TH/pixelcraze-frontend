@@ -4,7 +4,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { UsersComponent } from './users/users.component';
 import { AdminRoutingModule } from './admin-routing.module';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HeaderComponent } from './header/header.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 
 
@@ -12,12 +14,15 @@ import { ReactiveFormsModule } from '@angular/forms';
   declarations: [
     DashboardComponent,
     LoginComponent,
-    UsersComponent
+    UsersComponent,
+    HeaderComponent,
+    SidebarComponent
   ],
   imports: [
     CommonModule,
     AdminRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class AdminModule { }
