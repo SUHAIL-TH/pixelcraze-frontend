@@ -60,9 +60,17 @@
         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
         Account
         </a>
-        <ul class="dropdown-menu">
+        
+        <ul class="dropdown-menu" *ngIf="!authenticated">
+
           <li><a class="dropdown-item" routerLink="/login">Login</a></li>
           <li><a class="dropdown-item" routerLink="/register">Sign up</a></li>
+          
+        </ul>
+        <ul class="dropdown-menu" *ngIf="authenticated">
+
+         
+          <li><a class="dropdown-item" routerLink="/login" (click)="logout()">Log out</a></li>
           
         </ul>
       </li>

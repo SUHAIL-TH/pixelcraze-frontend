@@ -29,6 +29,7 @@ import { OtpComponent } from './otp/otp.component';
     FormsModule,
     
     ToastrModule.forRoot()
-  ]
+  ],
+  providers: [],
 })
 export class UserModule { }

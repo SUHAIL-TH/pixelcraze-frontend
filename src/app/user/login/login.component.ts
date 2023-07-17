@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { Emitters } from '../emitters/emitter';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -23,21 +24,27 @@ export class LoginComponent implements OnInit {
 
   onsubmit(){
     let user=this.loginform.getRawValue()
-    console.log(user);
     
-    console.log("hii");
     
+   
     if(user.email==''||user.password==''){
       this.submit=true
       this.toaster.error('Please fill the fields','',{progressBar:true})
     }else{
       this.http.post("http://localhost:3000/postlogin",user,{
         withCredentials:true
-      }).subscribe(()=>{
+      }).subscribe((res:any)=>{
+        const jwtToken =res.token;
+   
+        localStorage.setItem('jwt_token', jwtToken);
+        
         this.toaster.success('Logined' ,'Successfully',{progressBar:true})
+       
         this.router.navigate(['/'])
       },(err)=>{
+       
         this.toaster.error(err.error.message,'Error',{progressBar:true})
+   
       })
     }
     
