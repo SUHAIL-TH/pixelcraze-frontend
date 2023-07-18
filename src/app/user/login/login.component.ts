@@ -12,11 +12,14 @@ import { Emitters } from '../emitters/emitter';
 export class LoginComponent implements OnInit {
   loginform!:FormGroup
   submit=false
-  constructor(private formBuilder: FormBuilder,private toaster:ToastrService,private http:HttpClient,private router:Router) {}
+  error : null | string
+  constructor(private formBuilder: FormBuilder,private toaster:ToastrService,private http:HttpClient,private router:Router) {
+    this.error = null
+  }
   ngOnInit(): void {
     this.loginform=this.formBuilder.group({
-      email:["",Validators.required],
-      password: ['', [Validators.required, Validators.minLength(6)]]
+      email:["",[Validators.required,Validators.email]],
+      password: ['', [Validators.required, ]]
     })
   
   }
@@ -42,7 +45,7 @@ export class LoginComponent implements OnInit {
        
         this.router.navigate(['/'])
       },(err)=>{
-       
+       this.error = err.error.message
         this.toaster.error(err.error.message,'Error',{progressBar:true})
    
       })

@@ -10,6 +10,8 @@ import {HttpClientModule} from '@angular/common/http';
 
 import { ToastrModule } from 'ngx-toastr';
 import { OtpComponent } from './otp/otp.component';
+import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
+import { ResetsubmitComponent } from './resetsubmit/resetsubmit.component';
 
 
 
@@ -19,7 +21,9 @@ import { OtpComponent } from './otp/otp.component';
     RegisterComponent,
     NavbarComponent,
     HomeComponent,
-    OtpComponent
+    OtpComponent,
+    ResetpasswordComponent,
+    ResetsubmitComponent
   ],
   imports: [
     CommonModule,

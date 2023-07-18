@@ -29,6 +29,5 @@ export class NavbarComponent implements OnInit {
   logout(){
     localStorage.clear();
   }
-  
 
 }

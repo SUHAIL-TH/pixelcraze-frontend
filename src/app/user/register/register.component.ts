@@ -23,7 +23,7 @@ export class RegisterComponent implements OnInit {
       name:["",Validators.required],
       email:["",[Validators.required,Validators.email]],
         phone:["",[Validators.required, Validators.pattern(/^(\+\d{1,3}[- ]?)?\d{10}$/)]],
-        password: ["", [Validators.required, Validators.minLength(6)]],
+        password: ["", [Validators.required, Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}$')]],
         cpassword:["",[Validators.required,]],
     })
     

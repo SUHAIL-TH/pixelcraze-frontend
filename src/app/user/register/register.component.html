@@ -62,7 +62,7 @@
               <div *ngIf="regsubmit && registerform.controls['password'].errors" class="text-danger">
                       
                 <small *ngIf="registerform.controls['password'].errors['required']">password is required </small>
-                <small *ngIf="registerform.controls['password'].errors['minlength']">Minimum 6 character required</small>
+                <small *ngIf="registerform.controls['password'].errors['pattern']">Password is not strong</small>
 
               </div>
              

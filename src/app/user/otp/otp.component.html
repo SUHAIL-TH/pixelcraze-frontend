@@ -47,6 +47,15 @@
                   <button class="btn btn-dark px-4" type="submit">Validate</button>
                 </div>
               </form>
+              <div *ngIf="!timerclosed">
+                <p *ngIf="showTimer">Time left: {{ minutes }}:{{ seconds }}</p>
+              </div>
+              <div *ngIf="timerclosed" class="mt-2">
+
+                <button  (click)="resend()" class="btn btn-success" *ngIf="clicked">resend otp</button>
+
+              </div>
+              
             <div class="mt-2"> 
               
               

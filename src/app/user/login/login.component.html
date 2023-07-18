@@ -13,7 +13,7 @@
                 <div class="card-body p-4 p-lg-5 text-black" >
   
                   <form [formGroup]="loginform" (ngSubmit)="onsubmit()">
-  
+ 
                     <div class="d-flex align-items-center mb-3 pb-1">
                         <img src="/assets/icon/pixel-craze-low-resolution-logo-color-on-transparent-background (2).png" style="height: 20px; width: 120px;" alt="Logo goes here">
                       
@@ -29,19 +29,20 @@
                         
                       <small *ngIf="loginform.controls['email'].errors['required']">Email is required </small>
                       <small *ngIf="loginform.controls['email'].errors['email']">Email should be valid</small>
-  
+                      
                     </div>
+                    <!-- <small style="color: #ffff;" *ngIf="error">{{error}}</small> -->
                    
                   </div>
   
                   <div class="form-outline mb-4">
                     <label class="form-label text-white fw-bolder mt-2" for="form2Example17"  style="text-shadow: 0px 1px 0px black;">Password</label>
                    
-                  <input type="text" [ngClass]="{'is-invalid':submit && loginform.controls['password'].errors}" name="password" formControlName="password" id="password" class="form-control " placeholder="Enter the Email"/>
+                  <input type="password" [ngClass]="{'is-invalid':submit && loginform.controls['password'].errors}" name="password" formControlName="password" id="password" class="form-control " placeholder="Enter the Email"/>
                   <div *ngIf="submit && loginform.controls['password'].errors" class="text-danger">
                           
                     <small *ngIf="loginform.controls['password'].errors['required']">password is required </small>
-                    <small *ngIf="loginform.controls['password'].errors['minlength']">Minimum 6 character required</small>
+                    <small *ngIf="loginform.controls['password'].errors['pattern']">password is not strong</small>
     
                   </div>
                  
@@ -53,7 +54,7 @@
                     <hr>
                    
                  
-                       <a class="small  text-danger fw-bold" routerLink="/otp" style="text-decoration: none">Forgot password?</a>
+                       <a class="small  text-danger fw-bold" routerLink="/resetpassword" style="text-decoration: none">Forgot password?</a>
 
                       
                    

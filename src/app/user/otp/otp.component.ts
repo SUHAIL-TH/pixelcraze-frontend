@@ -13,6 +13,12 @@ export class OtpComponent  implements OnInit{
   otpsubmit=false
   user:any
   dataphone:any
+  showTimer: boolean = false;
+  minutes: string = '01';
+  seconds: string = '00';
+  countdownTimer: any;
+  timerclosed=false
+  clicked=true
   
   constructor(private toaser:ToastrService,private formBuilder:FormBuilder,private activateroutes:ActivatedRoute,private http:HttpClient,private router:Router){}
   ngOnInit(): void {
@@ -32,10 +38,49 @@ export class OtpComponent  implements OnInit{
       otp:["",[Validators.required,Validators.minLength(6)]],
     
     })
+    this.startTimer(60);
    
   } 
   otpValue!: string;
 
+
+  startTimer(duration: number) {
+    this.showTimer = true;
+    let timer = duration;
+
+    this.countdownTimer = setInterval(() => {
+      const minutes = Math.floor(timer / 60);
+      const seconds = timer % 60;
+
+      // Update the timer display.
+      this.minutes = minutes.toString().padStart(2, '0');
+      this.seconds = seconds.toString().padStart(2, '0');
+
+      // Decrease the timer.
+      timer--;
+
+      // Check if the timer has reached 0.
+      if (timer < 0) {
+        // Clear the interval when the timer reaches 0.
+        clearInterval(this.countdownTimer);
+        this.showTimer = false;
+        this.timerclosed=true
+      }
+    }, 1000); // Update the timer every second (1000 milliseconds).
+  }
+  resend(){
+    this.clicked=false
+    let data=this.user
+    this.http.post("http://localhost:3000/resentotp",data,{
+      withCredentials:true
+    }).subscribe(()=>{
+      this.toaser.success('OTP','sent successfully',{progressBar:true})
+    },(err)=>{
+      this.toaser.error(err.error.message,'',{progressBar:true})
+    })
+      
+    
+  }
   submitForm() {
     
     

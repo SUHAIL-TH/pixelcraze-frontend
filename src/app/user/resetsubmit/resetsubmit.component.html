@@ -1,0 +1,66 @@
+
+<section style="background-image: url(../../../assets/icon/bookworms-haven-flat-lay-illustration-generative-ai_549702-709\ \(1\).jpg), linear-gradient(180deg,transparent,rgba(37,37,37,0.61),#111); background-size: cover; background-position: center; height: 100vh">
+
+
+    <div
+      class="container height-100 d-flex justify-content-center align-items-center">
+      <div class="position-relative">
+       
+        <div class="card p-2 text-center" style=" border-color: #111;">
+          <div class="d-flex align-items-center mb-3 pb-1">
+            <img src="/assets/icon/pixel-craze-low-resolution-logo-color-on-transparent-background (1).png" style="height: 20px; width: 120px;" alt="Logo goes here">
+          
+        </div>
+          <h6>
+           Enter your New password
+           <hr>
+          </h6>
+          
+          <!-- <div>
+              <hr>
+            <span class="">A code has been sent to</span> <small class=""> your Phone number</small>
+          </div> -->
+          <form [formGroup]="resetpassform" (ngSubmit)="onsubmit()" >
+            <label for="">Password</label>
+            <div id="password"  class="inputs d-flex flex-row justify-content-center mt-2">
+              
+              <input class="mt- text-center form-control rounded" style="width: 200px; border-color: rgb(221, 63, 63);"
+                name="password"
+                type="password"
+                id="password"
+                [ngClass]="{'is-invalid':forsubmit && resetpassform.controls['password'].errors}"
+                
+               
+              
+                formControlName="password"
+              /> 
+            </div>
+            <div *ngIf="forsubmit && resetpassform.controls['password'].errors" class="text-danger">
+                      
+              <small *ngIf="resetpassform.controls['password'].errors['required']">Password is required </small>
+              <small *ngIf="resetpassform.controls['password'].errors['pattern']">Password should be strong</small>
+
+            </div>
+
+           
+
+
+            
+              <div class="mt-4">
+                <button class="btn btn-dark px-4" type="submit">Submit</button>
+              </div>
+            </form>
+          
+            
+          <div class="mt-2"> 
+            
+            
+        </div>
+          
+          
+        </div>
+        
+      </div>
+    </div>
+    
+  </section>
