@@ -7,6 +7,8 @@ import { AdminRoutingModule } from './admin-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { BannerComponent } from './banner/banner.component';
+import { ProfessionalsComponent } from './professionals/professionals.component';
 
 
 
@@ -16,13 +18,16 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     LoginComponent,
     UsersComponent,
     HeaderComponent,
-    SidebarComponent
+    SidebarComponent,
+    BannerComponent,
+    ProfessionalsComponent
   ],
   imports: [
     CommonModule,
     AdminRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+
   ]
 })
 export class AdminModule { }

@@ -1,4 +1,4 @@
-<section class="vh-100" style="background-color: #ffffff00;" style="background-image: url(../../../assets/icon/bookworms-haven-flat-lay-illustration-generative-ai_549702-709\ \(1\).jpg); background-size: cover; object-fit: contain;">
+<section class="" style="background-color: #ffffff00;" style="background-image: url(../../../assets/icon/workplace-with-smartphone-laptop-black-table-top-view-copyspace-background.jpg); background-size: cover; object-fit: fill;">
     <div class="container py-5 h-100" >
       <div class="row d-flex justify-content-center align-items-center h-100" >
         <div class="col col-xl-10" style="background-color: #00000000;">
@@ -12,7 +12,7 @@
               <div class="col-md-6 col-lg-7 d-flex align-items-center" style="background-color: rgba(0, 0, 0, 0.838);">
                 <div class="card-body p-4 p-lg-5 text-black" >
   
-                  <form [formGroup]="loginform" (ngSubmit)="onsubmit()">
+                  <form [formGroup]="loginforms"  (ngSubmit)="onsubmit()">
  
                     <div class="d-flex align-items-center mb-3 pb-1">
                         <img src="/assets/icon/pixel-craze-low-resolution-logo-color-on-transparent-background (2).png" style="height: 20px; width: 120px;" alt="Logo goes here">
@@ -24,11 +24,11 @@
                     <div class="form-outline mb-2">
                       <label class="form-label text-white fw-bolder mt-2" for="form2Example17"  style="text-shadow: 0px 1px 0px black; font-weight: 900;">Email</label>
                      
-                    <input type="text" [ngClass]="{'is-invalid':submit && loginform.controls['email'].errors}" name="email" formControlName="email" id="email" class="form-control " placeholder="Enter the Email"/>
-                    <div *ngIf="submit && loginform.controls['email'].errors" class="text-danger">
+                    <input type="text" [ngClass]="{'is-invalid':submit && loginforms.controls['email'].errors}" name="email" formControlName="email" id="email" class="form-control " placeholder="Enter the Email"/>
+                    <div *ngIf="submit && loginforms.controls['email'].errors" class="text-danger">
                         
-                      <small *ngIf="loginform.controls['email'].errors['required']">Email is required </small>
-                      <small *ngIf="loginform.controls['email'].errors['email']">Email should be valid</small>
+                      <small *ngIf="loginforms.controls['email'].errors['required']">Email is required </small>
+                      <small *ngIf="loginforms.controls['email'].errors['email']">Email should be valid</small>
                       
                     </div>
                     <!-- <small style="color: #ffff;" *ngIf="error">{{error}}</small> -->
@@ -38,11 +38,11 @@
                   <div class="form-outline mb-4">
                     <label class="form-label text-white fw-bolder mt-2" for="form2Example17"  style="text-shadow: 0px 1px 0px black;">Password</label>
                    
-                  <input type="password" [ngClass]="{'is-invalid':submit && loginform.controls['password'].errors}" name="password" formControlName="password" id="password" class="form-control " placeholder="Enter the Email"/>
-                  <div *ngIf="submit && loginform.controls['password'].errors" class="text-danger">
+                  <input type="password" [ngClass]="{'is-invalid':submit && loginforms.controls['password'].errors}" name="password" formControlName="password" id="password" class="form-control " placeholder="Enter the Email"/>
+                  <div *ngIf="submit && loginforms.controls['password'].errors" class="text-danger">
                           
-                    <small *ngIf="loginform.controls['password'].errors['required']">password is required </small>
-                    <small *ngIf="loginform.controls['password'].errors['pattern']">password is not strong</small>
+                    <small *ngIf="loginforms.controls['password'].errors['required']">password is required </small>
+                    <small *ngIf="loginforms.controls['password'].errors['pattern']">password is not strong</small>
     
                   </div>
                  
@@ -74,21 +74,3 @@
 
     
   </section>
-
-
-
-
- <!-- <div class="col s12 m6 offset-m3 center-align">
-                    <a class="oauth-container btn darken-4 white black-text" href="/users/google-oauth/" style="text-transform:none">
-                        <div class="left">
-                            <img width="20px" style="margin-top:7px; margin-right:8px" alt="Google sign-in" 
-                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
-                        </div>
-                        Login with Google
-                    </a>
-                </div> -->
-
-  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css"> -->
-
-<!-- Compiled and minified JavaScript -->
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script> -->

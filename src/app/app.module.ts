@@ -7,6 +7,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { UserGuardGuard } from './guard/user-guard.guard';
+import { UserServiceService } from './service/user/user-service.service';
+import { StoreModule } from '@ngrx/store';
+
+
+
 
 @NgModule({
   declarations: [
@@ -17,9 +22,10 @@ import { UserGuardGuard } from './guard/user-guard.guard';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    StoreModule.forRoot({}, {})
   ],
-  providers: [UserGuardGuard,],
+  providers: [UserGuardGuard, UserServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

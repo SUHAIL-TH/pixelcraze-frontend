@@ -3,6 +3,7 @@ import { Component ,OnInit} from '@angular/core';
 import {  FormBuilder,FormGroup,Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { UserServiceService } from 'src/app/service/user/user-service.service';
 import Swal from 'sweetalert2';
 
 
@@ -15,7 +16,8 @@ import Swal from 'sweetalert2';
 export class RegisterComponent implements OnInit {
   registerform!:FormGroup 
   regsubmit=false;
-  constructor(private formBuilder:FormBuilder,private http:HttpClient,private router:Router,private toastr:ToastrService){}
+  constructor(private userService:UserServiceService,
+    private formBuilder:FormBuilder,private http:HttpClient,private router:Router,private toastr:ToastrService){}
 
   ngOnInit(): void {
     
@@ -42,9 +44,7 @@ export class RegisterComponent implements OnInit {
       progressBar: true
     })
     }else {
-      this.http.post("http://localhost:3000/signup",user,{
-        withCredentials:true
-      }).subscribe((res:any)=>{this.toastr.success('OTP has sent','Successfully', { progressBar: true });
+      this.userService.userSignup(user).subscribe((res:any)=>{this.toastr.success('OTP has sent','Successfully', { progressBar: true });
       const navigationExtras = {
         queryParams: {
           data: JSON.stringify(res.data)
