@@ -9,6 +9,8 @@ import { HeaderComponent } from './header/header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { BannerComponent } from './banner/banner.component';
 import { ProfessionalsComponent } from './professionals/professionals.component';
+import { AddbannerComponent } from './addbanner/addbanner.component';
+
 
 
 
@@ -20,13 +22,15 @@ import { ProfessionalsComponent } from './professionals/professionals.component'
     HeaderComponent,
     SidebarComponent,
     BannerComponent,
-    ProfessionalsComponent
+    ProfessionalsComponent,
+    AddbannerComponent
   ],
   imports: [
     CommonModule,
     AdminRoutingModule,
     ReactiveFormsModule,
     FormsModule,
+   
 
   ]
 })

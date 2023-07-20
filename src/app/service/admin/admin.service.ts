@@ -1,0 +1,31 @@
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Observable, delay } from 'rxjs';
+import { User ,Banner} from 'src/app/admin/state/types/user.type';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class AdminService {
+
+  constructor(private http:HttpClient) { }
+  private adminurl="http://localhost:3000/admin/"
+  getUser() : Observable<User[]>{
+    return this.http.get<User[]>(`${this.adminurl}getusers`)
+  }
+
+  blockuser(id:any){
+    return this.http.post(`${this.adminurl}blockuser/${id}`,null)
+  }
+  unblockuser(id:string){
+    console.log("hii");
+    
+    return this.http.post(`${this.adminurl}unblockuser/${id}`,null)
+  }
+  addbanner(data:any){
+    return this.http.post(`${this.adminurl}addbanner`,data)
+  }
+  getbanner(){
+    return this.http.get<Banner[]>(`${this.adminurl}getbanner`)
+  }
+}

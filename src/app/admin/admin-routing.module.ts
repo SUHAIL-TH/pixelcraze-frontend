@@ -6,6 +6,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { UsersComponent } from './users/users.component';
 import { BannerComponent } from './banner/banner.component';
 import { ProfessionalsComponent } from './professionals/professionals.component';
+import { AddbannerComponent } from './addbanner/addbanner.component';
 
 
 
@@ -15,7 +16,8 @@ const routes: Routes = [
   {path:"dashboard",component:DashboardComponent},
   {path:"users",component:UsersComponent},
   {path:"banner",component:BannerComponent},
-  {path:"professionals",component:ProfessionalsComponent}
+  {path:"professionals",component:ProfessionalsComponent},
+  {path:"addbanner",component:AddbannerComponent}
   
 
 
