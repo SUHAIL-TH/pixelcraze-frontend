@@ -64,7 +64,7 @@ export class LoginComponent implements OnInit {
           this.router.navigate(['/'])
         },(err)=>{
          this.error = err.error.message
-          this.toaster.error(err.error.message,'Error',{progressBar:true})
+          this.toaster.error(err.error.message,'',{progressBar:true})
      
         })
     }

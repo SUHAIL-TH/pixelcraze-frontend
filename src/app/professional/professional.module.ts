@@ -6,6 +6,7 @@ import { HomeComponent } from './home/home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProfesionalRoutingModule } from './professional-routing.module';
 import { NavbarComponent } from './navbar/navbar.component';
+import { OtpComponent } from './otp/otp.component';
 
 
 
@@ -14,7 +15,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     LoginComponent,
     RegisterComponent,
     HomeComponent,
-    NavbarComponent
+    NavbarComponent,
+    OtpComponent
   ],
   imports: [
     CommonModule,

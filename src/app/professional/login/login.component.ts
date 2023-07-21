@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { ProfessionalService } from 'src/app/service/professional/professional.service';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,7 @@ export class LoginComponent {
   loginforms!:FormGroup
   submit=false
   error : null | string
-  constructor(private formBuilder: FormBuilder,private toaster:ToastrService,private http:HttpClient,private router:Router) {
+  constructor(private professionalService:ProfessionalService,private formBuilder: FormBuilder,private toaster:ToastrService,private http:HttpClient,private router:Router) {
     this.error = null
   }
   ngOnInit(): void {
@@ -26,27 +27,27 @@ export class LoginComponent {
  
 
   onsubmit(){
-    let user=this.loginforms.getRawValue()
+    let professionalData=this.loginforms.getRawValue()
     
     
    
-    if(user.email==''||user.password==''){
+    if(professionalData.email==''||professionalData.password==''){
       this.submit=true
       this.toaster.error('Please fill the fields','',{progressBar:true})
     }else{
-      this.http.post("http://localhost:3000/postlogin",user,{
-        withCredentials:true
-      }).subscribe((res:any)=>{
-        const jwtToken =res.token;
+     this.professionalService.postlogin(professionalData).subscribe(()=>{
+        // const jwtToken =res.token;
    
-        localStorage.setItem('jwt_token', jwtToken);
+        // localStorage.setItem('jwt_token', jwtToken);
         
-        this.toaster.success('Logined' ,'Successfully',{progressBar:true})
+        this.toaster.success('Login' ,'Successfully',{progressBar:true})
        
-        this.router.navigate(['/'])
+        this.router.navigate(['/professional/home'])
       },(err)=>{
-       this.error = err.error.message
-        this.toaster.error(err.error.message,'Error',{progressBar:true})
+      console.log("hii")
+      console.log(err);
+      
+        this.toaster.error(err.error.message,'',{progressBar:true})
    
       })
     }

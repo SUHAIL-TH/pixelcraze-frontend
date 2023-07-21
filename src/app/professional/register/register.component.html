@@ -1,1 +1,174 @@
-<p>register works!</p>
+
+   
+        
+
+
+    <section class="" style="background-color: #ffffff00;" style="background-image: url(../../../assets/icon/bookworms-haven-flat-lay-illustration-generative-ai_549702-709\ \(1\).jpg); background-size: cover; object-fit: fill;">
+        <div class="container py-5 h-100" >
+          <div class="row d-flex justify-content-center align-items-center h-100" >
+            <div class="col col-xl-10" style="background-color: #00000000;">
+              <div class="card" style="border-radius: 1rem;"  style="background-color: #00000000; ">
+                <div class="row g-0" style="box-shadow: 0px 1px 19px black;">
+                  <div class="col-md-6 col-lg-5 d-none d-md-block">
+                    <img src="/assets/icon/photo-1613047503507-b8d01ce6af26.jpeg"
+                      alt="login form" class="img-fluid" />
+                      
+                  </div> 
+                  <div class="col-md-6 col-lg-7 d-flex align-items-center" style="background-color: rgba(0, 0, 0, 0.838);">
+                    <div class="card-body p-4 p-lg-5 text-black" >
+      
+                      <form [formGroup]="registerform"  (ngSubmit)="onsubmit()" enctype="multipart/form-data">
+     
+                        <div class="d-flex align-items-center mb-3 pb-1">
+                            <img src="/assets/icon/pixel-craze-low-resolution-logo-color-on-transparent-background (2).png" style="height: 20px; width: 120px;" alt="Logo goes here">
+                          
+                        </div>
+                        <div>                        <small  class=" " style="font-weight: bold; color: #89170c; font-size: 15px; text-decoration: underline 1px rgb(197, 172, 9);">Professional Sign UP</small>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-outline mb-2">
+
+                                    <label class="form-label text-white  mt-2" for="form2Example17"  style="text-shadow: 0px 1px 0px rgb(247, 245, 245);">Name of company</label>
+                                   
+                                  <input type="text" [ngClass]="{'is-invalid':regsubmit && registerform.controls['name'].errors}" name="name" formControlName="name" id="name" class="form-control " placeholder="Enter the Name"/>
+                                  <div *ngIf="regsubmit && registerform.controls['name'].errors" class="text-danger">
+                                    
+                                    <small *ngIf="registerform.controls['name'].errors['required']">Name  is required </small>
+                                  </div>
+                                 
+                                </div>
+                                
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-outline mb-2">
+
+                                    <label class="form-label text-white  mt-2" for="form2Example17"  style="text-shadow: 0px 1px 0px rgb(247, 245, 245);">Name of Owner</label>
+                                   
+                                  <input type="text" [ngClass]="{'is-invalid':regsubmit && registerform.controls['ownername'].errors}" name="ownername" formControlName="ownername" id="name" class="form-control " placeholder="Enter the Owner name"/>
+                                  <div *ngIf="regsubmit && registerform.controls['ownername'].errors" class="text-danger">
+                                    
+                                    <small *ngIf="registerform.controls['ownername'].errors['required']">Name of owner  is required </small>
+                                  </div>
+                                 
+                                </div>
+                                
+                            </div>
+                            
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-outline mb-2">
+                                    <label class="form-label text-white  mt-2" for="form2Example17"  style="text-shadow: 0px 1px 0px black;">Email</label>
+                                   
+                                  <input type="text" [ngClass]="{'is-invalid':regsubmit && registerform.controls['email'].errors}" name="email" formControlName="email" id="email" class="form-control " placeholder="Enter the Email"/>
+                                  <div *ngIf="regsubmit && registerform.controls['email'].errors" class="text-danger">
+                                      
+                                    <small *ngIf="registerform.controls['email'].errors['required']">Email is required </small>
+                                    <small *ngIf="registerform.controls['email'].errors['email']">Email should be valid</small>
+                
+                                  </div>
+                                 
+                                </div>
+                                
+                                
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-outline mb-2">
+                                    <label class="form-label text-white  mt-2" for="form2Example17"  style="text-shadow: 0px 1px 0px black;">Phone</label>
+                                   
+                                  <input type="text" [ngClass]="{'is-invalid':regsubmit && registerform.controls['phone'].errors}" name="phone" formControlName="phone" id="phone" class="form-control " placeholder="Enter the Phone number"/>
+                                  <div *ngIf="regsubmit && registerform.controls['phone'].errors" class="text-danger">
+                                        
+                                    <small *ngIf="registerform.controls['phone'].errors['required']">phone is required </small>
+                                    <small *ngIf="registerform.controls['phone'].errors['pattern']">Enter valid phone number</small>
+                  
+                                  </div>
+                                 
+                                </div>
+                                
+                                
+                            </div>
+                            
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-outline mb-2">
+                                    <label class="form-label text-white  mt-2" for="form2Example17"  style="text-shadow: 0px 1px 0px black;">Upload Photograph</label>
+                                    <!-- (change)="uploadImage($event.target)"  -->
+                                    <input type="file" class="form-control" name="image2" formControlName="fileInput" (change)="uploadImage2($event.target)"> 
+                                    <div *ngIf="regsubmit && registerform.controls['fileInput'].errors" class="text-danger">
+                                        <div *ngIf="registerform.controls['fileInput'].errors['required']">Photograph is required</div>
+                                          
+                                      </div>
+                                    
+                                 
+                                </div>
+                                
+                                
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-outline mb-2">
+                                    <label class="form-label text-white  mt-2" for="form2Example17"  style="text-shadow: 0px 1px 0px black;">Upload Certificate</label>
+                                   
+                                    <input type="file" class="form-control" name="image" formControlName="fileInputcertificate" (change)="uploadImage($event.target)" > 
+                                    <div *ngIf="regsubmit && registerform.controls['fileInputcertificate'].errors" class="text-danger" >
+                                        <div *ngIf="registerform.controls['fileInputcertificate'].errors['required']">Certificate is required</div>
+                                          
+                                      </div>
+                                 
+                                </div>
+                                
+                                
+                            </div>
+                            
+
+                        </div>
+                        
+                        
+                      
+                    
+                    <div class="form-outline mb-4">
+                      <label class="form-label text-white  mt-2" for="form2Example17"  style="text-shadow: 0px 1px 0px black;">Password</label>
+                     
+                    <input type="password" [ngClass]="{'is-invalid':regsubmit && registerform.controls['password'].errors}" name="password" formControlName="password" id="password" class="form-control " placeholder="Enter the Email"/>
+                    <div *ngIf="regsubmit && registerform.controls['password'].errors" class="text-danger">
+                            
+                      <small *ngIf="registerform.controls['password'].errors['required']">password is required </small>
+                      <small *ngIf="registerform.controls['password'].errors['pattern']">Password is not strong</small>
+      
+                    </div>
+                   
+                  </div>
+      
+                      
+                        
+                        <div class="pt-1 mb-4">
+                          <button class="btn btn-success  btn-block" type="=submit">register</button>
+                        </div>
+                        <hr>
+                       
+                     
+                     
+    
+                          
+                       
+                        <p class="mt-3 pb-lg-2" style="color: #393f81;">All ready have an account? <a routerLink="/professional"  class=""
+                            style="text-decoration: none; color: #091ad7;">SignIN here</a></p>
+                            
+                      </form>
+                     
+      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        
+      </section>
+

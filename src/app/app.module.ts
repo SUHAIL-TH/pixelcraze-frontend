@@ -12,7 +12,7 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
 import { UserEffects } from './admin/state/user/user.effects';
-import { bannerReducer, userReducer } from './admin/state/user/user.reducer';
+import { bannerReducer, professionalReducer, userReducer } from './admin/state/user/user.reducer';
 
 
 
@@ -27,7 +27,7 @@ import { bannerReducer, userReducer } from './admin/state/user/user.reducer';
     HttpClientModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
-    StoreModule.forRoot({users:userReducer,banners:bannerReducer}),
+    StoreModule.forRoot({users:userReducer,banners:bannerReducer,professionals:professionalReducer}),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
     EffectsModule.forRoot([UserEffects,])
   ],

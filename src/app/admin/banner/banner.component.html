@@ -11,26 +11,26 @@
               <span class="fs-5 d-none d-sm-inline">Pixel Craze</span>
           </a>
           <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
-              <li class="nav-item "  >
-                  <a routerLink="/admin/dashboard" class="nav-link align-middle px-0">
-                      <i class="fa fa-home fa-beat" style="color: rgb(177, 7, 7);"></i> <span class="ms-4 d-none d-sm-inline text-success" style="font-weight: bold; color: rgb(244, 244, 244);">Dashboard</span>
-                  </a>
-              </li>
-              <li>
-                  <a routerLink="/admin/users" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-                      <i class="fa fa-users"></i> <span class="d-none d-sm-inline ms-4" style="font-weight: bold; color: white;">Users</span> </a>
-                  
-              </li>
-              <li>
-                  <a routerLink="/admin/professionals" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-                      <i class="fas fa-user-tie"></i> <span class="d-none d-sm-inline ms-4" style="font-weight: bold; color: white;">Professionals</span> </a>
-                  
-              </li>
-              <li>
-                  <a routerLink="/admin/banner" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-                      <i class="fas fa-user-tie"></i> <span class="d-none d-sm-inline ms-4" style="font-weight: bold; color: white;">Banner</span> </a>
-                  
-              </li>
+            <li class="nav-item "  >
+                <a routerLink="/admin/dashboard" class="nav-link align-middle px-0">
+                    <i class="fa fa-home fa-beat" style="color: rgb(177, 7, 7);"></i> <span class="ms-4 d-none d-sm-inline text-success" style="font-weight: bold; color: rgb(244, 244, 244);">Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a routerLink="/admin/users" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                    <i class="fa fa-users"></i> <span class="d-none d-sm-inline ms-4" style="font-weight: bold; color: white;">Users</span> </a>
+                
+            </li>
+            <li>
+                <a routerLink="/admin/professionals" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                    <i class="fas fa-user-tie"></i> <span class="d-none d-sm-inline ms-4" style="font-weight: bold; color: white;">Professionals</span> </a>
+                
+            </li>
+            <li>
+                <a routerLink="/admin/banner" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                    <i class="fas fa-image"></i> <span class="d-none d-sm-inline ms-4" style="font-weight: bold; color: white;">Banner</span> </a>
+                
+            </li>
               
               <!-- <li>
                   <a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
@@ -100,8 +100,8 @@
                   <td>{{banner.subheading}}</td>
                   <td><img style="width: 90px; height: 50px;" [src]="getImageUrl(banner.image ? banner.image.toString() : '')" alt="banner image goes here"></td>
                   <td>{{banner.blocked}}</td>
-                  <td *ngIf="!banner.blocked" ><button class="btn btn-danger"  >Block</button></td>
-                  <td *ngIf="banner.blocked"><button class="btn btn-success"   >UnBlock</button></td>
+                  <td *ngIf="!banner.blocked" ><button class="btn btn-danger" (click)="blockbanner(banner._id)" >Block</button></td>
+                  <td *ngIf="banner.blocked"><button class="btn btn-success"  (click)="unblockbanner(banner._id)" >UnBlock</button></td>
                 </tr>
                 
               </tbody>

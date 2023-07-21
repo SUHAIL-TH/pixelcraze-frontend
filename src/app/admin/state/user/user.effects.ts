@@ -5,7 +5,7 @@ import *as UserAction from '../user/user.action'
 
 import { User } from "../types/user.type";
 import { AdminService } from "src/app/service/admin/admin.service";
-import { catchError, map, mergeMap, of, switchMap } from "rxjs";
+import { catchError, map, merge, mergeMap, of, switchMap } from "rxjs";
 
 
 
@@ -33,5 +33,14 @@ export class UserEffects{
             ))
         )
     })
-    
+    loadprofessional$=createEffect(()=>{
+        return this.actions$.pipe(
+            ofType(UserAction.loadprofessional),
+            mergeMap(()=>
+            this.adminService.getprofessional().pipe(
+                map(professionals=>(UserAction.loadprofessionalsuccess({professionals:professionals}))),
+                catchError((error)=>of(UserAction.loadprofessionalfailure({error})))
+            ))
+        )
+    })
 }

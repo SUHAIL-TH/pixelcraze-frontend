@@ -7,6 +7,7 @@ import { UsersComponent } from './users/users.component';
 import { BannerComponent } from './banner/banner.component';
 import { ProfessionalsComponent } from './professionals/professionals.component';
 import { AddbannerComponent } from './addbanner/addbanner.component';
+import { ProfessinalrequestComponent } from './professinalrequest/professinalrequest.component';
 
 
 
@@ -17,7 +18,8 @@ const routes: Routes = [
   {path:"users",component:UsersComponent},
   {path:"banner",component:BannerComponent},
   {path:"professionals",component:ProfessionalsComponent},
-  {path:"addbanner",component:AddbannerComponent}
+  {path:"addbanner",component:AddbannerComponent},
+  {path:"professionalrequest",component:ProfessinalrequestComponent}
   
 
 

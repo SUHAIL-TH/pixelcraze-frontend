@@ -50,6 +50,8 @@ export class RegisterComponent implements OnInit {
           data: JSON.stringify(res.data)
         }
       };
+      
+      
 
       this.router.navigate(['/otp'], navigationExtras);},(err)=>{
         this.toastr.error(err.error.message ,'', {

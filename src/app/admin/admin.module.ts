@@ -10,6 +10,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { BannerComponent } from './banner/banner.component';
 import { ProfessionalsComponent } from './professionals/professionals.component';
 import { AddbannerComponent } from './addbanner/addbanner.component';
+import { ProfessinalrequestComponent } from './professinalrequest/professinalrequest.component';
 
 
 
@@ -23,7 +24,8 @@ import { AddbannerComponent } from './addbanner/addbanner.component';
     SidebarComponent,
     BannerComponent,
     ProfessionalsComponent,
-    AddbannerComponent
+    AddbannerComponent,
+    ProfessinalrequestComponent
   ],
   imports: [
     CommonModule,

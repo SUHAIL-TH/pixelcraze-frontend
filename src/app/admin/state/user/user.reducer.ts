@@ -1,7 +1,9 @@
 import { createReducer, on } from '@ngrx/store';
-import { UserState, BannerState } from '../types/user.type';
+import { UserState, BannerState, ProfessionalState } from '../types/user.type';
 
 import * as userAction from '../user/user.action';
+
+
 
 export const initialState: UserState = {
   users: [],
@@ -14,6 +16,12 @@ export const bannerinitialstate:BannerState={
     loading:false,
     loaded:false,
     error:null
+}
+export const professionalinitialstate:ProfessionalState={
+  professionals:[],
+  loading:false,
+  loaded:false,
+  error:null
 }
 
 export const userReducer = createReducer(
@@ -40,4 +48,13 @@ export const bannerReducer=createReducer(
     on(userAction.loadbanner,(state)=>({...state,loading:true})),
     on(userAction.loadbannersuccess,(state,{banners})=>({...state,loading:false,loaded:true,banners})),
     on(userAction.loadbannerfailure,(state,{error})=>({...state,loading:false,error}))
+)
+
+export const professionalReducer=createReducer(
+  professionalinitialstate,
+  on(userAction.loadprofessional,(state)=>({...state,loading:true})),
+  on(userAction.loadprofessionalsuccess,(state,{professionals})=>({...state,loading:false,loaded:true,professionals})),
+  on(userAction.loadprofessionalfailure,(state,{error})=>({...state,loading:false,error}))
+
+
 )

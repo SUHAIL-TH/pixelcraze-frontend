@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, delay } from 'rxjs';
-import { User ,Banner} from 'src/app/admin/state/types/user.type';
+import { User ,Banner, Professional} from 'src/app/admin/state/types/user.type';
 
 @Injectable({
   providedIn: 'root'
@@ -27,5 +27,14 @@ export class AdminService {
   }
   getbanner(){
     return this.http.get<Banner[]>(`${this.adminurl}getbanner`)
+  }
+  blockbanner(id:string){
+    return this.http.post(`${this.adminurl}blockbanner/${id}`,null)
+  }
+  unblockbanner(id:string){
+    return this.http.post(`${this.adminurl}unblockbanner/${id}`,null)
+  }
+  getprofessional(){
+    return this.http.get<Professional[]>(`${this.adminurl}getprofessionals`)
   }
 }

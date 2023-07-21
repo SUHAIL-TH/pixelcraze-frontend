@@ -30,3 +30,21 @@ export interface BannerState{
     loaded:boolean,
     error:any
 }
+
+export interface Professional{
+    _id?:string,
+    name?:string,
+    ownername?:string,
+    email?:string,
+    phone?:string,
+    blocked?:boolean,
+    isVerifed:boolean,
+    certificate?:string,
+    photo?:string
+}
+export interface ProfessionalState{
+    professionals:ReadonlyArray<Professional>,
+    loading:boolean,
+    loaded:boolean,
+    error:any
+}

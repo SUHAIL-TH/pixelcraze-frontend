@@ -58,7 +58,7 @@ export class AddbannerComponent implements OnInit {
       this.toastr.error('Please fill the field','',{progressBar:true})
     }else{
       const formData = new FormData();
-      console.log(data);
+      
       
       formData.append('image',this.selectedImage,this.selectedImage.name)
       formData.append('heading',data.heading)
