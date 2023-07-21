@@ -12,14 +12,17 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
 import { UserEffects } from './admin/state/user/user.effects';
-import { bannerReducer, professionalReducer, userReducer } from './admin/state/user/user.reducer';
+import { acceptedprofessionalReducer, bannerReducer, professionalReducer, userReducer } from './admin/state/user/user.reducer';
+import { UsersearchPipe } from './pipes/usersearch.pipe';
+
 
 
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    UsersearchPipe
   ],
   imports: [
     BrowserModule,
@@ -27,9 +30,10 @@ import { bannerReducer, professionalReducer, userReducer } from './admin/state/u
     HttpClientModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
-    StoreModule.forRoot({users:userReducer,banners:bannerReducer,professionals:professionalReducer}),
+    StoreModule.forRoot({users:userReducer,banners:bannerReducer,professionals:professionalReducer,acceptedprofessionals:acceptedprofessionalReducer}),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
-    EffectsModule.forRoot([UserEffects,])
+    EffectsModule.forRoot([UserEffects,]),
+   
   ],
   providers: [UserGuardGuard, UserServiceService],
   bootstrap: [AppComponent]

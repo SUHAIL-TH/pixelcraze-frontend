@@ -126,37 +126,45 @@
       <a routerLink="/admin/professionals" style="font-weight: bold; text-decoration: underline 2px rgb(28, 113, 7) ; color: black;"><small  >Professionals</small></a>
       <a  routerLink="/admin/professionalrequest" style="text-decoration: none; color: black; font-weight: 500;"  > <small  class=" ms-3" >Request</small></a>
           <hr>
-      
-      <h4 style="color: black;" *ngIf="false">.....</h4>
-      
-      <div class="table-responsive" *ngIf="true" style="box-shadow: 0px 2px 5px black; border-radius: 10px;">
-        <table class="table align-middle mb-0 bg-white">
-         
-            <thead class="bg-light">
-              <tr>
-                <th class="">No</th>
-                <th class="">Heading</th>
-                <th>SubHeading</th>
-                <th>Image</th>
-                <th>Blocked</th>
-                <th>Actions</th>
-              </tr>
-            </thead>
-            <tbody *ngIf="">
-              <tr >
-                <!-- <td>{{i+1}}</td>
-                <td>{{banner.heading}}</td>
-                <td>{{banner.subheading}}</td>
-                <td><img style="width: 90px; height: 50px;" [src]="getImageUrl(banner.image ? banner.image.toString() : '')" alt="banner image goes here"></td>
-                <td>{{banner.blocked}}</td>
-                <td *ngIf="!banner.blocked" ><button class="btn btn-danger" (click)="blockbanner(banner._id)" >Block</button></td>
-                <td *ngIf="banner.blocked"><button class="btn btn-success"  (click)="unblockbanner(banner._id)" >UnBlock</button></td> -->
-              </tr>
-              
-            </tbody>
+          <h4 style="color: black;" *ngIf="(loading$ |async)">.....</h4>
         
-        </table>
-      </div>
+          <div class="table-responsive" *ngIf="(loaded$ |async)" style="box-shadow: 0px 2px 5px black; border-radius: 10px;">
+            <table class="table align-middle mb-0 bg-white">
+             
+                <thead class="bg-light">
+                  <tr>
+                    <th class="">No</th>
+                    <th class="">Name</th>
+                    <th>Owner Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Blocked</th>
+                    <th>Actions</th>
+                    <!-- <th>Reject</th> -->
+  
+                  </tr>
+                </thead>
+                <tbody *ngIf="(professional$ |async) as professionalData">
+                  <tr *ngFor="let professional of professionalData,let i=index">
+                      
+                    <td>{{i+1}}</td>
+                    <td>{{professional.name}}</td>
+                    <td>{{professional.ownername}}</td>
+                    <!-- <td><img style="width: 90px; height: 50px;" [src]="getImageUrl(professional.image ? banner.image.toString() : '')" alt="banner image goes here"></td> -->
+                    <td>{{professional.email}}</td>
+                    <td>{{professional.phone}}</td>
+                    <td>{{professional.blocked}}</td>
+                    <td *ngIf="!professional.blocked" ><button class="btn btn-danger" (click)="block(professional._id)" >Block</button></td>
+                    <td *ngIf="professional.blocked"><button class="btn btn-success"   (click)="unblock(professional._id)">UnBlock</button></td>
+          
+                   
+                  </tr>
+                  
+                </tbody>
+            
+            </table>
+          </div>
+  
     
     </div>
   </div>

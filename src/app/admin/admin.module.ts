@@ -11,7 +11,8 @@ import { BannerComponent } from './banner/banner.component';
 import { ProfessionalsComponent } from './professionals/professionals.component';
 import { AddbannerComponent } from './addbanner/addbanner.component';
 import { ProfessinalrequestComponent } from './professinalrequest/professinalrequest.component';
-
+import { NgxPaginationModule } from 'ngx-pagination';
+import {UsersearchPipe} from '../pipes/usersearch.pipe'
 
 
 
@@ -25,13 +26,15 @@ import { ProfessinalrequestComponent } from './professinalrequest/professinalreq
     BannerComponent,
     ProfessionalsComponent,
     AddbannerComponent,
-    ProfessinalrequestComponent
+    ProfessinalrequestComponent,
+    UsersearchPipe
   ],
   imports: [
     CommonModule,
     AdminRoutingModule,
     ReactiveFormsModule,
     FormsModule,
+    NgxPaginationModule
    
 
   ]

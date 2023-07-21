@@ -37,4 +37,16 @@ export class AdminService {
   getprofessional(){
     return this.http.get<Professional[]>(`${this.adminurl}getprofessionals`)
   }
+  accept(id:string){
+    return this.http.post(`${this.adminurl}acceptprofessional/${id}`,null)
+  }
+  getacceptedprofessional(){
+    return this.http.get<Professional[]>(`${this.adminurl}getacceptedprofessionals`)
+  }
+  blockprofessional(id:string){
+    return this.http.post(`${this.adminurl}/blockprofessional/${id}`,null)
+  }
+  unblockprofessional(id:string){
+    return this.http.post(`${this.adminurl}/unblockprofessional/${id}`,null)
+  }
 }

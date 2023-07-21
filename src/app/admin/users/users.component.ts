@@ -14,15 +14,42 @@ import Swal from 'sweetalert2';
 })
 export class UsersComponent implements OnInit {
   constructor(private store:Store,private adminservice:AdminService,private toaster:ToastrService){}
+  searchText!: string;
   users$ : any | null
   // users$=this.store.select(selectUsers)  //this way also can be used to display data in html here we want to use the async key word
   loaded$=this.store.select(selectloaded)
   loading$=this.store.select(selectloading)
+  page:number=1
+  count:number=0
+  tableSize:number=2;
+  tableSizes:any=[5,10,15,20]
   ngOnInit(): void {
+    
+    
     this.store.dispatch(loaduser())
+   
+   this.listofuser()
+    
+    
+  }
+  listofuser(){
     this.store.pipe(select(selectUsers)).subscribe((users: any) => {
       this.users$ = users;
+     
+     
+     
+      
+      
     });
+  }
+  onTableDataChange(event:any){
+    this.page=event
+    this.listofuser()
+  }
+  onTableSizeChange(event:any){
+    this.tableSize=event.target.value;
+    this.page=1
+    this.listofuser()
   }
 
   blockuser(id:any){

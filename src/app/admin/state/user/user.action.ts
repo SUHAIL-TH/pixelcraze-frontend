@@ -18,3 +18,7 @@ export const loadbannerfailure=createAction("bannerloadfailure",props<{error:any
 export const loadprofessional=createAction("professionalload")
 export const loadprofessionalsuccess=createAction('professionalloadsuccess',props<{professionals:Professional[]}>())
 export const loadprofessionalfailure=createAction('professionalloadfailure',props<{error:any}>())
+
+export const loadacceptedprofessional=createAction("professionalAcept")
+export const loadacceptedprofessionalsuccess=createAction('professionalAcepsuccess',props<{acceptedprofessionals:Professional[]}>())
+export const loadacceptedprofessionalfailure=createAction('professionalAceptfailure',props<{error:any}>())

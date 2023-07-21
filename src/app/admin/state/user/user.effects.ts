@@ -43,4 +43,14 @@ export class UserEffects{
             ))
         )
     })
+    loadacceptedprofessional$=createEffect(()=>{
+        return this.actions$.pipe(
+            ofType(UserAction.loadacceptedprofessional),
+            mergeMap(()=>
+            this.adminService.getacceptedprofessional().pipe(
+                map(acceptedprofessionals=>(UserAction.loadacceptedprofessionalsuccess({acceptedprofessionals:acceptedprofessionals}))),
+                catchError((error)=>of(UserAction.loadacceptedprofessionalfailure({error})))
+            ))
+        )
+    })
 }

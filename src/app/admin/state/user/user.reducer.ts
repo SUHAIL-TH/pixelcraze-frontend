@@ -23,6 +23,12 @@ export const professionalinitialstate:ProfessionalState={
   loaded:false,
   error:null
 }
+export const acceptedprofessionalinitialstate:ProfessionalState={
+  professionals:[],
+  loading:false,
+  loaded:false,
+  error:null
+}
 
 export const userReducer = createReducer(
   initialState,
@@ -55,6 +61,14 @@ export const professionalReducer=createReducer(
   on(userAction.loadprofessional,(state)=>({...state,loading:true})),
   on(userAction.loadprofessionalsuccess,(state,{professionals})=>({...state,loading:false,loaded:true,professionals})),
   on(userAction.loadprofessionalfailure,(state,{error})=>({...state,loading:false,error}))
+
+
+)
+export const acceptedprofessionalReducer=createReducer(
+  acceptedprofessionalinitialstate,
+  on(userAction.loadacceptedprofessional,(state)=>({...state,loading:true})),
+  on(userAction.loadacceptedprofessionalsuccess,(state,{acceptedprofessionals})=>({...state,loading:false,loaded:true, professionals:acceptedprofessionals})),
+  on(userAction.loadacceptedprofessionalfailure,(state,{error})=>({...state,loading:false,error}))
 
 
 )

@@ -131,40 +131,88 @@
         
         <div class="table-responsive" *ngIf="(loaded$ |async)" style="box-shadow: 0px 2px 5px black; border-radius: 10px;">
           <table class="table align-middle mb-0 bg-white">
-           
-              <thead class="bg-light">
-                <tr>
-                  <th class="">No</th>
-                  <th class="">Name</th>
-                  <th>Owner Name</th>
-                  <th>Email</th>
-                  <th>Phone</th>
-                  <th>Documents</th>
-                  <th>Accept</th>
-                  <th>Reject</th>
-
-                </tr>
-              </thead>
-              <tbody *ngIf="(professionals$ |async) as professionalData">
-                <tr *ngFor="let professional of professionalData,let i=index">
-                    
-                  <td>{{i+1}}</td>
-                  <td>{{professional.name}}</td>
-                  <td>{{professional.ownername}}</td>
-                  <!-- <td><img style="width: 90px; height: 50px;" [src]="getImageUrl(professional.image ? banner.image.toString() : '')" alt="banner image goes here"></td> -->
-                  <td>{{professional.email}}</td>
-                  <td>{{professional.phone}}</td>
-                  <td><button class="btn btn-primary text-white fw-bold">view</button></td>
-                  <td><button class="btn btn-success text-white " >Accept</button></td>
-                  <td><button class="btn btn-danger text-white">Reject</button></td>
-                  <!-- <td *ngIf="!banner.blocked" ><button class="btn btn-danger" (click)="blockbanner(banner._id)" >Block</button></td> -->
-                  <!-- <td *ngIf="banner.blocked"><button class="btn btn-success"  (click)="unblockbanner(banner._id)" >UnBlock</button></td> -->
-                </tr>
-                
-              </tbody>
+            <thead class="bg-light">
+              <tr>
+                <th class="">No</th>
+                <th class="">Name</th>
+                <th>Owner Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Documents</th>
+                <th>Photo</th>
+                <th>Accept</th>
+              </tr>
+            </thead>
+            <tbody *ngIf="(professionals$ | async) as professionalData">
+              <tr *ngFor="let professional of professionalData; let i = index">
+                <td>{{ i + 1 }}</td>
+                <td>{{ professional.name }}</td>
+                <td>{{ professional.ownername }}</td>
+                <td>{{professional.email}}</td>
+                <td>{{professional.phone}}</td>
           
+                <td>
+                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" [attr.data-bs-target]="'#exampleModal' + i">
+                    View
+                  </button>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" [attr.data-bs-target]="'#exampleModals' + i">
+                    View
+                  </button>
+                </td>
+                <td>
+                  <button class="btn btn-success text-white" (click)="accept(professional._id)">Accept</button>
+                </td>
+              </tr>
+            </tbody>
           </table>
+          
+          <!-- Modal for each professional -->
+          <ng-container *ngFor="let professional of (professionals$ | async); let i = index">
+            <div class="modal fade" [id]="'exampleModal' + i" tabindex="-1" [attr.aria-labelledby]="'exampleModalLabel' + i" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 [id]="'exampleModalLabel' + i">Document</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <!-- Insert modal content here (e.g., image) -->
+                    <h5>{{ professional.phone }}</h5>
+                    <img [src]="getImageUrl(professional.certificate ? professional.certificate.toString() : '')" alt="banner image goes here" style="width: 450px; height: auto;">
+                  </div>
+                  <div class="modal-footer">
+                    <!-- Modal footer content -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-container>
+          <ng-container *ngFor="let professional of (professionals$ | async); let i = index">
+            <div class="modal fade" [id]="'exampleModals' + i" tabindex="-1" [attr.aria-labelledby]="'exampleModalLabel' + i" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 [id]="'exampleModalLabel' + i">Document</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <!-- Insert modal content here (e.g., image) -->
+                    <h5>{{ professional.phone }}</h5>
+                    <img [src]="getImageUrl(professional.photo ? professional.photo.toString() : '')" alt="banner image goes here" style="width: 450px; height: auto;">
+                  </div>
+                  <div class="modal-footer">
+                    <!-- Modal footer content -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-container>
+          
         </div>
+        
+        
       
       </div>
     </div>
