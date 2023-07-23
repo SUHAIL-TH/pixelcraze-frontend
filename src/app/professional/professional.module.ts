@@ -7,6 +7,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProfesionalRoutingModule } from './professional-routing.module';
 import { NavbarComponent } from './navbar/navbar.component';
 import { OtpComponent } from './otp/otp.component';
+import { ProfileComponent } from './profile/profile.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 
@@ -16,7 +18,9 @@ import { OtpComponent } from './otp/otp.component';
     RegisterComponent,
     HomeComponent,
     NavbarComponent,
-    OtpComponent
+    OtpComponent,
+    ProfileComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,

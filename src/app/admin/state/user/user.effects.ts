@@ -3,7 +3,7 @@ import { createEffect,Actions,ofType } from "@ngrx/effects";
 import *as UserAction from '../user/user.action'
 
 
-import { User } from "../types/user.type";
+
 import { AdminService } from "src/app/service/admin/admin.service";
 import { catchError, map, merge, mergeMap, of, switchMap } from "rxjs";
 

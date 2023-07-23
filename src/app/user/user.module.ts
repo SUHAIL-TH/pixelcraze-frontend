@@ -12,6 +12,9 @@ import { ToastrModule } from 'ngx-toastr';
 import { OtpComponent } from './otp/otp.component';
 import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
 import { ResetsubmitComponent } from './resetsubmit/resetsubmit.component';
+import { ProfessionalsComponent } from './professionals/professionals.component';
+import { FooterComponent } from './footer/footer.component';
+import { ProfessionalprofileComponent } from './professionalprofile/professionalprofile.component';
 
 
 
@@ -23,7 +26,10 @@ import { ResetsubmitComponent } from './resetsubmit/resetsubmit.component';
     HomeComponent,
     OtpComponent,
     ResetpasswordComponent,
-    ResetsubmitComponent
+    ResetsubmitComponent,
+    ProfessionalsComponent,
+    FooterComponent,
+    ProfessionalprofileComponent
   ],
   imports: [
     CommonModule,

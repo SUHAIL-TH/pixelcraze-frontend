@@ -21,25 +21,20 @@ export class UsersComponent implements OnInit {
   loading$=this.store.select(selectloading)
   page:number=1
   count:number=0
-  tableSize:number=2;
+  tableSize:number=5;
   tableSizes:any=[5,10,15,20]
   ngOnInit(): void {
     
     
     this.store.dispatch(loaduser())
-   
-   this.listofuser()
+
+    this.listofuser()
     
     
   }
   listofuser(){
-    this.store.pipe(select(selectUsers)).subscribe((users: any) => {
-      this.users$ = users;
-     
-     
-     
-      
-      
+    this.store.pipe(select(selectUsers)).subscribe((user: any) => {
+      this.users$ = user;      
     });
   }
   onTableDataChange(event:any){

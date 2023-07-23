@@ -126,22 +126,46 @@
                             
 
                         </div>
+                        <div class="row">
+                          <div class="col-md-6">
+                            <div class="form-outline mb-2">
+
+                              <label class="form-label text-white  mt-2" for="form2Example17"  style="text-shadow: 0px 1px 0px rgb(247, 245, 245);">Place</label>
+                             
+                            <input type="text" [ngClass]="{'is-invalid':regsubmit && registerform.controls['place'].errors}" name="place" formControlName="place" id="name" class="form-control " placeholder="Enter the place"/>
+                            <div *ngIf="regsubmit && registerform.controls['place'].errors" class="text-danger">
+                              
+                              <small *ngIf="registerform.controls['place'].errors['required']">Place is required</small>
+                            </div>
+                           
+                          </div>
+                              
+                              
+                          </div>
+                          <div class="col-md-6">
+                            <div class="form-outline mb-4">
+                              <label class="form-label text-white  mt-2" for="form2Example17"  style="text-shadow: 0px 1px 0px black;">Password</label>
+                             
+                            <input type="password" [ngClass]="{'is-invalid':regsubmit && registerform.controls['password'].errors}" name="password" formControlName="password" id="password" class="form-control " placeholder="Passwoed goes here"/>
+                            <div *ngIf="regsubmit && registerform.controls['password'].errors" class="text-danger">
+                                    
+                              <small *ngIf="registerform.controls['password'].errors['required']">password is required </small>
+                              <small *ngIf="registerform.controls['password'].errors['pattern']">Password is not strong</small>
+              
+                            </div>
+                           
+                          </div>
+                              
+                              
+                          </div>
+                          
+
+                      </div>
                         
                         
                       
                     
-                    <div class="form-outline mb-4">
-                      <label class="form-label text-white  mt-2" for="form2Example17"  style="text-shadow: 0px 1px 0px black;">Password</label>
-                     
-                    <input type="password" [ngClass]="{'is-invalid':regsubmit && registerform.controls['password'].errors}" name="password" formControlName="password" id="password" class="form-control " placeholder="Enter the Email"/>
-                    <div *ngIf="regsubmit && registerform.controls['password'].errors" class="text-danger">
-                            
-                      <small *ngIf="registerform.controls['password'].errors['required']">password is required </small>
-                      <small *ngIf="registerform.controls['password'].errors['pattern']">Password is not strong</small>
-      
-                    </div>
-                   
-                  </div>
+                    
       
                       
                         

@@ -13,6 +13,7 @@ import { AddbannerComponent } from './addbanner/addbanner.component';
 import { ProfessinalrequestComponent } from './professinalrequest/professinalrequest.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import {UsersearchPipe} from '../pipes/usersearch.pipe'
+import { ProfessionalsearchPipe } from '../pipes/professionalsearch.pipe';
 
 
 
@@ -27,7 +28,8 @@ import {UsersearchPipe} from '../pipes/usersearch.pipe'
     ProfessionalsComponent,
     AddbannerComponent,
     ProfessinalrequestComponent,
-    UsersearchPipe
+    UsersearchPipe,
+    ProfessionalsearchPipe
   ],
   imports: [
     CommonModule,

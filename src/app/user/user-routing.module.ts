@@ -7,6 +7,8 @@ import { OtpComponent } from './otp/otp.component';
 import { UserGuardGuard } from '../guard/user-guard.guard';
 import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
 import { ResetsubmitComponent } from './resetsubmit/resetsubmit.component';
+import { ProfessionalsComponent } from './professionals/professionals.component';
+import { ProfessionalprofileComponent } from './professionalprofile/professionalprofile.component';
 
 const routes: Routes = [
   {path:"",component:HomeComponent,},
@@ -16,7 +18,9 @@ const routes: Routes = [
     path:'otp',component:OtpComponent
   },
   {path:"resetpassword",component:ResetpasswordComponent},
-  {path:"resetsubmit",component:ResetsubmitComponent}
+  {path:"resetsubmit",component:ResetsubmitComponent},
+  {path:'professionals',component:ProfessionalsComponent},
+  {path:"professionalprofile",component:ProfessionalprofileComponent}
  
 ];
 

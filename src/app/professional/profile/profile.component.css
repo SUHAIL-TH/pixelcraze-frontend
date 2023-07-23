@@ -1,0 +1,5 @@
+.vertical-line {
+    border-left: 1px solid black; /* Change the color and style */
+    height: 100px; /* Adjust the height of the line */
+    margin: 0 10px; /* Adjust the margin for spacing */
+}

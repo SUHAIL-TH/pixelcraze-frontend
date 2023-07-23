@@ -13,7 +13,10 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
 import { UserEffects } from './admin/state/user/user.effects';
 import { acceptedprofessionalReducer, bannerReducer, professionalReducer, userReducer } from './admin/state/user/user.reducer';
-import { UsersearchPipe } from './pipes/usersearch.pipe';
+import { professionallistreducer } from './user/state/userstate/userstate.reducer';
+import { UserStateEffects } from './user/state/userstate/userstate.effects';
+
+
 
 
 
@@ -22,7 +25,8 @@ import { UsersearchPipe } from './pipes/usersearch.pipe';
 @NgModule({
   declarations: [
     AppComponent,
-    UsersearchPipe
+ 
+    
   ],
   imports: [
     BrowserModule,
@@ -30,9 +34,9 @@ import { UsersearchPipe } from './pipes/usersearch.pipe';
     HttpClientModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
-    StoreModule.forRoot({users:userReducer,banners:bannerReducer,professionals:professionalReducer,acceptedprofessionals:acceptedprofessionalReducer}),
+    StoreModule.forRoot({users:userReducer,banners:bannerReducer,professionals:professionalReducer,acceptedprofessionals:acceptedprofessionalReducer,professionalslist:professionallistreducer}),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
-    EffectsModule.forRoot([UserEffects,]),
+    EffectsModule.forRoot([UserEffects,UserStateEffects]),
    
   ],
   providers: [UserGuardGuard, UserServiceService],

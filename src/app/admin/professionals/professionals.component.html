@@ -126,9 +126,15 @@
       <a routerLink="/admin/professionals" style="font-weight: bold; text-decoration: underline 2px rgb(28, 113, 7) ; color: black;"><small  >Professionals</small></a>
       <a  routerLink="/admin/professionalrequest" style="text-decoration: none; color: black; font-weight: 500;"  > <small  class=" ms-3" >Request</small></a>
           <hr>
+          <div class="d-flex justify-content-end">
+            <div class="flex-grow-1"></div>
+            <div class="form-group">
+              <input type="text" [(ngModel)]="searchText" class="form-control form-control-sm" placeholder="Search...">
+            </div>
+          </div>
           <h4 style="color: black;" *ngIf="(loading$ |async)">.....</h4>
         
-          <div class="table-responsive" *ngIf="(loaded$ |async)" style="box-shadow: 0px 2px 5px black; border-radius: 10px;">
+          <div class="table-responsive mt-3" *ngIf="(loaded$ |async)" style="box-shadow: 0px 2px 5px black; border-radius: 10px;">
             <table class="table align-middle mb-0 bg-white">
              
                 <thead class="bg-light">
@@ -144,8 +150,8 @@
   
                   </tr>
                 </thead>
-                <tbody *ngIf="(professional$ |async) as professionalData">
-                  <tr *ngFor="let professional of professionalData,let i=index">
+                <tbody *ngIf="(professional$ |paginate: { itemsPerPage: tableSize, currentPage: page, totalItems: count }) as professionalData">
+                  <tr *ngFor="let professional of professionalData |professionalsearch: searchText; let i=index">
                       
                     <td>{{i+1}}</td>
                     <td>{{professional.name}}</td>
@@ -163,6 +169,15 @@
                 </tbody>
             
             </table>
+          </div>
+          <div class="mt-3  d-flex justify-content-end" >
+            <select name="" id="" (change)="onTableSizeChange($event)">
+              <option value="" *ngFor="let size of tableSizes">{{size}}</option>
+            </select>
+            <pagination-controls previousLabel="Prev"
+            nextLabel="Next" (pageChange)="onTableDataChange($event)">
+              
+            </pagination-controls>
           </div>
   
     

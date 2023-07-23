@@ -28,6 +28,7 @@ export class RegisterComponent {
         phone:["",[Validators.required, Validators.pattern(/^(\+\d{1,3}[- ]?)?\d{10}$/)]],
         password: ["", [Validators.required, Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}$')]],
         fileInput: [null, [Validators.required]],
+        place:['',Validators.required],
         fileInputcertificate: [null, [Validators.required]],
         
     })
@@ -67,6 +68,7 @@ export class RegisterComponent {
       formData.append("ownername",user.ownername)
       formData.append("phone",user.phone)
       formData.append("email",user.email)
+      formData.append('place',user.place)
       formData.append("password",user.password)
       this.professionalService.professionalSignup(formData).subscribe((res:any)=>{this.toastr.success('Registered','Successfully', { progressBar: true });
       // const navigationExtras = {

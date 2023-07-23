@@ -45,13 +45,15 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0 ps-3">
         <li class="nav-item">
-          <a class="nav-link " style="font-weight: bold;" href="">Home</a>
+          <a class="nav-link " style="font-weight: bold;" routerLink="/">Home</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Professional</a>
+        <li class="nav-item" *ngIf="authenticated">
+          <a class="nav-link" routerLink="/professionals">Professional</a>
+         
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
+        <li class="nav-item" *ngIf="authenticated">
+          <a class="nav-link"  href="#">About</a>
+          
         </li>
         
         
