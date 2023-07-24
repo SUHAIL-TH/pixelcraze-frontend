@@ -3,3 +3,65 @@
     height: 100px; /* Adjust the height of the line */
     margin: 0 10px; /* Adjust the margin for spacing */
 }
+
+.file-input {
+    display: none;
+  }
+  
+  /* Style the custom file input button */
+  .file-label {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  /* Optional: Add hover and active styles */
+  .file-input-container {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    border: 0px solid #000000;
+  }
+  
+  .file-input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 40px;
+    height: 20px;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  .file-label {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #272626;
+    color: #fff;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+  }
+  
+  .file-icon {
+    margin-right: 8px;
+  }
+  
+  .file-text {
+    font-size: 16px;
+  }
+  
+  /* Optional: Add hover and active styles */
+  .file-input-container:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .file-input-container:active {
+    background-color: #d0d0d0;
+  }
+  

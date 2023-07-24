@@ -38,21 +38,7 @@ export class LoginComponent implements OnInit {
       this.submit=true
       this.toaster.error('Please fill the fields','',{progressBar:true})
     }else{
-      // this.http.post("http://localhost:3000/postlogin",user,{
-      //   withCredentials:true
-      // }).subscribe((res:any)=>{
-      //   const jwtToken =res.token;
    
-      //   localStorage.setItem('jwt_token', jwtToken);
-        
-      //   this.toaster.success('Logined' ,'Successfully',{progressBar:true})
-       
-      //   this.router.navigate(['/'])
-      // },(err)=>{
-      //  this.error = err.error.message
-      //   this.toaster.error(err.error.message,'Error',{progressBar:true})
-   
-      // })
 
       this.userService.userLogin(user).subscribe((res:any)=>{
           const jwtToken =res.token;
@@ -63,8 +49,33 @@ export class LoginComponent implements OnInit {
          
           this.router.navigate(['/'])
         },(err)=>{
-         this.error = err.error.message
-          this.toaster.error(err.error.message,'',{progressBar:true})
+          if(err.error.message=='Your account is not verifid please verify it'){
+
+           
+            let phone={phone:err.error.phone,
+            email:err.error.email}
+            this.userService.verifyaccount(err.error.phone).subscribe(()=>{
+              this.toaster.success('Otp sent successfully','',{progressBar:true})
+              
+            })
+            const navigationExtras = {
+              queryParams: {
+                data: JSON.stringify(phone)
+              }
+            };
+            
+            this.toaster.error(err.error.message,'',{progressBar:true})
+            this.toaster.success('otp has sent to your phone number','',{progressBar:true})
+      
+            this.router.navigate(['/otp'], navigationExtras)
+            
+
+          }else{
+            this.error = err.error.message
+             this.toaster.error(err.error.message,'',{progressBar:true})
+
+          }
+         
      
         })
     }

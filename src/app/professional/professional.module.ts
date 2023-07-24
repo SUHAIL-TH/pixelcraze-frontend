@@ -9,6 +9,9 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { OtpComponent } from './otp/otp.component';
 import { ProfileComponent } from './profile/profile.component';
 import { FooterComponent } from './footer/footer.component';
+import { EditprofileComponent } from './editprofile/editprofile.component';
+import { BookingComponent } from './booking/booking.component';
+import { AddphotosComponent } from './addphotos/addphotos.component';
 
 
 
@@ -20,7 +23,10 @@ import { FooterComponent } from './footer/footer.component';
     NavbarComponent,
     OtpComponent,
     ProfileComponent,
-    FooterComponent
+    FooterComponent,
+    EditprofileComponent,
+    BookingComponent,
+    AddphotosComponent
   ],
   imports: [
     CommonModule,

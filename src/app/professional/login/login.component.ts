@@ -35,16 +35,16 @@ export class LoginComponent {
       this.submit=true
       this.toaster.error('Please fill the fields','',{progressBar:true})
     }else{
-     this.professionalService.postlogin(professionalData).subscribe(()=>{
-        // const jwtToken =res.token;
+     this.professionalService.postlogin(professionalData).subscribe((res:any)=>{
+        const jwtToken =res.token;
    
-        // localStorage.setItem('jwt_token', jwtToken);
+        localStorage.setItem('jwt_token', jwtToken);
         
         this.toaster.success('Login' ,'Successfully',{progressBar:true})
        
         this.router.navigate(['/professional/home'])
       },(err)=>{
-      console.log("hii")
+      
       console.log(err);
       
         this.toaster.error(err.error.message,'',{progressBar:true})

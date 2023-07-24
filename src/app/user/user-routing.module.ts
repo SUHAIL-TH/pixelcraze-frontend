@@ -20,7 +20,7 @@ const routes: Routes = [
   {path:"resetpassword",component:ResetpasswordComponent},
   {path:"resetsubmit",component:ResetsubmitComponent},
   {path:'professionals',component:ProfessionalsComponent},
-  {path:"professionalprofile",component:ProfessionalprofileComponent}
+  {path:"professionalprofile/:id",component:ProfessionalprofileComponent}
  
 ];
 

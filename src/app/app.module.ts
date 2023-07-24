@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { UserGuardGuard } from './guard/user-guard.guard';
@@ -15,6 +15,7 @@ import { UserEffects } from './admin/state/user/user.effects';
 import { acceptedprofessionalReducer, bannerReducer, professionalReducer, userReducer } from './admin/state/user/user.reducer';
 import { professionallistreducer } from './user/state/userstate/userstate.reducer';
 import { UserStateEffects } from './user/state/userstate/userstate.effects';
+import { ProfessionalInterceptor } from './interceptor/professional.interceptor';
 
 
 
@@ -29,6 +30,7 @@ import { UserStateEffects } from './user/state/userstate/userstate.effects';
     
   ],
   imports: [
+    
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
@@ -39,7 +41,9 @@ import { UserStateEffects } from './user/state/userstate/userstate.effects';
     EffectsModule.forRoot([UserEffects,UserStateEffects]),
    
   ],
-  providers: [UserGuardGuard, UserServiceService],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: ProfessionalInterceptor, multi: true },
+    UserGuardGuard, UserServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

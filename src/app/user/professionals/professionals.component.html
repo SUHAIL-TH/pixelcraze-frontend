@@ -20,7 +20,7 @@
                 <div class="card-body">
                     <div class=" d-flex justify-content-between" >
                         <h5 class="card-title">{{professional.name}}</h5>
-                        <button routerLink="/professionalprofile" style="width: 100px; box-shadow: 0px 1px 3px rgb(0, 0, 0); border-radius: 10px;" class="btn btn-outline-dark fw-bold">Profile</button>
+                        <button (click)="getprofile(professional._id)" style="width: 100px; box-shadow: 0px 1px 3px rgb(0, 0, 0); border-radius: 10px;" class="btn btn-outline-dark fw-bold">Profile</button>
                         <!-- <button style="width: 100px;" class="btn btn-outline-dark fw-bold"  style="box-shadow: 0px 1px 3px rgb(0, 0, 0); border-radius: 10px;">Profile</button> -->
                     </div>
                   <small style="color: rgb(0, 31, 167); font-weight: bold;"><span class="text-success fw-bold" style="font-size: 17px;">{{professional.experinces}} </span>Years of experinces</small>

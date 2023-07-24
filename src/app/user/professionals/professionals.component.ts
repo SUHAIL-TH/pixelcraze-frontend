@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { loadprofessional } from '../state/userstate/userstate.action';
 import { selectProfessionallist, selectProfessionallistState, selectProfessionallistloaded, selectProfessionallistloading } from '../state/userstate/userstate.selector';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-professionals',
@@ -9,7 +10,7 @@ import { selectProfessionallist, selectProfessionallistState, selectProfessional
   styleUrls: ['./professionals.component.css']
 })
 export class ProfessionalsComponent  implements OnInit{
-  constructor(private store:Store){}
+  constructor(private store:Store,private router:Router){}
   // professionallist$=this.store.select(selectProfessionallist)
   professionallist$:any|null
   loaded$=this.store.select(selectProfessionallistloaded)
@@ -28,9 +29,13 @@ export class ProfessionalsComponent  implements OnInit{
   profesionallist(){
     this.store.pipe(select(selectProfessionallist)).subscribe((professional:any)=>{
       this.professionallist$=professional
-      console.log(professional);
+      
       
     })
+  }
+  getprofile(id:any){
+   
+    this.router.navigate(['/professionalprofile',id])
   }
 
 }

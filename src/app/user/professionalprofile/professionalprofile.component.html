@@ -4,44 +4,57 @@
       <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
         <ol class="breadcrumb mt-2">
           <li class="breadcrumb-item"><a routerLink="/professional/home" style="text-decoration: none; color: black;">Home</a></li>
-          <li class="breadcrumb-item active" aria-current="page">Profile</li>
+          <li class="breadcrumb-item active" aria-current="page">Professional Profile</li>
         </ol>
       </nav>
       <div>
-        <small class="mt-3 fw-bold" style="margin-left: 50px; text-shadow: 0px 1px 2px black; font-size: 15px; text-decoration: underline 2px red ;   ">Devine captures</small>
+        <small class="mt-3 fw-bold" style="margin-left: 50px; text-shadow: 0px 1px 2px black; font-size: 15px; text-decoration: underline 2px red ;   ">{{professionaldata.name}}</small>
 
 
       </div>
       <div class="row mt-3">
        
         <div class="col-md-4 col-lg-4  ">
-            <img class="ms-5" src="../../../assets/icon/female-model-poses-featured-1.jpg " alt="" style="width: 250px; height: 300px; object-fit: cover; box-shadow: 0px 1px 5px black;">
+            <img class="ms-5" [src]="getImageUrl(professionaldata.photo ? professionaldata.photo.toString() : '')" alt="" style="width: 250px; height: 300px; object-fit: cover; box-shadow: 0px 1px 5px black;">
             <!-- <div class="vertical-line"></div> -->
             
           </div>
          
           <div class="col-md-8 col-lg-8 ">
-            <!-- <small class="mt-5">Devine captures</small> -->
+            
+            <small class="mt-5 fw-bold" ><span>Owned by :</span> {{professionaldata.ownername}}</small>
             <div class="d-flex justify-content-between">
-              
-            <span style="font-weight: 500;" class="mt-4"><i class="fas fa-map-marker-alt text-danger" ></i>      Kannur,cherupuzha</span>
+            
+            <span style="font-weight: 500;" class="mt-4"><i class="fas fa-map-marker-alt text-danger" ></i>      {{professionaldata.place}}</span>
            
-            <!-- <button style=" box-shadow: 0px 1px 3px gray; border-radius: 10px;" class="btn btn-outline-success fw-bold btn-sm">Edit</button> -->
+            <button style=" box-shadow: 0px 1px 3px gray; border-radius: 10px;" class="btn btn-outline-success fw-bold btn-sm">Book Now</button>
             </div>
            
             
+            <p class="card-text mt-4"><small class="text-dark"><i class="fas fa-envelope text-danger"></i> {{professionaldata.email}}</small></p>
            <div class="mt-3"> 
-            <small style="color: rgb(0, 31, 167); font-weight: bold;"><span class="text-success fw-bold" style="font-size: 17px;">4 </span>Years of experinces</small>
+            <small style="color: rgb(0, 31, 167); font-weight: bold;"><span class="text-success fw-bold" style="font-size: 17px;">{{professionaldata.experinces}} </span>Years of experinces</small>
            </div>
-           <p class="card-text mt-4"><small class="text-muted">wedding photography</small></p>
+           <div class="mt-3">
+            <small><i class="fas fa-phone text-success"></i>  {{professionaldata.phone}}</small>
+          </div>
+           <div>
+
+            <div class="mt-2">
+                
+                <small class="fw-bold mt-2" style="text-decoration: underline;">specialized</small>
+            </div>
+           </div>
+           <p class="card-text mt-2"><small class="text-dark">{{professionaldata.specialized}}</small></p>
             
           </div>
         
       </div>
       <hr class="mt-5">
-      <small class="" style="text-align: start;font-weight: 400; text-shadow: 0px 1px 1px black;">Welcome to our photography website, where we celebrate the art of capturing moments and creating everlasting memories.
+      <small class="" *ngIf="!professionaldata.aboutus" style="text-align: start;font-weight: 400; text-shadow: 0px 1px 1px black;">Welcome to our photography website, where we celebrate the art of capturing moments and creating everlasting memories.
         At our core, we believe that photography goes beyond simply taking pictures. It is a powerful medium that allows us to freeze time, preserve emotions, and unveil the beauty that surrounds us. Through our lenses, we strive to transform ordinary scenes into extraordinary works of art, capturing the essence of life in each frame.
         Whether it's a tender embrace, a breathtaking landscape, or a candid expression, we are passionate about preserving those fleeting moments that define who we are. We believe that every photograph tells a unique story, and we are dedicated to capturing the authentic emotions and hidden narratives that lie within.</small>
+      <small class="professionaldata.aboutus" style="text-align: start;font-weight: 400; text-shadow: 0px 1px 1px black;">{{professionaldata.aboutus}}</small>
     </div>
     <div class="row px-xl-5 mt-5">
        <small class="mt-3 fw-bold" style=" text-shadow: 0px 1px 2px black; font-size: 15px; text-decoration: underline 2px rgb(0, 0, 0) ;   ">Photo's</small>
@@ -53,7 +66,7 @@
        <div class="row mt-4">
         <div class="col-md-3 mb-3 col-12 d-flex align-item-center justify-content-center ">
           <div class="card" style="width: 18rem">
-            <img src="..." class="card-img-top" alt="...">
+            <img src="" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">Card title</h5>
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -63,7 +76,7 @@
         </div>
         <div class="col-md-3 mb-3 col-12 d-flex align-item-center justify-content-center">
           <div class="card" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
+            <img src="" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">Card title</h5>
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -73,7 +86,7 @@
         </div>
         <div class="col-md-3 mb-3 col-12 d-flex align-item-center justify-content-center">
           <div class="card" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
+            <img src="" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">Card title</h5>
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -83,7 +96,7 @@
         </div>
         <div class="col-md-3 col-12 mb-3 d-flex align-item-center justify-content-center">
           <div class="card" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
+            <img src="" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">Card title</h5>
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -96,9 +109,9 @@
 
    
     </div>
-   <div class=" px-xl-5 mt-5">
+   <div class="px-xl-5 mt-5">
     <hr>
-    <small class="mt-3 fw-bold" style="  font-size: 18px; text-decoration: underline 2px rgb(188, 9, 9) ;   ">Per Day Price Estimate</small>
+    <small class="mt-3 fw-bold mt-5" style="  font-size: 18px; text-decoration: underline 2px rgb(188, 9, 9) ;   ">Per Day Price Estimate</small>
     <div class="row">
       <div class="col-md-6 align-item-center">
         <div class="mt-3">
