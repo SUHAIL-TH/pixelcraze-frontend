@@ -1,0 +1,10 @@
+.imagessview {
+    width: 460px;
+  }
+  
+  /* Media query for screen size less than or equal to 733px */
+  @media only screen and (max-width: 733px) {
+    .imagessview {
+      width: 340px;
+    }
+  }

@@ -32,4 +32,9 @@ export class ProfessionalService {
   posteditprofile(data:any){
     return this.http.post(`${this.professionalUrl}/professional/posteditprofile`,data)
   }
+  addphoto(data:any){
+    
+    return this.http.post(`${this.professionalUrl}/professional/postaddimage`,data)
+
+  }
 }

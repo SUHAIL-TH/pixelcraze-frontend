@@ -1,1 +1,65 @@
-<p>addphotos works!</p>
+<app-navbar></app-navbar>
+<div class="container-fluid" style="min-height: 100vh;">
+    <div class="row px-xl-5 mt-2">
+      <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+        <ol class="breadcrumb mt-2">
+          <li class="breadcrumb-item"><a routerLink="/professional/home" style="text-decoration: none; color: black;">Home</a></li>
+          <li class="breadcrumb-item " aria-current="page" ><a routerLink="/professional/profile" style="text-decoration: none; color: black;">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Edit profile</li>
+        </ol>
+      </nav>
+      <div class="">
+        <form [formGroup]="imageForm"  (ngSubmit)="submit()">
+            <div class="form-group">
+              <label for="exampleInputEmail1" style="color: black; font-weight: bold; text-shadow: 0px 1px 2px black;">Description</label>
+              <input type="text"  formControlName="discription"  class="form-control mt-2"  id="discription" name="discription"  placeholder="please enter a discription" style="border-color: rgba(0, 0, 0, 0.379);"  >
+              <!-- formControlName="name" [ngClass]="{'is-invalid':submit && editform.controls['discription'].errors}" -->
+              <!-- <div *ngIf="submit && editform.controls['name'].errors" class="text-danger">
+                            
+                <small *ngIf="editform.controls['discription'].errors['required']">Name is required </small>
+               
+                
+              </div> -->
+            </div>
+        
+              <div class="row mt-4">
+                  <div class="col-md-6">
+                    <label  class="" style="color: black; font-weight: bold; text-shadow: 0px 1px 2px black;">Photo</label>
+                    <input type="file"  (change)="onFileSelected($event)" accept="image/*" class="form-control mt-3" id="photo"   name="photo" style="border-color: rgba(0, 0, 0, 0.506);"  >
+                
+                      
+                  </div>
+    
+                  <div class="col-md-6">
+                    <!-- <label class="form-label" for="customFile" style="color: black; font-weight: bold; text-shadow: 0px 1px 2px black;">Specialized</label>
+                    <input type="text"  class="form-control mt-2" name="specialized"    style="border-color: rgba(0, 0, 0, 0.379);"  >  -->
+                    
+                    <img class="mt-3" *ngIf="imageUrl" [src]="imageUrl" alt="Selected Image" style="height: 200px; width: auto;">
+                </div>
+                 
+              </div>
+              
+              
+            
+           
+       
+    
+            
+            <div class="mt-3"> 
+                <button  type="submit"  class="btn btn-success btn-sm " style="font-weight: bold;">Submit</button>
+            </div>
+            
+          </form>
+
+      </div>
+      
+      
+      
+    
+
+   </div>
+    
+    
+  </div>
+
+  <app-footer></app-footer>

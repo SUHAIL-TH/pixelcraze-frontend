@@ -14,7 +14,7 @@
       </div>
       <div class="row mt-3">
        
-        <div class="col-md-4 col-lg-4  ">
+        <div class="col-md-4 col-lg-4  " >
             <img class="ms-5" [src]="getImageUrl(profileData?.photo ? profileData?.photo.toString() : '')"  alt="Profile pic goes here" style="width: 250px; height: 300px; object-fit: cover; box-shadow: 0px 2px 5px black;">
             <!-- <div class="vertical-line"></div> -->
             <div class="d-flex justify-content-around mt-4">
@@ -73,53 +73,46 @@
        <small class="mt-3 fw-bold" style=" text-shadow: 0px 1px 2px black; font-size: 15px; text-decoration: underline 2px rgb(0, 0, 0) ;   ">Photo's</small>
        <hr class="mt-2">
        <div class="d-flex justify-content-end">
-        <button class="btn btn-outline-danger btn-sm">Add</button>
+        <button class="btn btn-outline-danger btn-sm" routerLink="/professional/addphotos">Add</button>
        </div>
       
 
     
-       <div class="row mt-4">
+       <div class="row mt-4" >
      
-          <div class="col-md-3 mb-3 col-12 d-flex align-item-center justify-content-center ">
-            <div class="card" style="width: 18rem">
-              <img src="" class="card-img-top" alt="">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
+        <div class="col-md-3 mb-3 col-12 d-flex align-item-center justify-content-center" *ngFor="let img of profileData?.images; let i = index">
+          <div class="card" style="width: 300px;">
+            <img [src]="getImageUrl(img?.image ? img?.image.toString() : '')" 
+                 data-bs-toggle="modal" 
+                 [attr.data-bs-target]="'#exampleModal' + i"  
+                 class="card-img-top" 
+                 alt="" 
+                 style="height: 300px; width: 300px; object-fit: cover; box-shadow: 0px 2px 5px black;">
           </div>
-          <div class="col-md-3 mb-3 col-12 d-flex align-item-center justify-content-center">
-            <div class="card" style="width: 18rem;">
-              <img src="" class="card-img-top" alt="">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3 mb-3 col-12 d-flex align-item-center justify-content-center">
-            <div class="card" style="width: 18rem;">
-              <img src="" class="card-img-top" alt="">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3 col-12 mb-3 d-flex align-item-center justify-content-center">
-            <div class="card" style="width: 18rem;">
-              <img src="" class="card-img-top" alt="">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
         </div>
+        
+        <ng-container *ngFor="let img of profileData?.images; let i = index">
+          <div class="modal fade" [id]="'exampleModal' + i" tabindex="-1" [attr.aria-labelledby]="'exampleModalLabel' + i" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  <hr>
+                </div>
+                <div class="modal-body">
+                  <img class="imagessview" [src]="getImageUrl(img?.image ? img?.image.toString() : '')" 
+                       alt="banner image goes here" 
+                       style=" height: auto;">
+                </div>
+                <div class="modal-footer d-flex justify-content-start">
+                  <small>{{img.discription}}</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </ng-container>
+          
 
     
       

@@ -28,6 +28,8 @@ export class ProfileComponent implements OnInit {
   loadprofile() {
     this.service.getprofiledata().subscribe((res: any) => {
       this.profileData = res;
+      console.log(res);
+      
     });
   }
   getImageUrl(image: string) {

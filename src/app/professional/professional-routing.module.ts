@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 import { EditprofileComponent } from './editprofile/editprofile.component';
 import { BookingComponent } from './booking/booking.component';
+import { AddphotosComponent } from './addphotos/addphotos.component';
 
 
 
@@ -17,7 +18,8 @@ const routes: Routes = [
     {path:"home",component:HomeComponent},
     {path:'profile',component:ProfileComponent},
     {path:"editprofile",component:EditprofileComponent},
-    {path:'booking',component:BookingComponent}
+    {path:'booking',component:BookingComponent},
+    {path:"addphotos",component:AddphotosComponent}
  
 ];
 
