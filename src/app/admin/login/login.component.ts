@@ -41,7 +41,13 @@ export class LoginComponent {
     }else {
       this.http.post("http://localhost:3000/admin/postlogin",user,{
         withCredentials:true
-      }).subscribe((res:any)=>{this.toastr.success('Logined','Successfully', { progressBar: true });
+      }).subscribe((res:any)=>{
+      
+        const jwtToken:string=res;
+      
+        
+        localStorage.setItem('jwt_token_admin',jwtToken)
+        this.toastr.success('Logined','Successfully', { progressBar: true });
       
       console.log("hiii");
       

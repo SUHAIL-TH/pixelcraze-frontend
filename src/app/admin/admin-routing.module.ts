@@ -8,18 +8,19 @@ import { BannerComponent } from './banner/banner.component';
 import { ProfessionalsComponent } from './professionals/professionals.component';
 import { AddbannerComponent } from './addbanner/addbanner.component';
 import { ProfessinalrequestComponent } from './professinalrequest/professinalrequest.component';
+import { AdminGuard, ConsecutiveGuard } from '../guard/admin.guard';
 
 
 
 
 const routes: Routes = [
-  {path:"",component:LoginComponent},
-  {path:"dashboard",component:DashboardComponent},
-  {path:"users",component:UsersComponent},
-  {path:"banner",component:BannerComponent},
-  {path:"professionals",component:ProfessionalsComponent},
-  {path:"addbanner",component:AddbannerComponent},
-  {path:"professionalrequest",component:ProfessinalrequestComponent}
+  {path:"",component:LoginComponent,canActivate:[AdminGuard,ConsecutiveGuard]},
+  {path:"dashboard",component:DashboardComponent,canActivate:[AdminGuard,ConsecutiveGuard]},
+  {path:"users",component:UsersComponent,canActivate:[AdminGuard,ConsecutiveGuard]},
+  {path:"banner",component:BannerComponent,canActivate:[AdminGuard,ConsecutiveGuard]},
+  {path:"professionals",component:ProfessionalsComponent,canActivate:[AdminGuard,ConsecutiveGuard]},
+  {path:"addbanner",component:AddbannerComponent,canActivate:[AdminGuard,ConsecutiveGuard]},
+  {path:"professionalrequest",component:ProfessinalrequestComponent,canActivate:[AdminGuard,ConsecutiveGuard]}
   
 
 

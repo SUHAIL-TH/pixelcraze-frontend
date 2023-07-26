@@ -5,37 +5,31 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
-export class UserGuardGuard {
+export class ProfessionalGuard {
   constructor(private router: Router) {}
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): any {
-    const jwtToken = localStorage.getItem('jwt_token');
-    const loginRoute = '/login';
-    const signupRoute = '/register';
-    // if (jwtToken) {
-    //   this.router.navigate(['/']);
-    //   return false;
-    // } else {
-    //   return true;
-    // }
+    const jwtToken = localStorage.getItem('jwt_token_professional');
+    const loginRoute = '/professional';
+    const signupRoute = '/professiona/signup';
+  
     if (
       state.url !== loginRoute &&
       state.url !== signupRoute &&
       jwtToken === null
     ) {
-      this.router.navigate(['/login']);
+      this.router.navigate(['/professional']);
       return false;
     } else if (
       (state.url === loginRoute || state.url === signupRoute) &&
       jwtToken !== null
     ) {
-      this.router.navigate(['/']);
+      this.router.navigate(['/professinal/home']);
       return false;
     }
     return true;
   }
 }
-
 
 @Injectable({
   providedIn: 'root',
@@ -45,12 +39,12 @@ export class ConsecutiveGuard implements CanActivate {
 
   canActivate() {
     const admin = localStorage.getItem('jwt_token_admin');
-    const professional = localStorage.getItem('jwt_token_professional');
+    const user = localStorage.getItem('jwt_token');
     if (admin) {
       this.router.navigate(['/admin/dashboard']);
       return false;
-    } else if (professional) {
-       this.router.navigate(['/professional/home']);
+    } else if (user) {
+       this.router.navigate(['/']);
        return false;
     } else {
       return true;

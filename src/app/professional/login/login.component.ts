@@ -38,7 +38,7 @@ export class LoginComponent {
      this.professionalService.postlogin(professionalData).subscribe((res:any)=>{
         const jwtToken =res.token;
    
-        localStorage.setItem('jwt_token', jwtToken);
+        localStorage.setItem('jwt_token_professional', jwtToken);
         
         this.toaster.success('Login' ,'Successfully',{progressBar:true})
        

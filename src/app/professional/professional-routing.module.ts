@@ -8,18 +8,19 @@ import { ProfileComponent } from './profile/profile.component';
 import { EditprofileComponent } from './editprofile/editprofile.component';
 import { BookingComponent } from './booking/booking.component';
 import { AddphotosComponent } from './addphotos/addphotos.component';
+import { ConsecutiveGuard, ProfessionalGuard } from '../guard/professional.guard';
 
 
 
 
 const routes: Routes = [
-    {path:'',component:LoginComponent},
-    {path:'signup',component:RegisterComponent},
-    {path:"home",component:HomeComponent},
-    {path:'profile',component:ProfileComponent},
-    {path:"editprofile",component:EditprofileComponent},
-    {path:'booking',component:BookingComponent},
-    {path:"addphotos",component:AddphotosComponent}
+    {path:'',component:LoginComponent,canActivate:[ProfessionalGuard,ConsecutiveGuard]},
+    {path:'signup',component:RegisterComponent,canActivate:[ProfessionalGuard,ConsecutiveGuard]},
+    {path:"home",component:HomeComponent,canActivate:[ProfessionalGuard,ConsecutiveGuard]},
+    {path:'profile',component:ProfileComponent,canActivate:[ProfessionalGuard,ConsecutiveGuard]},
+    {path:"editprofile",component:EditprofileComponent,canActivate:[ProfessionalGuard,ConsecutiveGuard]},
+    {path:'booking',component:BookingComponent,canActivate:[ProfessionalGuard,ConsecutiveGuard]},
+    {path:"addphotos",component:AddphotosComponent,canActivate:[ProfessionalGuard,ConsecutiveGuard]}
  
 ];
 

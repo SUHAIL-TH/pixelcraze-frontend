@@ -13,8 +13,8 @@ export class ProfessionalService {
   professionalSignup(data:any){
     return this.http.post(`${this.professionalUrl}/professional/postsignup`,data)
   }
-  postlogin(data:any){
-    console.log(data);
+  postlogin(data:object){
+    
     
     return this.http.post(`${this.professionalUrl}/professional/postlogin`,data)
   }
@@ -32,7 +32,7 @@ export class ProfessionalService {
   posteditprofile(data:any){
     return this.http.post(`${this.professionalUrl}/professional/posteditprofile`,data)
   }
-  addphoto(data:any){
+  addphoto(data:object){
     
     return this.http.post(`${this.professionalUrl}/professional/postaddimage`,data)
 

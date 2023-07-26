@@ -9,7 +9,7 @@ import { UserServiceService } from 'src/app/service/user/user-service.service';
 })
 export class ProfessionalprofileComponent implements OnInit {
   userId: any;
-  professionaldata: any;
+  professionaldata:any;
   constructor(
     private service: UserServiceService,
     private route: ActivatedRoute,
@@ -24,6 +24,8 @@ export class ProfessionalprofileComponent implements OnInit {
     this.service.getdetailsprofessional(id).subscribe(
       (res) => {
         this.professionaldata = res;
+        console.log(res);
+        
       },
       (err) => {
         this.router.navigate(['/']);
