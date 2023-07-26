@@ -21,9 +21,10 @@ export class UserGuardGuard {
     if (
       state.url !== loginRoute &&
       state.url !== signupRoute &&
+     
       jwtToken === null
     ) {
-      this.router.navigate(['/login']);
+      this.router.navigate(['/']);
       return false;
     } else if (
       (state.url === loginRoute || state.url === signupRoute) &&

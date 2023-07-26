@@ -15,6 +15,7 @@ import { ResetsubmitComponent } from './resetsubmit/resetsubmit.component';
 import { ProfessionalsComponent } from './professionals/professionals.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProfessionalprofileComponent } from './professionalprofile/professionalprofile.component';
+import { BookingformComponent } from './bookingform/bookingform.component';
 
 
 
@@ -29,7 +30,8 @@ import { ProfessionalprofileComponent } from './professionalprofile/professional
     ResetsubmitComponent,
     ProfessionalsComponent,
     FooterComponent,
-    ProfessionalprofileComponent
+    ProfessionalprofileComponent,
+    BookingformComponent
   ],
   imports: [
     CommonModule,

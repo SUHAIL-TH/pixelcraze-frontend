@@ -9,9 +9,10 @@ import { ResetpasswordComponent } from './resetpassword/resetpassword.component'
 import { ResetsubmitComponent } from './resetsubmit/resetsubmit.component';
 import { ProfessionalsComponent } from './professionals/professionals.component';
 import { ProfessionalprofileComponent } from './professionalprofile/professionalprofile.component';
+import { BookingformComponent } from './bookingform/bookingform.component';
 
 const routes: Routes = [
-  {path:"",component:HomeComponent,canActivate:[UserGuardGuard,ConsecutiveGuard]},
+  {path:"",component:HomeComponent,canActivate:[ConsecutiveGuard]},
   {path:"login",component:LoginComponent,canActivate:[UserGuardGuard,ConsecutiveGuard]},
   {path:"register",component:RegisterComponent,canActivate:[UserGuardGuard,ConsecutiveGuard]},
   {
@@ -20,7 +21,8 @@ const routes: Routes = [
   {path:"resetpassword",component:ResetpasswordComponent},
   {path:"resetsubmit",component:ResetsubmitComponent},
   {path:'professionals',component:ProfessionalsComponent,canActivate:[UserGuardGuard,ConsecutiveGuard]},
-  {path:"professionalprofile/:id",component:ProfessionalprofileComponent,canActivate:[UserGuardGuard,ConsecutiveGuard]}
+  {path:"professionalprofile/:id",component:ProfessionalprofileComponent,canActivate:[UserGuardGuard,ConsecutiveGuard]},
+  {path:'bookingform',component:BookingformComponent,canActivate:[UserGuardGuard,ConsecutiveGuard]}
  
 ];
 
