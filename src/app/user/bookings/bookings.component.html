@@ -18,25 +18,28 @@
               <thead class="bg-light">
                 <tr>
                   <th class="">No</th>
-                  <th class="">Name</th>
+                  <!-- <th class="">Name</th> -->
                   <th>HouseName</th>
-                  <th>Phone</th>
-                  <th>Location</th>
-                  <th>Event </th>
+                  <th>Professional</th>
+                  <th>Ownername</th>
+                  <th>Phone </th>
                   <th>Date</th>
+                  <th>Event</th>
                   <th>Amount</th>
                 </tr>
               </thead>
-              <tbody *ngFor="let book of bookingdata;let i=index">
-                <tr >
+              <tbody >
+                <tr *ngFor="let book of bookingdata ; let i=index">
                   <td>{{i+1}}</td>
-                  <td>{{book?.name}}</td>
-                  <td>{{book?.housename}}</td>
-                  <td>{{book.phone}}</td>
-                  <td>{{book.place}}</td>
-                  <td >{{book.event}}</td>
-                 <td>{{book.date | date:'shortDate'}}</td>
-                 <td>{{book.amount}}</td>
+                  <!-- <td>{{book.name}}</td> -->
+                  <td>{{book.housename}}</td>
+                  <td>{{book?.professional?.name}}</td>
+                  <td>{{book?.professional?.ownername}}</td>
+                  <td >{{book?.professional?.phone}}</td>
+                  <td >{{book?.date | date:'shortDate'}}</td>
+                  <td>{{book.event}}</td>
+                  <td>{{book.amount}}</td>
+                 
                 </tr>
                 
               </tbody>

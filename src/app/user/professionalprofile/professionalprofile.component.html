@@ -27,7 +27,7 @@
             
             <span style="font-weight: 500;" class="mt-4"><i class="fas fa-map-marker-alt text-danger" ></i>      {{professionaldata.place}}</span>
            
-            <button routerLink="/bookingform" style=" box-shadow: 0px 1px 3px gray; border-radius: 10px;" class="btn btn-outline-success fw-bold btn-sm">Book Now</button>
+            <button (click)="booknow(professionaldata._id)" style=" box-shadow: 0px 1px 3px gray; border-radius: 10px;" class="btn btn-outline-success fw-bold btn-sm">Book Now</button>
             </div>
            
             

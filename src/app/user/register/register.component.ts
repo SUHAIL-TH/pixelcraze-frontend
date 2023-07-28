@@ -45,11 +45,11 @@ export class RegisterComponent implements OnInit {
     })
     }else {
       this.userService.userSignup(user).subscribe((res:any)=>{this.toastr.success('OTP has sent','Successfully', { progressBar: true });
-      const navigationExtras = {
-        queryParams: {
-          data: JSON.stringify(res.data)
-        }
-      };
+          const navigationExtras = {
+            queryParams: {
+              data: JSON.stringify(res.data)
+            }
+          };
       
       
 

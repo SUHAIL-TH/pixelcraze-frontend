@@ -18,7 +18,7 @@
                   <div *ngIf="submitform && bookingform.controls['name'].errors" class="text-danger">
                         
                     <small *ngIf="bookingform.controls['name'].errors['required']">Email is required </small>
-                    <small *ngIf="bookingform.controls['name'].errors['pattern']">Null values is not allowed</small>
+                    <small *ngIf="bookingform.controls['name'].errors['leadingWhitespace']">Null values is not allowed</small>
                    
 
                   </div>
@@ -31,26 +31,41 @@
                   <div *ngIf="submitform && bookingform.controls['housename'].errors" class="text-danger">
                         
                     <small *ngIf="bookingform.controls['housename'].errors['required']">House name is required </small>
+                    <small *ngIf="bookingform.controls['housename'].errors['leadingWhitespace']">Null values is not allowed</small>
                    
 
                   </div>
                 </div>  
                 <div class="form-group">
                     <label  class="mt-3" style="color: black; font-weight: bold;">Place</label>
-                    <input type="text" [ngClass]="{'is-invalid':submitform && bookingform.controls['place'].errors}" class="form-control" id="place"  formControlName="place" name="place" placeholder="Place goes here">
+                    <input type="text"  [ngClass]="{'is-invalid':submitform && bookingform.controls['place'].errors}" class="form-control" id="place"  formControlName="place" name="place" placeholder="Place goes here">
                     <div *ngIf="submitform && bookingform.controls['place'].errors" class="text-danger">
                         
                       <small *ngIf="bookingform.controls['place'].errors['required']">Place  is required </small>
-                     
+                      <small *ngIf="bookingform.controls['place'].errors['leadingWhitespace']">Null values is not allowed</small>
   
                     </div>
                   </div>  
                   <div class="form-group">
                     <label  class="mt-3" style="color: black; font-weight: bold;">Phone</label>
-                    <input type="text" [ngClass]="{'is-invalid':submitform && bookingform.controls['phone'].errors}" class="form-control" id="phone"  formControlName="phone" name="phone" placeholder="phone goes here">
+                    <input type="number" [ngClass]="{'is-invalid':submitform && bookingform.controls['phone'].errors}" class="form-control" id="phone"  formControlName="phone" name="phone" placeholder="phone goes here">
                     <div *ngIf="submitform && bookingform.controls['phone'].errors" class="text-danger">
                         
                       <small *ngIf="bookingform.controls['phone'].errors['required']">Phone number is required </small>
+                      <small *ngIf="bookingform.controls['phone'].errors['pattern']">Enter valid phone number</small>
+                     
+  
+                    </div>
+                  </div>  
+                  <div class="form-group">
+                    <label  class="mt-3" style="color: black; font-weight: bold;">Amount</label>
+                    <input type="number" [ngClass]="{'is-invalid':submitform && bookingform.controls['amount'].errors}" class="form-control" id="amount"  formControlName="amount" name="amount" placeholder="Amount to be pay should goes here">
+                    <div *ngIf="submitform && bookingform.controls['amount'].errors" class="text-danger">
+                        
+                      <small *ngIf="bookingform.controls['amount'].errors['required']">Amount filed is required </small>
+
+                      <small *ngIf="bookingform.controls['amount'].errors['leadingWhitespace']">Null values is not allowed</small>
+                      
                      
   
                     </div>
@@ -61,6 +76,7 @@
                     <div *ngIf="submitform && bookingform.controls['event'].errors" class="text-danger">
                         
                       <small *ngIf="bookingform.controls['event'].errors['required']">Event is required </small>
+                      <small *ngIf="bookingform.controls['event'].errors['leadingWhitespace']">Null values is not allowed</small>
                      
   
                     </div>

@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { booking } from 'src/app/professional/types/professional.type';
 
 @Injectable({
   providedIn: 'root'
@@ -36,5 +37,8 @@ export class ProfessionalService {
     
     return this.http.post(`${this.professionalUrl}/professional/postaddimage`,data)
 
+  }
+  bookingdate(){
+    return this.http.get<booking[]>(`${this.professionalUrl}/professional/getbookingdata`)
   }
 }

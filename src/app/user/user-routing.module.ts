@@ -10,6 +10,8 @@ import { ResetsubmitComponent } from './resetsubmit/resetsubmit.component';
 import { ProfessionalsComponent } from './professionals/professionals.component';
 import { ProfessionalprofileComponent } from './professionalprofile/professionalprofile.component';
 import { BookingformComponent } from './bookingform/bookingform.component';
+import { BookingComponent } from '../professional/booking/booking.component';
+import { BookingsComponent } from './bookings/bookings.component';
 
 const routes: Routes = [
   {path:"",component:HomeComponent,canActivate:[ConsecutiveGuard]},
@@ -22,7 +24,9 @@ const routes: Routes = [
   {path:"resetsubmit",component:ResetsubmitComponent},
   {path:'professionals',component:ProfessionalsComponent,canActivate:[UserGuardGuard,ConsecutiveGuard]},
   {path:"professionalprofile/:id",component:ProfessionalprofileComponent,canActivate:[UserGuardGuard,ConsecutiveGuard]},
-  {path:'bookingform',component:BookingformComponent,canActivate:[UserGuardGuard,ConsecutiveGuard]}
+  {path:'bookingform',component:BookingformComponent,canActivate:[UserGuardGuard,ConsecutiveGuard]},
+  {path:'bookings',component:BookingsComponent,canActivate:[UserGuardGuard,ConsecutiveGuard]}
+
  
 ];
 

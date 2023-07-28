@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Professional } from 'src/app/user/state/usertypes/usertypes';
+
+import { Professional, bookings } from 'src/app/user/state/usertypes/usertypes';
 
 @Injectable({
   providedIn: 'root',
@@ -35,5 +36,12 @@ export class UserServiceService {
  
     
     return this.http.get(`${this.user_api}/verifyaccount?phone=${phone}`)
+  }
+  booking(data:object){
+  
+    return this.http.post(`${this.user_api}/booking`,data)
+  }
+  getbookindgdatas(){
+    return this.http.get<bookings[]>(`${this.user_api}/getbookingdatas`)
   }
 }

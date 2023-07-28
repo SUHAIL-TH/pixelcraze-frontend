@@ -32,6 +32,14 @@ export class ProfessionalprofileComponent implements OnInit {
       }
     );
   }
+  booknow(id:string){
+    const navigationExtras = {
+      queryParams: {
+        data: JSON.stringify(id)
+      }
+    };
+    this.router.navigate(['/bookingform'],navigationExtras)
+  }
   getImageUrl(image: string): string {
     return `http://localhost:3000/public/images/${image}`;
    

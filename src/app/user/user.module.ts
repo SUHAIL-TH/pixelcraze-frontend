@@ -16,6 +16,7 @@ import { ProfessionalsComponent } from './professionals/professionals.component'
 import { FooterComponent } from './footer/footer.component';
 import { ProfessionalprofileComponent } from './professionalprofile/professionalprofile.component';
 import { BookingformComponent } from './bookingform/bookingform.component';
+import { BookingsComponent } from './bookings/bookings.component';
 
 
 
@@ -31,7 +32,8 @@ import { BookingformComponent } from './bookingform/bookingform.component';
     ProfessionalsComponent,
     FooterComponent,
     ProfessionalprofileComponent,
-    BookingformComponent
+    BookingformComponent,
+    BookingsComponent
   ],
   imports: [
     CommonModule,

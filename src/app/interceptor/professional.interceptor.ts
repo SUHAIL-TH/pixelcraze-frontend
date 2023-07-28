@@ -16,6 +16,8 @@ export class ProfessionalInterceptor implements HttpInterceptor {
     let token = localStorage.getItem('jwt_token')
     let professionaltoken=localStorage.getItem("jwt_token_professional")
     let admintoken=localStorage.getItem("jwt_token_professional")
+ 
+    
     if (token) {
       const newRequest = request.clone({
         headers: request.headers.set('Authorization', 'Bearer ' + token)
