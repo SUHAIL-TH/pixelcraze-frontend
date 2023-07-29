@@ -32,6 +32,14 @@ export class ProfessionalprofileComponent implements OnInit {
       }
     );
   }
+  chatconnection(id:any){
+  
+    
+    this.service.chatconnection(id).subscribe(()=>{
+      this.router.navigate(['/chat'])
+    })
+
+  }
   booknow(id:string){
     const navigationExtras = {
       queryParams: {

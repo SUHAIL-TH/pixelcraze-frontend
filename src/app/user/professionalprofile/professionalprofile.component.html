@@ -44,8 +44,13 @@
                 
                 <small class="fw-bold mt-2" style="text-decoration: underline;">specialized</small>
             </div>
+           </div >
+           <div class="d-flex justify-content-between">
+            <p class="card-text mt-2"><small class="text-dark">{{professionaldata.specialized}}</small></p>
+            <button (click)="chatconnection(professionaldata._id)" style=" box-shadow: 0px 1px 3px gray; border-radius: 10px;" class="btn btn-outline-danger fw-bold ">Chat</button>
+
            </div>
-           <p class="card-text mt-2"><small class="text-dark">{{professionaldata.specialized}}</small></p>
+          
             
           </div>
         

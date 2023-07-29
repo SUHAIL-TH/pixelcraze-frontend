@@ -1,0 +1,140 @@
+<app-navbar></app-navbar>
+<div class="container-fluid" style="min-height: 100vh;">
+    <div class="row px-xl-5 mt-2">
+      <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+        <ol class="breadcrumb mt-2">
+          <li class="breadcrumb-item"><a routerLink="/professional/home" style="text-decoration: none; color: black;">Home</a></li>
+          
+          <li class="breadcrumb-item active" aria-current="page">professionals</li>
+          <li class="breadcrumb-item active" aria-current="page">profile</li>
+          <li class="breadcrumb-item active" aria-current="page">chat</li>
+        </ol>
+      </nav>
+    
+      <section style="background-color: #CDC4F9;">
+        <div class="container py-5">
+      
+          <div class="row">
+            <div class="col-md-12">
+      
+              <div class="card" id="chat3" style="border-radius: 15px;">
+                <div class="card-body">
+      
+                  <div class="row">
+                    <div class="col-md-6 col-lg-5 col-xl-4 mb-4 mb-md-0">
+      
+                      <div class="p-3">
+      
+                        <div class="input-group rounded mb-3">
+                          <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+                            aria-describedby="search-addon" />
+                          <span class="input-group-text border-0" id="search-addon">
+                            <i class="fas fa-search"></i>
+                          </span>
+                        </div>
+      
+                        <div data-mdb-perfect-scrollbar="true" style="position: relative; max-height: 400px; overflow-y: auto;">
+                          <app-contact></app-contact>
+                        </div>
+      
+                      </div>
+      
+                    </div>
+      
+                    <div class="col-md-6 col-lg-7 col-xl-8" >
+                        <!-- this is the code for diplaying the image if user does not select anything  -->
+
+                        
+                        <div *ngIf="!chatshow" style="position: relative; height: 400px; overflow-y: auto;">
+                            <div class="d-flex justify-content-center items-center h-full rounded-r-lg" >
+                            <img
+                              src="https://i.pinimg.com/originals/e3/1b/75/e31b752875679b64fce009922f9f0dda.gif"
+                              class="h-64 rounded-3xl"
+                              alt=""
+                              srcset=""
+                              style="height: 300px; width: 250px;"
+                            />
+                            
+                           
+                          </div>
+                          <div class="d-flex justify-content-center">
+                            <p class="font-semibold text-lg mt-3 font-mono">
+                                Select a chat to start message :)
+                              </p>
+
+                        </div>
+
+                        </div>
+                       
+      
+                      <div class="pt-3 pe-3" data-mdb-perfect-scrollbar="true" *ngIf="chatshow"
+                        style="position: relative; height: 400px; overflow-y: auto;">
+      
+                        <!-- The chat messages content remains unchanged -->
+                        <div class="d-flex flex-row justify-content-start">
+                            <img src="https://png.pngtree.com/png-vector/20220817/ourmid/pngtree-man-avatar-with-circle-frame-vector-ilustration-png-image_6110328.png"
+                              alt="avatar 1" style="width: 45px; height: 100%;">
+                            <div>
+                              <p class="small p-2 ms-3 mb-1 rounded-3" style="background-color: #f5f6f7;">Neque porro
+                                quisquam
+                                est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non
+                                numquam
+                                eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+                              <p class="small ms-3 mb-3 rounded-3 text-muted float-end">12:00 PM | Aug 13</p>
+                            </div>
+                          </div>
+                          <div class="d-flex flex-row justify-content-end">
+                            <div>
+                              <p class="small p-2 me-3 mb-1 text-white rounded-3 bg-primary">Ut enim ad minim veniam,
+                                quis
+                                nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                              <p class="small me-3 mb-3 rounded-3 text-muted">12:00 PM | Aug 13</p>
+                            </div>
+                            <img src="https://png.pngtree.com/png-vector/20220817/ourmid/pngtree-man-avatar-with-circle-frame-vector-ilustration-png-image_6110328.png"
+                              alt="avatar 1" style="width: 45px; height: 100%;">
+                          </div>
+                          
+                        
+                        
+
+      
+                      </div>
+      
+                      <form >
+                      <div class="text-muted d-flex justify-content-start align-items-center pe-3 pt-3 mt-2">
+                            <img src="https://png.pngtree.com/png-vector/20220817/ourmid/pngtree-man-avatar-with-circle-frame-vector-ilustration-png-image_6110328.png"
+                            alt="avatar 3" style="width: 40px; height: 100%;">
+                          <input type="text" class="form-control form-control-lg" id="message"
+                            placeholder="Message....">
+                          <!-- <a class="ms-1 text-muted" href="#!"><i class="fas fa-paperclip"></i></a>
+                          <a class="ms-3 text-muted" href="#!"><i class="fas fa-smile"></i></a> -->
+                          <button class="ms-3" type="submit" style="border: none; background-color: transparent;"><i class="fas fa-paper-plane text-black  " style="text-decoration: none;"></i></button>
+
+                          
+                        </div>
+                    </form>
+      
+                    </div>
+                  </div>
+      
+                </div>
+              </div>
+      
+            </div>
+          </div>
+      
+        </div>
+      </section>
+     
+      
+      
+      
+      
+    
+
+   </div>
+    
+    
+  </div>
+
+  <app-footer></app-footer>

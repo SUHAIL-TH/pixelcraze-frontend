@@ -44,4 +44,12 @@ export class UserServiceService {
   getbookindgdatas(){
     return this.http.get<bookings[]>(`${this.user_api}/getbookingdatas`)
   }
+  chatconnection(id:any){
+    console.log(id);
+    
+    return this.http.post(`${this.user_api}/chatconnection/${id}`,null)
+  }
+  userchatlist(){
+    return this.http.get(`${this.user_api}/userchat`)
+  }
 }
