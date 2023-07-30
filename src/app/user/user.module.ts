@@ -45,7 +45,6 @@ import { ContactComponent } from './chat/contact/contact.component';
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
-    
     ToastrModule.forRoot()
   ],
   providers: [],

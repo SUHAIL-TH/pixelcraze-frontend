@@ -5,8 +5,7 @@
         <ol class="breadcrumb mt-2">
           <li class="breadcrumb-item"><a routerLink="/professional/home" style="text-decoration: none; color: black;">Home</a></li>
           
-          <li class="breadcrumb-item active" aria-current="page">professionals</li>
-          <li class="breadcrumb-item active" aria-current="page">profile</li>
+          
           <li class="breadcrumb-item active" aria-current="page">chat</li>
         </ol>
       </nav>
@@ -24,8 +23,8 @@
                     <div class="col-md-6 col-lg-5 col-xl-4 mb-4 mb-md-0" style="box-shadow: 0px 1px 5px rgb(241, 70, 70);">
       
                       <div class="p-3" >
-      
-                        <div class="input-group rounded mb-3">
+                        <small class="fw-bold" style="text-decoration: underline 2px green; font-family: monospace; font-size: 17px;">Chats</small>
+                        <div class="input-group rounded mb-2 mt-2">
                           <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
                             aria-describedby="search-addon" />
                           <span class="input-group-text border-0" id="search-addon">
@@ -52,13 +51,13 @@
                               class="h-64 rounded-3xl"
                               alt=""
                               srcset=""
-                              style="height: 300px; width: 300px;"
+                              style="height: 300px; width: 290px;"
                             />
                             
                            
                           </div>
                           <div class="d-flex justify-content-center">
-                            <p class="font-semibold text-lg mt-3 font-mono">
+                            <p class="font-semibold text-lg mt-3 font-mono text-danger">
                                 Select a chat to start message :)
                               </p>
 
@@ -67,22 +66,22 @@
                         </div>
                        
       
-                      <div class="pt-3 pe-3" data-mdb-perfect-scrollbar="true" *ngIf="chatshow"
-                        style="position: relative; height: 500px; overflow-y: auto;" #chatContainer class="chat-container" >
+                      <div class="pt-3 pe-3" data-mdb-perfect-scrollbar="true" *ngIf="chatshow" #chatContainer class="chat-container"
+                        style="position: relative; height: 500px; overflow-y: auto;" >
                        <ng-container *ngFor="let chat of messages">
                           <!-- The chat messages content remains unchanged -->
-                          <div class="d-flex flex-row justify-content-start" *ngIf="chat.to!=viewerid" >
+                          <div class="d-flex flex-row justify-content-start" *ngIf="chat.to!=userid"  >
                             <img src="https://png.pngtree.com/png-vector/20220817/ourmid/pngtree-man-avatar-with-circle-frame-vector-ilustration-png-image_6110328.png"
                               alt="avatar 1" style="width: 45px; height: 100%;">
                             <div >
                               <p class="small p-2 ms-3 mb-1 rounded-3 text-white" style="background-color: rgb(58, 57, 57); width: 200px;" >{{chat.message}}</p>
-                              <p class="small ms-3 mb-3 rounded-3 text-muted float-start">{{chat.createdAt | date : "short"}}</p>
+                              <p class="small ms-3 mb-3 rounded-3 text-muted float-start">{{chat.createdAt | date : "short" }}</p>
                             </div>
-                          </div>
-                          <div class="d-flex flex-row justify-content-end"  *ngIf="chat.to==viewerid" >
+                          </div> 
+                          <div class="d-flex flex-row justify-content-end"  *ngIf="chat.to==userid"  >
                             <div>
-                              <p class="small p-2 me-3 mb-1 text-white rounded-3 bg-success" >{{chat.message}} </p>
-                              <p class="small me-3 mb-3 rounded-3 text-muted">{{chat.createdAt | date : "short" }}</p>
+                              <p class="small p-2 me-3 mb-1 text-white rounded-3 bg-success" >{{chat.message}}</p>
+                              <p class="small me-3 mb-3 rounded-3 text-muted d-flex justify-content-end">{{chat.createdAt | date : "short" }}</p>
                             </div>
                             <img src="https://png.pngtree.com/png-vector/20220817/ourmid/pngtree-man-avatar-with-circle-frame-vector-ilustration-png-image_6110328.png"
                               alt="avatar 1" style="width: 45px; height: 100%;">
@@ -101,7 +100,7 @@
                       <div class="text-muted d-flex justify-content-start align-items-center pe-3 pt-3 mt-2">
                             <img src="https://png.pngtree.com/png-vector/20220817/ourmid/pngtree-man-avatar-with-circle-frame-vector-ilustration-png-image_6110328.png"
                             alt="avatar 3" style="width: 40px; height: 100%;">
-                          <input type="text" [(ngModel)]="message" name="message"  class="form-control " id="message" style=" box-shadow: 0px 1px 5px black;"
+                          <input type="text"  [(ngModel)]="message" name="message"  class="form-control " id="message" style=" box-shadow: 0px 1px 5px black;"
                             placeholder="Message....">
                             <button class="ms-3" type="submit" style="border: none; background-color: transparent;"><i class="fas fa-paper-plane text-black  " style="text-decoration: none;"></i></button>
                             
@@ -134,4 +133,4 @@
     
   </div>
 
-  <app-footer></app-footer>
+ <app-footer></app-footer>

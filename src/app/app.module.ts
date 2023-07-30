@@ -18,6 +18,7 @@ import { UserStateEffects } from './user/state/userstate/userstate.effects';
 import { ProfessionalInterceptor } from './interceptor/professional.interceptor';
 import { AdminGuard } from './guard/admin.guard';
 import { ProfessionalGuard } from './guard/professional.guard';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -37,6 +38,7 @@ import { ProfessionalGuard } from './guard/professional.guard';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    FormsModule,
     ToastrModule.forRoot(),
     StoreModule.forRoot({users:userReducer,banners:bannerReducer,professionals:professionalReducer,acceptedprofessionals:acceptedprofessionalReducer,professionalslist:professionallistreducer}),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),

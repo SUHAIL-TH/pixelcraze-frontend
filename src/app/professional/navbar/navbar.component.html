@@ -15,6 +15,9 @@
           <li class="nav-item">
             <a class="nav-link" routerLink="/professional/booking">Bookings</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/professional/chat">Chat</a>
+          </li>
           
           
         </ul>
@@ -23,13 +26,13 @@
           Account
           </a>
           
-          <ul class="dropdown-menu" *ngIf="true">
+          <ul class="dropdown-menu" *ngIf="!authenticated">
   
             <li><a class="dropdown-item" routerLink="/professional">Login</a></li>
             <li><a class="dropdown-item" routerLink="/professional/signup">Sign up</a></li>
             
           </ul>
-          <ul class="dropdown-menu" *ngIf="false">
+          <ul class="dropdown-menu" *ngIf="authenticated">
   
            
             <li><a class="dropdown-item" routerLink="/login" (click)="logout()">Log out</a></li>

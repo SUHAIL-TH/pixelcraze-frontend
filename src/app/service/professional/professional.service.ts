@@ -41,4 +41,15 @@ export class ProfessionalService {
   bookingdate(){
     return this.http.get<booking[]>(`${this.professionalUrl}/professional/getbookingdata`)
   }
+  professionalchatlist(){
+    return this.http.get(`${this.professionalUrl}/professional/professionalchatlist`)
+  }
+  chatblock(id:string){
+    return this.http.get(`${this.professionalUrl}/professional/findchat/${id}`)
+  }
+  sentmessage(data:object){
+    console.log(data)
+    return this.http.post(`${this.professionalUrl}/professional/message`,data)
+
+  }
 }

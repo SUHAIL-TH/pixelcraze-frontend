@@ -12,6 +12,8 @@ import { FooterComponent } from './footer/footer.component';
 import { EditprofileComponent } from './editprofile/editprofile.component';
 import { BookingComponent } from './booking/booking.component';
 import { AddphotosComponent } from './addphotos/addphotos.component';
+import { ChatComponent } from './chat/chat.component';
+import { ContactComponent } from './chat/contact/contact.component';
 
 
 
@@ -26,7 +28,9 @@ import { AddphotosComponent } from './addphotos/addphotos.component';
     FooterComponent,
     EditprofileComponent,
     BookingComponent,
-    AddphotosComponent
+    AddphotosComponent,
+    ChatComponent,
+    ContactComponent
   ],
   imports: [
     CommonModule,

@@ -19,7 +19,7 @@ export class ContactComponent  implements OnInit{
   getchatslist(){
     this.userservice.userchatlist().subscribe((res)=>{
         this.userdata=res
-        console.log(res)
+       
 
     })
   }

@@ -52,4 +52,13 @@ export class UserServiceService {
   userchatlist(){
     return this.http.get(`${this.user_api}/userchat`)
   }
+  chatblock(id:string){
+    return this.http.get(`${this.user_api}/findchat/${id}`)
+  }
+  sentmessage(data:object){
+    console.log(data);
+    
+    return this.http.post(`${this.user_api}/message`,data)
+
+  }
 }
