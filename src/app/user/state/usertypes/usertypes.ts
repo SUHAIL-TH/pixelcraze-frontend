@@ -25,7 +25,7 @@ export interface bookings{
     amount?:string,
     status?:boolean,
     phone?:number,
-    date?:string
-    professional?: {name : string, ownername:string,phone:number}
+    date?:string,
+    professional?: {name : string, ownername:string,phone:number,_id:string}
     
   }

@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { UserServiceService } from 'src/app/service/user/user-service.service';
+import { Socket } from "ngx-socket-io";
 
 @Component({
   selector: 'app-chat',
@@ -15,9 +17,18 @@ export class ChatComponent  implements OnInit{
   message:string=''
   connectionId:string=''
   userid:string=''
-  constructor(private http:HttpClient,private userservice:UserServiceService){}
+
+  constructor(private http:HttpClient,private userservice:UserServiceService,private toaster:ToastrService,private socket:Socket){}
   ngOnInit(): void {
     this.getchatslist()
+
+    this.socket.on('message recieved',(newMessage:any)=>{   
+
+      
+      if (this.viewerid==newMessage.from) {
+        this.messages.push(newMessage);
+      }
+    })
     
   }
   @ViewChild('chatContainer') chatContainer!: ElementRef 
@@ -32,40 +43,48 @@ export class ChatComponent  implements OnInit{
     }
   }
   getchatslist(){
-    this.userservice.userchatlist().subscribe((res)=>{
-        this.userdata=res
-       
-        
+    this.userservice.userchatlist().subscribe((res:any)=>{
+      console.log(res.data);
+        this.userdata=res.data
+       this.socket.emit('setup',res.id) 
     })
   }
   fullchat(professionalid:string){
    this.viewerid=professionalid
     this.chatshow=true
     this.userservice.chatblock(professionalid).subscribe((res:any)=>{
+      this.socket.emit('join',res.cid) 
       this.messages=res.result
-      // console.log(res);
-      
       this.connectionId=res.cid
       this.userid=res.userid
-      // console.log(this.messages)
+      
     })
    }
 
    submit(){
-   
-    const data={
+
+    if(this.message==''){
+      this.toaster.error("Please type message",'',{progressBar:true})
+    }else{
+      const data={
       
-      connectionid:this.connectionId,
-      from:this.userid,
-      to:this.viewerid,
-      message:this.message,
-      
+        connectionid:this.connectionId,
+        from:this.userid,
+        to:this.viewerid,
+        message:this.message,
+      }
+      this.userservice.sentmessage(data).subscribe((res)=>{
+        this.message=''
+        this.messages.push(res);
+        this.socket.emit('chatMessage',res)
+      })
+     }
+
     }
-    this.userservice.sentmessage(data).subscribe(()=>{
-      this.message=''
-      
-    })
-   }
+   
+    
   
 
 }
+
+

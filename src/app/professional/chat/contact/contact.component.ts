@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ProfessionalService } from 'src/app/service/professional/professional.service';
 import { ChatComponent } from '../chat.component';
 
@@ -9,17 +9,12 @@ import { ChatComponent } from '../chat.component';
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent implements OnInit {
-
-  professionalchatdata:any
+  @Input() data: any;
   constructor(private professionalservie:ProfessionalService,private chatcomponet:ChatComponent){}
   ngOnInit(): void {
-   this.getchatlist()
+  
   }
-  getchatlist(){
-    this.professionalservie.professionalchatlist().subscribe((res)=>{
-      this.professionalchatdata=res      
-    })
-  }
+ 
   fullchat(id:string){
     this.chatcomponet.fullchat(id)
   }

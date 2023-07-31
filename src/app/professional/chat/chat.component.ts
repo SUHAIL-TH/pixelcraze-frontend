@@ -1,6 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ProfessionalService } from 'src/app/service/professional/professional.service';
-
+import { Socket } from "ngx-socket-io";
 @Component({
   selector: 'app-chat',
   templateUrl: './chat.component.html',
@@ -13,8 +13,24 @@ export class ChatComponent implements OnInit {
   message: string = '';
   connectionId: string = '';
   professionalId:string=''
-  constructor(private professional: ProfessionalService) {}
-  ngOnInit(): void {}
+  professionalchatdata:any
+  constructor(private professional: ProfessionalService,private socket:Socket) {}
+  ngOnInit(): void {
+    this.getchatlist()
+    this.socket.on('message recieved',(newMessage:any)=>{     
+      console.log(newMessage);
+      console.log(this.userid);
+      
+             
+      if (this.userid==newMessage.from) {
+        console.log("hiii");
+        
+        this.messages.push(newMessage);
+
+      }
+    })
+  }
+
   @ViewChild('chatContainer') chatContainer!: ElementRef 
   ngAfterViewChecked(): void {
     this.scrollToBottom();
@@ -26,17 +42,22 @@ export class ChatComponent implements OnInit {
       // Handle any errors related to scrolling (if necessary)
     }
   }
+  getchatlist(){
+    this.professional.professionalchatlist().subscribe((res:any)=>{
+    
+      this.professionalchatdata=res.data 
+      this.socket.emit('setup',res.id) 
+    })
+  }
 
   fullchat(userid: string) {
-    console.log(userid);
-
     this.userid = userid;
-
     this.professional.chatblock(userid).subscribe((res: any) => {
+      this.socket.emit('join',res.cid) 
       this.chatshow = true;
       this.messages = res.result;
       this.connectionId = res.cid;
-      this.professionalId=res.user
+      this.professionalId=res.prof
 
     });
   }
@@ -48,8 +69,10 @@ export class ChatComponent implements OnInit {
       to:this.userid,
       message:this.message
     }
-    this.professional.sentmessage(data).subscribe(()=>{
+    this.professional.sentmessage(data).subscribe((res)=>{
       this.message=''
+      this.messages.push(res);
+      this.socket.emit('chatMessage',res)
       
     })
   }

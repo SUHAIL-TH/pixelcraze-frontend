@@ -25,7 +25,6 @@ export class ProfessionalsComponent {
   ngOnInit(): void {
     this.store.dispatch(loadacceptedprofessional())
     this.listprofessional()
-    
   }
   listprofessional(){
     this.store.pipe(select(selectacceptedProfessionals)).subscribe((professonals:any)=>{

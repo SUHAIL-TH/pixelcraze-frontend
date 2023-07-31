@@ -19,7 +19,9 @@ import { ProfessionalInterceptor } from './interceptor/professional.interceptor'
 import { AdminGuard } from './guard/admin.guard';
 import { ProfessionalGuard } from './guard/professional.guard';
 import { FormsModule } from '@angular/forms';
+import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 
+const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
 
 
 
@@ -40,6 +42,7 @@ import { FormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     FormsModule,
     ToastrModule.forRoot(),
+    SocketIoModule.forRoot(config),
     StoreModule.forRoot({users:userReducer,banners:bannerReducer,professionals:professionalReducer,acceptedprofessionals:acceptedprofessionalReducer,professionalslist:professionallistreducer}),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
     EffectsModule.forRoot([UserEffects,UserStateEffects]),

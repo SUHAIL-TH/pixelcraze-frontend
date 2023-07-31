@@ -15,8 +15,8 @@ export class UserServiceService {
   userLogin(data: FormData): Observable<any> {
     return this.http.post<FormData>(`${this.user_api}/postlogin`, data);
   }
-  postotp(otp:any){
-    return this.http.post(`${this.user_api}/postotp`,otp)
+  postotp(otp: any) {
+    return this.http.post(`${this.user_api}/postotp`, otp);
   }
 
   userSignup(data: FormData): Observable<any> {
@@ -28,37 +28,36 @@ export class UserServiceService {
     );
   }
   getdetailsprofessional(id: string) {
-   
-
     return this.http.get(`${this.user_api}/professionaldata?id=${id}`);
   }
-  verifyaccount(phone:any){
- 
-    
-    return this.http.get(`${this.user_api}/verifyaccount?phone=${phone}`)
+  verifyaccount(phone: any) {
+    return this.http.get(`${this.user_api}/verifyaccount?phone=${phone}`);
   }
-  booking(data:object){
-  
-    return this.http.post(`${this.user_api}/booking`,data)
+  booking(data: object) {
+    return this.http.post(`${this.user_api}/booking`, data);
   }
-  getbookindgdatas(){
-    return this.http.get<bookings[]>(`${this.user_api}/getbookingdatas`)
+  getbookindgdatas() {
+    return this.http.get<bookings[]>(`${this.user_api}/getbookingdatas`);
   }
-  chatconnection(id:any){
-    console.log(id);
-    
-    return this.http.post(`${this.user_api}/chatconnection/${id}`,null)
-  }
-  userchatlist(){
-    return this.http.get(`${this.user_api}/userchat`)
-  }
-  chatblock(id:string){
-    return this.http.get(`${this.user_api}/findchat/${id}`)
-  }
-  sentmessage(data:object){
-    console.log(data);
-    
-    return this.http.post(`${this.user_api}/message`,data)
+  chatconnection(id: any) {
+    // console.log(id);
 
+    return this.http.post(`${this.user_api}/chatconnection/${id}`, null);
+  }
+  userchatlist() {
+    return this.http.get(`${this.user_api}/userchat`);
+  }
+  chatblock(id: string) {
+    return this.http.get(`${this.user_api}/findchat/${id}`);
+  }
+  sentmessage(data: object) {
+    // console.log(data);
+    return this.http.post(`${this.user_api}/message`, data);
+  }
+  addreview(data: object) {
+    return this.http.post(`${this.user_api}/addreview`, data);
+  }
+  getbanner(){
+    return this.http.get(`${this.user_api}/getbanner`)
   }
 }

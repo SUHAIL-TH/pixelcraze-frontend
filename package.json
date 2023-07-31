@@ -22,6 +22,7 @@
     "@ngrx/store": "^16.1.0",
     "@ngrx/store-devtools": "^16.1.0",
     "ngx-pagination": "^6.0.3",
+    "ngx-socket-io": "^4.5.1",
     "ngx-toastr": "^17.0.2",
     "razorpay": "^2.9.1",
     "rxjs": "~7.5.0",

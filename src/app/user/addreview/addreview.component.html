@@ -1,0 +1,58 @@
+<app-navbar></app-navbar>
+<div class="container-fluid" style="min-height: 100vh;">
+    
+    <div class="row px-xl-5" >
+      <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+          <ol class="breadcrumb mt-2">
+            <li class="breadcrumb-item"><a routerLink="/" style="text-decoration: none; color: black;">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page"><a routerLink="/bookings" style="text-decoration: none; color: black;">Bookings</a></li>
+            
+            <li class="breadcrumb-item active" aria-current="page">Review</li>
+          </ol>
+        </nav>
+        <div class=" col-md-6">
+            <form [formGroup]="reviewform" (ngSubmit)="submit()">
+                <div class="form-group"> 
+                  <label for="exampleInputEmail1" style="color: black; font-weight: bold;">Review</label>
+                  <input type="text"   [ngClass]="{'is-invalid':submitform && reviewform.controls['review'].errors}" formControlName="review"  class="form-control mt-2" id="name" name="name"  placeholder="Enter your review" style="box-shadow: 0px 1px 3px rgb(165, 165, 165);">
+                
+                  <div *ngIf="submitform && reviewform.controls['review'].errors" class="text-danger">
+                        
+                    <small *ngIf="reviewform.controls['review'].errors['required']">Review is required </small>
+                    <small *ngIf="reviewform.controls['review'].errors['leadingWhitespace']">Null values is not allowed</small>
+                   
+
+                  </div>
+                 
+                </div>
+                
+              
+                
+                
+                
+               
+              
+                 
+                <div class="mt-3"> 
+                    <button  type="submit" class="btn btn-success text-white fw-bold ">Submit</button>
+                </div>
+                
+              </form>
+
+        </div>
+        <div class="col-md-6 mt-d d-none d-lg-block d-md-block ">
+            <img src="../../../assets/icon/5156329_2661360.jpg" alt="" class="ms-5"  style="width: 600px; object-fit: cover; " >
+           
+        </div>
+        
+       
+            
+  
+          
+      
+        
+        
+        
+    </div>
+  </div>
+  <app-footer></app-footer>

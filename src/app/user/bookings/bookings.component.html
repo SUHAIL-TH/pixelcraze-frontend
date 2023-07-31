@@ -26,6 +26,7 @@
                   <th>Date</th>
                   <th>Event</th>
                   <th>Amount</th>
+                  <th>Review</th>
                 </tr>
               </thead>
               <tbody >
@@ -39,10 +40,12 @@
                   <td >{{book?.date | date:'shortDate'}}</td>
                   <td>{{book.event}}</td>
                   <td>{{book.amount}}</td>
-                 
+                  <td ><button *ngIf="book.date && currentDate && (book.date)<=currentDate" class="btn btn-success btn-sm" style="font-weight: bold;" (click)="addreview(book?.professional?._id)">Add</button></td>
+                 <td></td>
                 </tr>
                 
               </tbody>
+          
           
           </table>
         </div>
@@ -58,3 +61,12 @@
   </div>
 
   <app-footer></app-footer>
+
+                        <!-- [ngClass]="{'is-invalid':submitform && bookingform.controls['review'].errors}" formControlName="name" -->
+                        <!-- <div *ngIf="submitform && bookingform.controls['review'].errors" class="text-danger">
+                              
+                          <small *ngIf="bookingform.controls['review'].errors['required']">Review is required </small>
+                          <small *ngIf="bookingform.controls['review'].errors['leadingWhitespace']">Null values is not allowed</small>
+                         
+      
+                        </div> -->

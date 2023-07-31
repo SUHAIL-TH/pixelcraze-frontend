@@ -19,6 +19,7 @@ import { BookingformComponent } from './bookingform/bookingform.component';
 import { BookingsComponent } from './bookings/bookings.component';
 import { ChatComponent } from './chat/chat.component';
 import { ContactComponent } from './chat/contact/contact.component';
+import { AddreviewComponent } from './addreview/addreview.component';
 
 
 
@@ -37,7 +38,8 @@ import { ContactComponent } from './chat/contact/contact.component';
     BookingformComponent,
     BookingsComponent,
     ChatComponent,
-    ContactComponent
+    ContactComponent,
+    AddreviewComponent
   ],
   imports: [
     CommonModule,
