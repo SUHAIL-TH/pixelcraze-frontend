@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { UserServiceService } from 'src/app/service/user/user-service.service';
 
 @Component({
   selector: 'app-resetsubmit',
@@ -14,7 +15,7 @@ export class ResetsubmitComponent implements OnInit {
   forsubmit=false;
   token!: string;
   email!:string
-  constructor(private route: ActivatedRoute,private formBuilder:FormBuilder,private http:HttpClient,private router:Router,private toastr:ToastrService){}
+  constructor(private userservice:UserServiceService,private route: ActivatedRoute,private formBuilder:FormBuilder,private http:HttpClient,private router:Router,private toastr:ToastrService){}
   ngOnInit(): void {
     this.token = this.route.snapshot.queryParams['token'];
     this.email = this.route.snapshot.queryParams['email'];
@@ -33,13 +34,13 @@ export class ResetsubmitComponent implements OnInit {
     
     data.token=this.token
     data.email=this.email
-    console.log(data)
     if(data.password==""){
       this.forsubmit=true
       this.toastr.error('Please fill the field' ,'Error',{progressBar:true})
 
     }else{
-      this.http.post('http://localhost:3000/resetpassword',data,{withCredentials:true}).subscribe(()=>{
+      // this.http.post('http://localhost:3000/resetpassword',data,{withCredentials:true})
+      this.userservice.resetpassword(data).subscribe(()=>{
         this.toastr.success('Password changed successfully','',{progressBar:true})
         this.router.navigate(['/login'])
       },(err)=>{

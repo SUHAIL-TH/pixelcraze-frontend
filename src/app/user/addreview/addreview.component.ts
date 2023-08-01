@@ -10,6 +10,7 @@ import { UserServiceService } from 'src/app/service/user/user-service.service';
   styleUrls: ['./addreview.component.css']
 })
 export class AddreviewComponent implements OnInit {
+  
   reviewform!:FormGroup
   profesionalid!:string
   submitform:boolean=false
@@ -18,6 +19,8 @@ export class AddreviewComponent implements OnInit {
     this.activateroutes.queryParams.subscribe(params => {
       this.profesionalid= JSON.parse(params['proid']);
     });
+
+
     this.reviewform=this.frombuilder.group({
       review:["",[Validators.required,this.noLeadingWhitespaceValidator]],  
     })
@@ -49,3 +52,4 @@ export class AddreviewComponent implements OnInit {
   }
 
 }
+

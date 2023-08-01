@@ -40,24 +40,27 @@ export class UserServiceService {
     return this.http.get<bookings[]>(`${this.user_api}/getbookingdatas`);
   }
   chatconnection(id: any) {
-    // console.log(id);
-
     return this.http.post(`${this.user_api}/chatconnection/${id}`, null);
   }
   userchatlist() {
     return this.http.get(`${this.user_api}/userchat`);
   }
   chatblock(id: string) {
-    return this.http.get(`${this.user_api}/findchat/${id}`);
+    return this.http.get(`${this.user_api}/allmessage/${id}`);
   }
   sentmessage(data: object) {
-    // console.log(data);
     return this.http.post(`${this.user_api}/message`, data);
   }
   addreview(data: object) {
-    return this.http.post(`${this.user_api}/addreview`, data);
+    return this.http.post(`${this.user_api}/addreview`, data,{withCredentials:true});
   }
   getbanner(){
     return this.http.get(`${this.user_api}/getbanner`)
+  }
+  resetpassword(data:any){
+    return this.http.post(`${this.user_api}/resetpassword`,data,{withCredentials:true})
+  }
+  resetemail(data:any){
+    return this.http.post(`${this.user_api}/verifynumber`,data,{withCredentials:true})
   }
 }

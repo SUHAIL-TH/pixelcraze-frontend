@@ -21,9 +21,6 @@ const routes: Routes = [
   {path:"professionals",component:ProfessionalsComponent,canActivate:[AdminGuard,ConsecutiveGuard]},
   {path:"addbanner",component:AddbannerComponent,canActivate:[AdminGuard,ConsecutiveGuard]},
   {path:"professionalrequest",component:ProfessinalrequestComponent,canActivate:[AdminGuard,ConsecutiveGuard]}
-  
-
-
 ];
 
 @NgModule({

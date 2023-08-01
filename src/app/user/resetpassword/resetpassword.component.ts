@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { UserServiceService } from 'src/app/service/user/user-service.service';
 
 @Component({
   selector: 'app-resetpassword',
@@ -13,7 +14,7 @@ export class ResetpasswordComponent  implements OnInit{
 
   resetform!:FormGroup
   forsubmit=false;
-  constructor(private formBuilder:FormBuilder,private http:HttpClient,private router:Router,private toastr:ToastrService){}
+  constructor(private userservice:UserServiceService,private formBuilder:FormBuilder,private http:HttpClient,private router:Router,private toastr:ToastrService){}
   ngOnInit(): void {
     this.resetform=this.formBuilder.group({
      
@@ -31,9 +32,11 @@ export class ResetpasswordComponent  implements OnInit{
       this.forsubmit=true
       this.toastr.error( 'Please fill the fields','Error',{progressBar:true})
     }else{
-      this.http.post('http://localhost:3000/verifynumber',data,{
-        withCredentials:true
-      }).subscribe(()=>{
+      // this.http.post('http://localhost:3000/verifynumber',data,{
+      //   withCredentials:true
+      // })
+      this.userservice.resetemail(data)
+      .subscribe(()=>{
         this.toastr.success('Check your email and reset Password','',{progressBar:true})
         
       },(err)=>{

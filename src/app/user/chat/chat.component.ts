@@ -44,7 +44,7 @@ export class ChatComponent  implements OnInit{
   }
   getchatslist(){
     this.userservice.userchatlist().subscribe((res:any)=>{
-      console.log(res.data);
+      
         this.userdata=res.data
        this.socket.emit('setup',res.id) 
     })
