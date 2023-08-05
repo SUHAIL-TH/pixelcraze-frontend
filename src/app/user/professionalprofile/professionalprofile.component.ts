@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserServiceService } from 'src/app/service/user/user-service.service';
 
+
 @Component({
   selector: 'app-professionalprofile',
   templateUrl: './professionalprofile.component.html',

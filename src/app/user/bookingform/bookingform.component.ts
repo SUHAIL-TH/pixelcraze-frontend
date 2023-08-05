@@ -101,6 +101,8 @@ export class BookingformComponent implements OnInit {
             })
 
           } else {
+            this.router.navigate(['/bookingform'])
+            this.toaster.error('Somthing went Wrong','Error',{progressBar:true})
             // Payment failed or canceled
             console.log("payment has failed")
           }

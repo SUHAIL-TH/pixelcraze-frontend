@@ -53,7 +53,7 @@
           
         </ul>
         <hr>
-        <div class="dropdown pb-4">
+        <!-- <div class="dropdown pb-4">
             <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
                 <img src="https://github.com/mdo.png" alt="hugenerd" width="30" height="30" class="rounded-circle">
                 <span class="d-none d-sm-inline mx-1">loser</span>
@@ -67,13 +67,44 @@
                 </li>
                 <li><a class="dropdown-item" href="#">Sign out</a></li>
             </ul>
-        </div>
+        </div> -->
     </div>
     </div>
     <div class="col-9 col-md-9 col-xl-10 py-3">
       <div class="align-items-center text-center">
-        <small class="fw-bold">Dashboard is comming soon......</small>
-        <small class="text-danger">Please wait</small>
+        <!-- <small class="fw-bold">Dashboard is comming soon......</small>
+        <small class="text-danger">Please wait</small> -->
+        <div class="row text-center">
+            <div class="col-md-3 cad">
+                <div style="box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2); background-color: #171717; height: 160px; border-radius: 10px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                    <i class="fas fa-users fa-2x" style="color: #6c757d;"></i>
+                    <h4 style="color: #39ff23; margin-top: 10px; font-family: monospace; font-size: 17px; font-size: 19px;">Users</h4>
+                    <span style="color: #6c757d; font-size: 24px; font-weight: bold;">{{usercount}}</span>
+                </div>
+            </div>
+            
+            <div class="col-md-3 cad">
+                <div style="box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2); background-color: #171717; height: 160px; border-radius: 10px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                    <i class="fas fa-camera fa-2x" style="color: #6c757d;"></i>
+                    <h4 style="color: #ff0000; margin-top: 10px; font-family: monospace; font-size: 17px;">Active Professionals</h4>
+                    <span style="color: #6c757d; font-size: 24px; font-weight: bold;">{{professionalcount}}</span>
+                </div>
+            </div>
+            <div class="col-md-3 cad">
+                <div style="box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2); background-color: #171717; height: 160px; border-radius: 10px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                    <i class="fas fa-bookmark fa-2x" style="color: #6c757d;"></i>
+                    <h4 style="color: #39ff23; margin-top: 10px; font-family: monospace; font-size: 17px;">Booking</h4>
+                    <span style="color: #6c757d; font-size: 24px; font-weight: bold;">{{bookingcount}}</span>
+                </div>
+            </div>
+            <div class="col-md-3 cad">
+                <div style="box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2); background-color: #171717; height: 160px; border-radius: 10px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                    <i class="fas fa-image fa-2x" style="color: #6c757d;"></i>
+                    <h4 style="color: #ff2323; margin-top: 10px; font-family: monospace; font-size: 17px;">Banner Active</h4>
+                    <span style="color: #6c757d; font-size: 24px; font-weight: bold;">{{bannercount}}</span>
+                </div>
+            </div>
+        </div>
       </div>
     </div>
   </div>

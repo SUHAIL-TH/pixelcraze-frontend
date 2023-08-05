@@ -17,6 +17,7 @@ import { ProfessionalsearchPipe } from '../pipes/professionalsearch.pipe';
 
 
 
+
 @NgModule({
   declarations: [
     DashboardComponent,
@@ -29,7 +30,8 @@ import { ProfessionalsearchPipe } from '../pipes/professionalsearch.pipe';
     AddbannerComponent,
     ProfessinalrequestComponent,
     UsersearchPipe,
-    ProfessionalsearchPipe
+    ProfessionalsearchPipe,
+    
   ],
   imports: [
     CommonModule,

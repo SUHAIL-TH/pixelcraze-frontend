@@ -50,4 +50,9 @@ export class AdminService {
   unblockprofessional(id:string){
     return this.http.post(`${this.adminurl}/admin//unblockprofessional/${id}`,null)
   }
+  getdashboarddata(){
+   
+    
+    return this.http.get(`${this.adminurl}/admin/dashboarddata`)
+  }
 }

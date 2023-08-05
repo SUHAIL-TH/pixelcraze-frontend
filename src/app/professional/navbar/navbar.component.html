@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary" style="box-shadow: 0px 1px 5px black;">
+<nav class="navbar navbar-expand-lg bg-body-tertiary" style="box-shadow: 0px 1px 5px black; height: 70px;">
     <div class="container-fluid">
       <a href=""><img src="/assets/icon/pixel-craze-low-resolution-logo-color-on-transparent-background (1).png" style="height: 20px; width: 120px;" alt="Logo goes here"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -7,39 +7,31 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0 ps-3">
           <li class="nav-item">
-            <a class="nav-link " style="font-weight: bold;" routerLink="/professional/home">Home</a>
+            <a class="nav-link " [routerLinkActiveOptions]="{exact: true}" style="font-weight: 900 ;  font-family: monospace;" routerLinkActive="active" routerLink="/professional/home">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/professional/profile">Profile</a>
+            <a class="nav-link"  routerLink="/professional/profile" [routerLinkActiveOptions]="{exact: true}" style="font-weight: 900 ;  font-family: monospace;" routerLinkActive="active">Profile</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/professional/booking">Bookings</a>
-          </li>
+            <a class="nav-link" routerLink="/professional/booking" [routerLinkActiveOptions]="{exact: true}" style="font-weight: 900 ;  font-family: monospace;" routerLinkActive="active">Booking</a>
+          </li> 
           <li class="nav-item">
-            <a class="nav-link" routerLink="/professional/chat">Chat</a>
+            <a class="nav-link" routerLink="/professional/chat" [routerLinkActiveOptions]="{exact: true}" style="font-weight: 900 ;  font-family: monospace;" routerLinkActive="active">Chat</a>
           </li>
-          
-          
         </ul>
         <li class="nav-item dropdown btn btn-dark">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
           Account
           </a>
-          
           <ul class="dropdown-menu" *ngIf="!authenticated">
   
             <li><a class="dropdown-item" routerLink="/professional">Login</a></li>
-            <li><a class="dropdown-item" routerLink="/professional/signup">Sign up</a></li>
-            
+            <li><a class="dropdown-item" routerLink="/professional/signup">Sign up</a></li> 
           </ul>
           <ul class="dropdown-menu" *ngIf="authenticated">
-  
-           
-            <li><a class="dropdown-item" routerLink="/login" (click)="logout()">Log out</a></li>
-            
+            <li><a class="dropdown-item" routerLink="/login" (click)="logout()">Log out</a></li> 
           </ul>
-        </li>
-        
+        </li> 
       </div>
     </div>
   </nav>

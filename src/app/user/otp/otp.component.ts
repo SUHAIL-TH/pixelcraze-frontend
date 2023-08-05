@@ -64,12 +64,13 @@ export class OtpComponent  implements OnInit{
     }, 1000); // Update the timer every second (1000 milliseconds).
   }
   resend(){
+    // this.http.post("http://localhost:3000/resentotp",data,{
+    //   withCredentials:true
+    // })
     this.clicked=false
     let data=this.user
-    
-    this.http.post("http://localhost:3000/resentotp",data,{
-      withCredentials:true
-    }).subscribe(()=>{
+    this.userserive.resendotp(data)
+    .subscribe(()=>{
       this.toaser.success('OTP','sent successfully',{progressBar:true})
     },(err)=>{
       this.toaser.error(err.error.message,'',{progressBar:true})

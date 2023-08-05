@@ -14,3 +14,14 @@ nav{
     color: #000000;
     /* Add additional custom styles as needed */
   }
+  .nav-link {
+    color: rgb(0, 0, 0);
+    font-weight: 900;
+    font-family:monospace;
+  }
+  
+  /* Active link color */
+  .nav-link.active {
+    color: green;
+    text-decoration: underline green 3px;
+  }

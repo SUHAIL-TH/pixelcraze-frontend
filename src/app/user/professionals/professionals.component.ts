@@ -10,6 +10,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./professionals.component.css']
 })
 export class ProfessionalsComponent  implements OnInit{
+  searchText!: string;
+  page:number=1
+  count:number=0
+  tableSize:number=5;
+  tableSizes:any=[5,10,15,20]
   constructor(private store:Store,private router:Router){}
   // professionallist$=this.store.select(selectProfessionallist)
   professionallist$:any|null
@@ -32,6 +37,15 @@ export class ProfessionalsComponent  implements OnInit{
       
       
     })
+  }
+  onTableDataChange(event:any){
+    this.page=event
+    this.profesionallist()
+  }
+  onTableSizeChange(event:any){
+    this.tableSize=event.target.value;
+    this.page=1
+    this.profesionallist()
   }
   getprofile(id:any){
    

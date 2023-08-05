@@ -1,69 +1,34 @@
-<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-between " style="box-shadow: 0px 1px 5px black;">
-  <a href=""><img src="/assets/icon/pixel-craze-low-resolution-logo-color-on-transparent-background (1).png" style="height: 20px; width: 120px;" alt="Logo goes here"></a>
-  <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
 
-  <div class="collapse navbar-collapse justify-content-between " id="navbarSupportedContent" >
-    <ul class="navbar-nav mr-auto ps-3">
-      <li class="nav-item active">
-        <a class="nav-link " style="font-weight: bold;" href="">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Professional</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">About</a>
-      </li>
-      
-      
-    </ul>
-    
-       
-    <li class="nav-item dropdown btn btn-dark">
-      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-      Account
-      </a>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" routerLink="/login">Login</a></li>
-        <li><a class="dropdown-item" routerLink="/register">Sign up</a></li>
-        
-      </ul>
-    </li>
-    
-  </div>
-</nav> -->
-
-<!-- //////////// -->
-
-<nav class="navbar navbar-expand-lg bg-body-tertiary" style="box-shadow: 0px 1px 5px black;">
+<nav class="navbar navbar-expand-lg bg-body-tertiary" style="box-shadow: 0px 1px 5px black; ">
   <div class="container-fluid">
     <a href=""><img src="/assets/icon/pixel-craze-low-resolution-logo-color-on-transparent-background (1).png" style="height: 20px; width: 120px;" alt="Logo goes here"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse " id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0 ps-3">
-        <li class="nav-item">
-          <a class="nav-link " style="font-weight: bold;" routerLink="/">Home</a>
+        <li class="nav-item" >
+          <a class="nav-link " routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" style="font-weight: 900 ; " routerLink="/">Home</a>
         </li>
+       
         <li class="nav-item" *ngIf="authenticated">
-          <a class="nav-link" routerLink="/professionals">Professional</a>
+          <a class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" style="font-weight: 900 ;  "  routerLink="/professionals">Professionals</a>
          
         </li>
         <li class="nav-item" *ngIf="authenticated">
-          <a class="nav-link" routerLink="/bookings">Booking</a>
+          <a class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" style="font-weight: 900 ;  "   routerLink="/bookings">Booking</a>
          
         </li>
         <li class="nav-item" *ngIf="authenticated">
-          <a class="nav-link"  href="#">About</a>
+          <a class="nav-link" routerLink="/about"  [routerLinkActiveOptions]="{exact: true}" style="font-weight: 900 ;  " routerLinkActive="active" >About</a>
+
           
         </li>
         
         
       </ul>
       <li class="nav-item dropdown btn btn-dark">
-        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
         Account
         </a>
         
@@ -76,7 +41,7 @@
         <ul class="dropdown-menu" *ngIf="authenticated">
 
          
-          <li><a class="dropdown-item" routerLink="/login" (click)="logout()">Log out</a></li>
+          <li><a class="dropdown-item text-dark" routerLink="/login" (click)="logout()" >Log out</a></li>
           
         </ul>
       </li>

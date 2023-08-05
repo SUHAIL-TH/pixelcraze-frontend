@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
@@ -7,7 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { UserRoutingModule } from './user-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
-
+import { NgxPaginationModule } from 'ngx-pagination';
 import { ToastrModule } from 'ngx-toastr';
 import { OtpComponent } from './otp/otp.component';
 import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
@@ -20,6 +20,8 @@ import { BookingsComponent } from './bookings/bookings.component';
 import { ChatComponent } from './chat/chat.component';
 import { ContactComponent } from './chat/contact/contact.component';
 import { AddreviewComponent } from './addreview/addreview.component';
+import { ProfessionalpipePipe } from '../pipes/professionallistsearch/professionalpipe.pipe';
+
 
 
 
@@ -39,7 +41,9 @@ import { AddreviewComponent } from './addreview/addreview.component';
     BookingsComponent,
     ChatComponent,
     ContactComponent,
-    AddreviewComponent
+    AddreviewComponent,
+    ProfessionalpipePipe
+
   ],
   imports: [
     CommonModule,
@@ -47,6 +51,7 @@ import { AddreviewComponent } from './addreview/addreview.component';
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
+    NgxPaginationModule,
     ToastrModule.forRoot()
   ],
   providers: [],

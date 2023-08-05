@@ -20,6 +20,10 @@ import { AdminGuard } from './guard/admin.guard';
 import { ProfessionalGuard } from './guard/professional.guard';
 import { FormsModule } from '@angular/forms';
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
+import {MatButtonModule} from '@angular/material/button';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+
+
 
 const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
 
@@ -31,6 +35,8 @@ const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
 @NgModule({
   declarations: [
     AppComponent,
+    PageNotFoundComponent,
+   
  
     
   ],
@@ -46,7 +52,7 @@ const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
     StoreModule.forRoot({users:userReducer,banners:bannerReducer,professionals:professionalReducer,acceptedprofessionals:acceptedprofessionalReducer,professionalslist:professionallistreducer}),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
     EffectsModule.forRoot([UserEffects,UserStateEffects]),
-   
+    MatButtonModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: ProfessionalInterceptor, multi: true },

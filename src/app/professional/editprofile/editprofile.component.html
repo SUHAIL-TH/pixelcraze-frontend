@@ -1,5 +1,5 @@
 <app-navbar></app-navbar>
-<div class="container-fluid" style="min-height: 100vh;">
+<div class="container-fluid" style="min-height: 100vh;" >
     <div class="row px-xl-5 mt-2">
       <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
         <ol class="breadcrumb mt-2">
@@ -11,7 +11,7 @@
       <form [formGroup]="editform" (ngSubmit)="onsubmit()" >
         <div class="form-group">
           <label for="exampleInputEmail1" style="color: black; font-weight: bold; text-shadow: 0px 1px 2px black;">Name</label>
-          <input type="text" formControlName="name" [ngClass]="{'is-invalid':submit && editform.controls['name'].errors}"  class="form-control mt-2"  id="name" name="name"  placeholder="Name goes here" style="border-color: rgba(0, 0, 0, 0.379);"  >
+          <input type="text" formControlName="name" [ngClass]="{'is-invalid':submit && editform.controls['name'].errors}"  class="form-control mt-2"  id="name" name="name"  placeholder="Name goes here" style="border-color: rgba(82, 82, 82, 0.379); box-shadow: 0px 1px 4px rgb(141, 141, 141);"  >
           <div *ngIf="submit && editform.controls['name'].errors" class="text-danger">
                         
             <small *ngIf="editform.controls['name'].errors['required']">Name is required </small>
@@ -23,14 +23,14 @@
           <div class="row">
               <div class="col-md-6">
                 <label  class="mt-3" style="color: black; font-weight: bold; text-shadow: 0px 1px 2px black;">Owner Name</label>
-                <input type="text"  formControlName="ownername" class="form-control mt-2" id="subheading"   name="subheading" placeholder="Owner name goes here" style="border-color: rgba(0, 0, 0, 0.379);"  >
+                <input type="text"  formControlName="ownername" class="form-control mt-2" id="subheading"   name="subheading" placeholder="Owner name goes here" style="border-color: rgba(82, 82, 82, 0.379); box-shadow: 0px 1px 4px rgb(141, 141, 141);"  >
             
                   
               </div>
 
               <div class="col-md-6">
                 <label class="form-label" for="customFile" style="color: black; font-weight: bold; text-shadow: 0px 1px 2px black;">Specialized</label>
-                <input type="text" formControlName="specialized"  class="form-control mt-2" name="specialized"    style="border-color: rgba(0, 0, 0, 0.379);"  > 
+                <input type="text" formControlName="specialized"  class="form-control mt-2" name="specialized"    style="border-color: rgba(82, 82, 82, 0.379); box-shadow: 0px 1px 4px rgb(141, 141, 141);"  > 
                 
                 
             </div>
@@ -46,12 +46,12 @@
             <div class="row">
                 <div class="col-md-6">
                     <label class="form-label" for="customFile" style="color: black; font-weight: bold; text-shadow: 0px 1px 2px black;">Email</label>
-                      <input type="text" formControlName="email" class="form-control mt-2" name="email"  placeholder="Email  goes here" style="border-color: rgba(0, 0, 0, 0.379);"    > 
+                      <input type="text" formControlName="email" class="form-control mt-2" name="email"  placeholder="Email  goes here" style="border-color: rgba(82, 82, 82, 0.379);box-shadow: 0px 1px 4px rgb(141, 141, 141);"    > 
 
                 </div>
                 <div class="col-md-6">
                     <label class="form-label" for="customFile" style="color: black; font-weight: bold; text-shadow: 0px 1px 2px black;">Phone</label>
-            <input type="number" formControlName="phone" class="form-control mt-2" name="phone"   placeholder="Phone number goes here"  style="border-color: rgba(0, 0, 0, 0.379);"   > 
+            <input type="number" formControlName="phone" class="form-control mt-2" name="phone"   placeholder="Phone number goes here"  style="border-color: rgba(82, 82, 82, 0.379); box-shadow: 0px 1px 4px rgb(141, 141, 141);"   > 
 
                 </div>
             </div>
@@ -62,13 +62,13 @@
             <div class="row">
                 <div class="col-md-6">
                     <label class="form-label" for="customFile" style="color: black; font-weight: bold; text-shadow: 0px 1px 2px black;">Place</label>
-                    <input type="text" formControlName="place" class="form-control mt-2" name="place"   placeholder="Place name goes here" style="border-color: rgba(0, 0, 0, 0.379);"  > 
+                    <input type="text" formControlName="place" class="form-control mt-2" name="place"   placeholder="Place name goes here" style="border-color: rgba(82, 82, 82, 0.379); box-shadow: 0px 1px 4px rgb(141, 141, 141);"  > 
                     
                     
                 </div>
                 <div class="col-md-6">
                   <label class="form-label" for="customFile" style="color: black; font-weight: bold; text-shadow: 0px 1px 2px black;">Experinces</label>
-                  <input type="number" formControlName="experinces"  class="form-control mt-2" name="experinces"    style="border-color: rgba(0, 0, 0, 0.379);"  > 
+                  <input type="number" formControlName="experinces"  class="form-control mt-2" name="experinces"    style="border-color: rgba(82, 82, 82, 0.379); box-shadow: 0px 1px 4px rgb(141, 141, 141);"  > 
                   
                   
               </div>
@@ -84,7 +84,7 @@
           
           <div class="mt-3">
             <label class="form-label" for="customFile" style="color: black; font-weight: bold; text-shadow: 0px 1px 2px black;">About us</label>
-            <textarea id="aboutUsInput" formControlName="aboutus" formControlName="aboutus" class="form-control" rows="5"  style="border-color: rgba(0, 0, 0, 0.379);"></textarea>
+            <textarea id="aboutUsInput" formControlName="aboutus" formControlName="aboutus" class="form-control" rows="5"  style="border-color: rgba(82, 82, 82, 0.379); box-shadow: 0px 1px 4px rgb(141, 141, 141);"></textarea>
             
           </div>
         <div class="mt-3"> 

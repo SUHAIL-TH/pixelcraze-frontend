@@ -63,4 +63,7 @@ export class UserServiceService {
   resetemail(data:any){
     return this.http.post(`${this.user_api}/verifynumber`,data,{withCredentials:true})
   }
+  resendotp(data:any){
+    return this.http.post(`${this.user_api}/resentotp`,data,{withCredentials:true})
+  }
 }
