@@ -69,57 +69,16 @@
                 >
               </a>
             </li>
+            <li>
+              <a routerLink="/admin/booking" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                  <i class="fas fa-calendar-check"></i> <span class="d-none d-sm-inline ms-4" style="font-weight: bold; color: white;">Booking</span> </a>
+              
+          </li>
   
-            <!-- <li>
-                    <a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-                        <i class="fs-4 bi-grid"></i> <span class="ms-1 d-none d-sm-inline">Products</span> </a>
-                        <ul class="collapse nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
-                        <li class="w-100">
-                            <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 1</a>
-                        </li>
-                        <li>
-                            <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 2</a>
-                        </li>
-                        <li>
-                            <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 3</a>
-                        </li>
-                        <li>
-                            <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Product</span> 4</a>
-                        </li>
-                    </ul>
-                </li> -->
+          
           </ul>
           <hr />
-          <!-- <div class="dropdown pb-4">
-            <a
-              href="#"
-              class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
-              id="dropdownUser1"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              <img
-                src=""
-                alt="hugenerd"
-                width="30"
-                height="30"
-                class="rounded-circle"
-              />
-              <span class="d-none d-sm-inline mx-1">loser</span>
-            </a>
-            <ul
-              class="dropdown-menu dropdown-menu-dark text-small shadow"
-              aria-labelledby="dropdownUser1"
-            >
-              <li><a class="dropdown-item" href="#">New project...</a></li>
-              <li><a class="dropdown-item" href="#">Settings</a></li>
-              <li><a class="dropdown-item" href="#">Profile</a></li>
-              <li>
-                <hr class="dropdown-divider" />
-              </li>
-              <li><a class="dropdown-item" href="#">Sign out</a></li>
-            </ul>
-          </div> -->
+         
         </div>
       </div>
       <div class="col-9 col-md-9 col-xl-10 py-3">
@@ -133,7 +92,7 @@
           <table class="table align-middle mb-0 bg-white">
             <thead class="bg-light">
               <tr>
-                <th class="">No</th>
+                <th  class="">No</th>
                 <th class="">Name</th>
                 <th>Owner Name</th>
                 <th>Email</th>
@@ -145,23 +104,23 @@
             </thead>
             <tbody *ngIf="(professionals$ | async) as professionalData">
               <tr *ngFor="let professional of professionalData; let i = index">
-                <td>{{ i + 1 }}</td>
-                <td>{{ professional.name }}</td>
-                <td>{{ professional.ownername }}</td>
-                <td>{{professional.email}}</td>
-                <td>{{professional.phone}}</td>
+                <td style="font-family: monospace;">{{ i + 1 }}</td>
+                <td style="font-family: monospace;">{{ professional.name }}</td>
+                <td style="font-family: monospace;">{{ professional.ownername }}</td>
+                <td style="font-family: monospace;">{{professional.email}}</td>
+                <td style="font-family: monospace;">{{professional.phone}}</td>
           
-                <td>
+                <td style="font-family: monospace;">
                   <button type="button" class="btn btn-primary" data-bs-toggle="modal" [attr.data-bs-target]="'#exampleModal' + i">
                     View
                   </button>
                 </td>
-                <td>
+                <td style="font-family: monospace;">
                   <button type="button" class="btn btn-primary" data-bs-toggle="modal" [attr.data-bs-target]="'#exampleModals' + i">
                     View
                   </button>
                 </td>
-                <td>
+                <td style="font-family: monospace;">
                   <button class="btn btn-success text-white" (click)="accept(professional._id)">Accept</button>
                 </td>
               </tr>

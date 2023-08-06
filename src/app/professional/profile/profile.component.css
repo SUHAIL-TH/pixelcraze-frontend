@@ -94,6 +94,17 @@
   .card:hover{
     scale: 1.05;
   }
+  .up:hover{
+    scale: 1.04;
+    color: red;
+    
+    
+  }
+  .tx:hover{
+    scale: 1.04;
+    color: rgb(0, 211, 21);
+    
+  }
   /* .button {
     border-radius: 4px;
     background-color: #f4511e;

@@ -14,6 +14,9 @@ import { ProfessinalrequestComponent } from './professinalrequest/professinalreq
 import { NgxPaginationModule } from 'ngx-pagination';
 import {UsersearchPipe} from '../pipes/usersearch.pipe'
 import { ProfessionalsearchPipe } from '../pipes/professionalsearch.pipe';
+import { ChartModule } from 'angular-highcharts';
+import { HighchartsChartModule } from 'highcharts-angular';
+import { BookingsComponent } from './bookings/bookings.component';
 
 
 
@@ -31,6 +34,7 @@ import { ProfessionalsearchPipe } from '../pipes/professionalsearch.pipe';
     ProfessinalrequestComponent,
     UsersearchPipe,
     ProfessionalsearchPipe,
+    BookingsComponent,
     
   ],
   imports: [
@@ -38,7 +42,10 @@ import { ProfessionalsearchPipe } from '../pipes/professionalsearch.pipe';
     AdminRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    ChartModule,
+    HighchartsChartModule
+
    
 
   ]

@@ -11,9 +11,9 @@
           </ol>
         </nav>
         <div class=" col-md-6">
-            <form [formGroup]="reviewform" (ngSubmit)="submit()">
+            <form [formGroup]="reviewform" (ngSubmit)="submit()" class="mt-5">
                 <div class="form-group"> 
-                  <label for="exampleInputEmail1" style="color: black; font-weight: bold;">Review</label>
+                  <label class="name" for="exampleInputEmail1" style="color: black; font-weight: bold;">Review</label>
                   <input type="text"   [ngClass]="{'is-invalid':submitform && reviewform.controls['review'].errors}" formControlName="review"  class="form-control mt-2" id="name" name="name"  placeholder="Enter your review" style="box-shadow: 0px 1px 3px rgb(165, 165, 165);">
                 
                   <div *ngIf="submitform && reviewform.controls['review'].errors" class="text-danger">
@@ -26,9 +26,20 @@
 
                  
                 </div>
-                <div>
-                 
+                <div class="mt-2">
+                  <h6 class="mt-5  name" >Add your rating</h6>
+                  <div class="rating">
+                    <span class="star" style="font-size: 40px;" (click)="setRating(1)" [ngClass]="{ 'active': rating >= 1 }">&#9733;</span>
+                    <span class="star" style="font-size: 40px;" (click)="setRating(2)" [ngClass]="{ 'active': rating >= 2 }">&#9733;</span>
+                    <span class="star" style="font-size: 40px;" (click)="setRating(3)" [ngClass]="{ 'active': rating >= 3 }">&#9733;</span>
+                    <span class="star" style="font-size: 40px;" (click)="setRating(4)" [ngClass]="{ 'active': rating >= 4 }">&#9733;</span>
+                    <span class="star" style="font-size: 40px;" (click)="setRating(5)" [ngClass]="{ 'active': rating >= 5 }">&#9733;</span>
+                  </div>
+                  
+                  <p *ngIf="rating  > 0" style="font-family: monospace;">You have selected: {{ rating }}</p>
                 </div>
+                
+              
                 
               
                 
@@ -38,7 +49,7 @@
               
                  
                 <div class="mt-3"> 
-                    <button  type="submit" class="btn btn-success text-white fw-bold ">Submit</button>
+                    <button  type="submit" class="btn btn-success text-white fw-bold btn-sm ">Submit</button>
                 </div>
                 
               </form>

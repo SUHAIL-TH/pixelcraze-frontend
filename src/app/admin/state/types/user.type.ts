@@ -54,3 +54,13 @@ export interface dashboarddata {
   bannercount: number;
   bookedcount: number;
 }
+export interface bookingdata{
+  name?:string,
+  ownername?:string,
+  phone?:number,
+  place?:string,
+  amount?:number,
+  date?:string,
+  event?:string,
+  professional?: {name : string, ownername:string,phone:number,_id:string}
+}

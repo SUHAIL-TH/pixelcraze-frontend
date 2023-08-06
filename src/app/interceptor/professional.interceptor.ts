@@ -15,7 +15,7 @@ export class ProfessionalInterceptor implements HttpInterceptor {
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     let token = localStorage.getItem('jwt_token')
     let professionaltoken=localStorage.getItem("jwt_token_professional")
-    let admintoken=localStorage.getItem("jwt_token_professional")
+    let admintoken=localStorage.getItem("jwt_token_admin")
  
     
     if (token) {

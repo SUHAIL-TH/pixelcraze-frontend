@@ -29,14 +29,14 @@
               </thead>
               <tbody *ngFor="let book of bookingdata;let i=index">
                 <tr >
-                  <td>{{i+1}}</td>
-                  <td>{{book?.name}}</td>
-                  <td>{{book?.housename}}</td>
-                  <td>{{book.phone}}</td>
-                  <td>{{book.place}}</td>
-                  <td >{{book.event}}</td>
-                 <td>{{book.date | date:'shortDate'}}</td>
-                 <td>{{book.amount}}</td>
+                  <td style="font-family: monospace;">{{i+1}}</td>
+                  <td style="font-family: monospace;">{{book?.name}}</td>
+                  <td style="font-family: monospace;">{{book?.housename}}</td>
+                  <td style="font-family: monospace;">{{book.phone}}</td>
+                  <td style="font-family: monospace;">{{book.place}}</td>
+                  <td style="font-family: monospace;">{{book.event}}</td>
+                 <td style="font-family: monospace;">{{book.date | date:'shortDate'}}</td>
+                 <td style="font-family: monospace;">{{book.amount}}</td>
                 </tr>
                 
               </tbody>

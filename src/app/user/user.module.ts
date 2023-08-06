@@ -25,6 +25,7 @@ import { ProfessionalpipePipe } from '../pipes/professionallistsearch/profession
 
 
 
+
 @NgModule({
   declarations: [
     LoginComponent,
@@ -52,7 +53,8 @@ import { ProfessionalpipePipe } from '../pipes/professionallistsearch/profession
     HttpClientModule,
     FormsModule,
     NgxPaginationModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+   
   ],
   providers: [],
 })

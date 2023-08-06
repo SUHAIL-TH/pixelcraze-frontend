@@ -3,9 +3,9 @@
     <div class="row px-xl-5 mt-2">
       <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
         <ol class="breadcrumb mt-2">
-          <li class="breadcrumb-item"><a routerLink="/professional/home" style="text-decoration: none; color: black;">Home</a></li>
+          <li class="breadcrumb-item"><a routerLink="/professional/home" style="text-decoration: none; color: black;font-family: 'Arizonia', cursive;font-size: 21px ">Home</a></li>
           
-          <li class="breadcrumb-item active" aria-current="page">Booking</li>
+          <li class="breadcrumb-item active" aria-current="page" style="font-family: 'Arizonia', cursive;font-size: 21px">Booking</li>
         </ol>
       </nav>
 
@@ -31,17 +31,17 @@
               </thead>
               <tbody >
                 <tr *ngFor="let book of bookingdata ; let i=index">
-                  <td>{{i+1}}</td>
+                  <td style="font-family: monospace;">{{i+1}}</td>
                   <!-- <td>{{book.name}}</td> -->
-                  <td>{{book.housename}}</td>
-                  <td>{{book?.professional?.name}}</td>
-                  <td>{{book?.professional?.ownername}}</td>
-                  <td >{{book?.professional?.phone}}</td>
-                  <td >{{book?.date | date:'shortDate'}}</td>
-                  <td>{{book.event}}</td>
-                  <td>{{book.amount}}</td>
-                  <td ><button *ngIf="book.date && currentDate && (book.date)<=currentDate" class="btn btn-success btn-sm" style="font-weight: bold;" (click)="addreview(book?.professional?._id)">Add</button></td>
-                 <td></td>
+                  <td style="font-family: monospace;">{{book.housename}}</td>
+                  <td style="font-family: monospace;">{{book?.professional?.name}}</td>
+                  <td style="font-family: monospace;">{{book?.professional?.ownername}}</td>
+                  <td  style="font-family: monospace;">{{book?.professional?.phone}}</td>
+                  <td  style="font-family: monospace;">{{book?.date | date:'shortDate'}}</td>
+                  <td style="font-family: monospace;">{{book.event}}</td>
+                  <td style="font-family: monospace;">{{book.amount}}</td>
+                  <td style="font-family: monospace;" ><button *ngIf="book.date && currentDate && (book.date)<=currentDate" class="btn btn-success btn-sm" style="font-weight: bold;" (click)="addreview(book?.professional?._id)">Add</button></td>
+                 <td style="font-family: monospace;"></td>
                 </tr>
                 
               </tbody>

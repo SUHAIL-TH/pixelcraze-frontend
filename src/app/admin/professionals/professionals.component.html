@@ -69,6 +69,11 @@
               >
             </a>
           </li>
+          <li>
+            <a routerLink="/admin/booking" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                <i class="fas fa-calendar-check"></i> <span class="d-none d-sm-inline ms-4" style="font-weight: bold; color: white;">Booking</span> </a>
+            
+        </li>
 
           <!-- <li>
                   <a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
@@ -129,7 +134,7 @@
           <div class="d-flex justify-content-end">
             <div class="flex-grow-1"></div>
             <div class="form-group">
-              <input type="text" [(ngModel)]="searchText" class="form-control form-control-sm" placeholder="Search...">
+              <input type="text" [(ngModel)]="searchText"  style="box-shadow: 0px 1px 5px black;" class="form-control form-control-sm" placeholder="Search...">
             </div>
           </div>
           <h4 style="color: black;" *ngIf="(loading$ |async)">.....</h4>
@@ -153,15 +158,15 @@
                 <tbody *ngIf="(professional$ |paginate: { itemsPerPage: tableSize, currentPage: page, totalItems: count }) as professionalData">
                   <tr *ngFor="let professional of professionalData |professionalsearch: searchText; let i=index">
                       
-                    <td>{{i+1}}</td>
-                    <td>{{professional.name}}</td>
-                    <td>{{professional.ownername}}</td>
+                    <td style="font-family: monospace;">{{i+1}}</td>
+                    <td style="font-family: monospace;">{{professional.name}}</td>
+                    <td style="font-family: monospace;">{{professional.ownername}}</td>
                     <!-- <td><img style="width: 90px; height: 50px;" [src]="getImageUrl(professional.image ? banner.image.toString() : '')" alt="banner image goes here"></td> -->
-                    <td>{{professional.email}}</td>
-                    <td>{{professional.phone}}</td>
-                    <td>{{professional.blocked}}</td>
-                    <td *ngIf="!professional.blocked" ><button class="btn btn-danger" (click)="block(professional._id)" >Block</button></td>
-                    <td *ngIf="professional.blocked"><button class="btn btn-success"   (click)="unblock(professional._id)">UnBlock</button></td>
+                    <td style="font-family: monospace;">{{professional.email}}</td>
+                    <td style="font-family: monospace;">{{professional.phone}}</td>
+                    <td style="font-family: monospace;">{{professional.blocked}}</td>
+                    <td style="font-family: monospace;" *ngIf="!professional.blocked" ><button class="btn btn-danger" (click)="block(professional._id)" >Block</button></td>
+                    <td style="font-family: monospace;" *ngIf="professional.blocked"><button class="btn btn-success"   (click)="unblock(professional._id)">UnBlock</button></td>
           
                    
                   </tr>

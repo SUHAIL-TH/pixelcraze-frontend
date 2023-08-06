@@ -11,6 +11,7 @@ import { UserServiceService } from 'src/app/service/user/user-service.service';
 export class ProfessionalprofileComponent implements OnInit {
   userId: any;
   professionaldata:any;
+  rating:number=4
   constructor(
     private service: UserServiceService,
     private route: ActivatedRoute,
@@ -24,8 +25,9 @@ export class ProfessionalprofileComponent implements OnInit {
   getprofessionalData(id: string) {
     this.service.getdetailsprofessional(id).subscribe(
       (res) => {
+        console.log(res)
         this.professionaldata = res;
-        console.log(res);
+       
         
       },
       (err) => {

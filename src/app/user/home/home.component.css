@@ -61,6 +61,9 @@ line-height: normal;
     list-style: none;
     padding-left: 0; /* Optionally, remove any default left padding */
   }
+  .imghome:hover{
+    scale: 1.001;
+  }
   
   
   

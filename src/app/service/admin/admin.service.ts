@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, delay } from 'rxjs';
-import { User ,Banner, Professional} from 'src/app/admin/state/types/user.type';
+import { User ,Banner, Professional, bookingdata} from 'src/app/admin/state/types/user.type';
 
 @Injectable({
   providedIn: 'root'
@@ -51,8 +51,9 @@ export class AdminService {
     return this.http.post(`${this.adminurl}/admin//unblockprofessional/${id}`,null)
   }
   getdashboarddata(){
-   
-    
     return this.http.get(`${this.adminurl}/admin/dashboarddata`)
+  }
+  bookingdata(){
+    return this.http.get<bookingdata[]>(`${this.adminurl}/admin/bookingdata`)
   }
 }

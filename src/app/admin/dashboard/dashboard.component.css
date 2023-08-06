@@ -4,3 +4,8 @@
 .cad{
     margin-top: 5px;
 }
+/* dashboard.component.css */
+.chart-container {
+    height: 200px; /* Adjust the height as needed */
+  }
+  
