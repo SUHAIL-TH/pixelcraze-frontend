@@ -2,6 +2,7 @@ nav{
     padding: 10px 20px;
     border-width: 2px;
     border-color: black; 
+    background-color: red;
 }
 .custom-toggler {
     border: none;
@@ -24,4 +25,10 @@ nav{
   .nav-link.active {
     color: green;
     text-decoration: underline green 3px;
+  }
+  .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }

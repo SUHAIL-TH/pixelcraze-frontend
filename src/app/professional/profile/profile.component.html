@@ -1,14 +1,20 @@
 <app-navbar></app-navbar>
 <div class="container-fluid" style="min-height: 100vh;">
+  <nav class="px-xl-5" style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+    <ol class="breadcrumb mt-2">
+      <li class="breadcrumb-item"><a routerLink="/professional/home" style="text-decoration: none; color: black; font-family: 'Arizonia', cursive;font-size: 21px">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page" style="font-family: 'Arizonia', cursive;font-size: 21px">Profile</li>
+    </ol>
+  </nav>
+  <div class="contain"> 
+
+    <img src=".../../../../../assets/icon/photo-1663168679840-0a2ed088cbcd.jpeg" style="width: 100%; height: 350px; object-fit: cover; opacity: 1; " alt="">
+    <div class="centered">Through my lens, the world comes alive.</div>
+  </div>
     <div class="row px-xl-5 mt-2">
-      <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
-        <ol class="breadcrumb mt-2">
-          <li class="breadcrumb-item"><a routerLink="/professional/home" style="text-decoration: none; color: black; font-family: 'Arizonia', cursive;font-size: 21px">Home</a></li>
-          <li class="breadcrumb-item active" aria-current="page" style="font-family: 'Arizonia', cursive;font-size: 21px">Profile</li>
-        </ol>
-      </nav>
-      <div>
-        <small class="mt-3 fw-bold" style="margin-left: 30px; text-shadow: 0px 1px 2px rgb(78, 78, 78); font-size: 20px; text-decoration: underline 2px rgb(68, 127, 0)  ;font-family: monospace;">{{profileData?.name}}</small>
+    
+      <div class="mt-4">
+        <small class=" fw-bold" style="margin-left: 30px; text-shadow: 0px 1px 2px rgb(78, 78, 78); font-size: 20px; text-decoration: underline 2px rgb(0, 0, 0)  ;font-family: monospace;">{{profileData?.name}}</small>
 
 
       </div>
@@ -38,41 +44,41 @@
           </div>
           <!-- <div class="col-md-8 col-lg-8" style="background-color: rgba(105, 105, 105, 0.562); box-shadow: 0px 1px 5px black; background-image: url(../../../assets/icon/wallhaven-0q2lmq_1920x1080.png); background-size: contain; background-repeat: no-repeat; object-fit: ;"> -->
 
-          <div class="col-md-8 col-lg-8 mt-1" style="background-color: rgba(255, 253, 253, 0.562); box-shadow: 0px 1px 5px black; " >
+          <div class="col-md-8 col-lg-8 mt-1" style="background-color: rgba(255, 253, 253, 0.562); " >
            
           <div class="mt-3">
 
-            <small class="mt-5 fw-bold " style="text-shadow: 0px 1px 1px black; font-family: monospace; font-size: 17px;" ><span class="">Owned by :</span> {{profileData?.ownername}}</small>
+            <small class="mt-5  detailstext" style="text-shadow: 0px 1px 1px black; font-size: 17px;" ><span class="">Owned by :</span> {{profileData?.ownername}}</small>
           </div>
             <div class="d-flex justify-content-between">
             
-            <span style="font-weight: 500; font-family: monospace;" class="mt-4" ><i class="fas fa-map-marker-alt text-danger" ></i>      {{profileData?.place}}</span>
+            <span style="font-weight: 500; " class="mt-4 detailstext" ><i class="fas fa-map-marker-alt text-danger" ></i>      {{profileData?.place}}</span>
            
-            <button routerLink="/professional/editprofile" style=" box-shadow: 0px 1px 3px gray; border-radius: 10px;" class="btn btn-outline-dark fw-bold btn-sm">  <i class="fas fa-pencil-alt fa-pulse"></i> Edit</button>
+            <button routerLink="/professional/editprofile" style=" box-shadow: 0px 1px 3px gray; border-radius: 10px;" class="btn btn-outline-dark detailstext btn-sm">  <i class="fas fa-pencil-alt fa-pulse"></i> Edit</button>
             </div>
            
             
-            <p class="card-text mt-4"><small class="text-dark" style="font-family: monospace;"><i class="fas fa-envelope fa-beat-fade" style="color:rgb(141, 5, 77)"></i> {{profileData?.email}}</small></p>
+            <p class="card-text mt-4 detailstext"><small class="text-dark" ><i class="fas fa-envelope fa-beat-fade" style="color:rgb(141, 5, 77)"></i> {{profileData?.email}}</small></p>
            <div class="mt-3"> 
-            <small style="color: rgb(0, 31, 167); font-weight: bold;"><span class="text-success fw-bold" style="font-size: 17px;">{{profileData?.experinces}} </span>Years of experinces</small>
+            <small style="color: rgb(0, 31, 167); " class="detailstext"><span class="text-success " style="font-size: 17px;">{{profileData?.experinces}} </span>Years of experinces</small>
            </div>
            <div>
             <div class="mt-3">
-              <small style="font-family: monospace;"><i class="fas fa-phone text-success" ></i>  {{profileData?.phone}}</small>
+              <small class="detailstext" ><i class="fas fa-phone text-success" ></i>  {{profileData?.phone}}</small>
             </div>
             <div class="mt-3">
                 
-                <small class="fw-bold mt-2" style="text-decoration: underline; font-family: monospace;">specialized</small>
+                <small class="detailstext mt-2" style="text-decoration: underline; ">specialized</small>
             </div>
            </div>
-           <p class="card-text mt-2" style="font-family: monospace;"><small class="text-dark">{{profileData?.specialized}}</small></p>
+           <p class="card-text mt-2 detailstext" ><small class="text-dark">{{profileData?.specialized}}</small></p>
             
           </div>
         
       </div>
       <hr class="mt-5">
       <small *ngIf="profileData?.aboutus">{{profileData?.aboutus}}</small>
-      <small *ngIf="!profileData?.aboutus" class="" style="text-align: start;font-weight: 400; text-shadow: 0px 1px 1px black; font-family: monospace;">Welcome to our photography website, where we celebrate the art of capturing moments and creating everlasting memories.
+      <small *ngIf="!profileData?.aboutus" class="" style="text-align: start;font-weight: 500;  font-family: monospace;">Welcome to our photography website, where we celebrate the art of capturing moments and creating everlasting memories.
         At our core, we believe that photography goes beyond simply taking pictures. It is a powerful medium that allows us to freeze time, preserve emotions, and unveil the beauty that surrounds us. Through our lenses, we strive to transform ordinary scenes into extraordinary works of art, capturing the essence of life in each frame.
         Whether it's a tender embrace, a breathtaking landscape, or a candid expression, we are passionate about preserving those fleeting moments that define who we are. We believe that every photograph tells a unique story, and we are dedicated to capturing the authentic emotions and hidden narratives that lie within.</small>
     </div>
@@ -89,7 +95,7 @@
      
         <div class="col-md-3 mb-3 col-12 d-flex align-item-center justify-content-center" *ngFor="let img of profileData?.images; let i = index">
           <!-- <div class="vertical-linee me-1"></div> -->
-          <div class="card" style="width: 300px">
+          <div class="card cardd" style="width: 300px">
             <img [src]="getImageUrl(img?.image ? img?.image.toString() : '')" 
                  data-bs-toggle="modal" 
                  [attr.data-bs-target]="'#exampleModal' + i"  
@@ -156,6 +162,44 @@
 
     
 
+    <h2 class="brands-text"> <span class="text-white;" style="font-family: 'Arizonia', cursive ;color: rgb(255, 255, 255); font-size: 15px;">Pixel Craze</span> </h2>
+   </div>
+   <div class="px-xl-5 mt-5">
+    <h6 class="name" style="font-size: 21px; text-decoration: underline;"> Reviews</h6>
+   
+      <div *ngFor="let data of profileData?.reviews; let i = index">
+        <div class="card mt-4  " style="border: white; background-color:#ffffff"  >
+          <div class="row g-0 " >
+           
+            <div class="col-md-12 ">
+              <div class=" d-flex ">
+
+                <img src="data:image/jpeg;base64,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"   class="img-fluid  img"  alt=".." style="width: 50px; height: 50px; object-fit: cover;">
+                <h6 class="card-title name mt-2 ms-2" style=" text-shadow: 0px 1px 2px black; font-size: 17px; ">{{data?.user?.name}}</h6>
+                
+              </div>
+              <p class="card-textms-3"><small class="text " style="font-size: 15px;  font-family: monospace;">{{data?.date | date: 'short'}}</small></p>
+              <div class="rating ms-2">
+                <span class="star" style="font-size: 20px;" [ngClass]="{ 'active': data?.rating >= 1 }">&#9733;</span>
+                <span class="star" style="font-size: 20px;" [ngClass]="{ 'active': data?.rating >= 2 }">&#9733;</span>
+                <span class="star" style="font-size: 20px;" [ngClass]="{ 'active': data?.rating >= 3 }">&#9733;</span>
+                <span class="star" style="font-size: 20px;" [ngClass]="{ 'active': data?.rating >= 4 }">&#9733;</span>
+                <span class="star" style="font-size: 20px;" [ngClass]="{ 'active': data?.rating >= 5 }">&#9733;</span>
+              </div>
+              
+              <p class="card-text mt-3 ms-3"><small class="text " style="font-size: 15px;  font-family: monospace;">{{data?.review}}</small></p>
+
+            </div>
+          
+          </div>
+         
+        </div>
+        <hr>
+
+      </div>
+   
+    
+    
    </div>
     
     

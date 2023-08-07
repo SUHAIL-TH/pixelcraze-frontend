@@ -2,10 +2,10 @@
     scale: 1.05;
 }
 .img:hover{
-    scale: 1.05;
+    scale: 1.005;
 }
 .card:hover{
-    scale: 1.01;
+    scale: 1.001;
     border-color: rgb(39, 39, 39);
     border-width: 2px;
 }
@@ -13,7 +13,7 @@
 .brands-text {
     float: left;
     width: 100%;
-    background: #0d1f35;
+    background: #161d26;
     font-size: 24px;
     font-weight: bold;
     text-align: center;

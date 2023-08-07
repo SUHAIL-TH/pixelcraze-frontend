@@ -74,14 +74,14 @@
 
 .cardd:hover {
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3); /* Change the box shadow on hover */
-  scale: 1.03;
+  scale: 1.009;
   
 }
 .btn:hover{
   scale: 1.05;
 }
 .img:hover{
-  scale: 1.05;
+  scale: 1.005;
 }
 /* Define the pulse animation */
 @keyframes pulse {
@@ -113,11 +113,11 @@ line-height: normal;
 .brands-text {
   float: left;
   width: 100%;
-  background: #0d1f35;
+  background: #020304;
   font-size: 24px;
   font-weight: bold;
   text-align: center;
-  min-height: 25px;
+  min-height: 20px;
   margin: 70px 0 40px;
 }
 .rating {
@@ -132,4 +132,28 @@ line-height: normal;
 
 .star.active {
   color: gold; /* Change the color to your desired color for selected stars */
+}
+.contain {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-shadow: 0px 2px  5px rgb(1, 1, 236);
+  font-family: Goldman;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+}
+.detailstext{
+  text-shadow: 0px 1px  1px rgb(0, 0, 0);
+  font-family: Goldman;
+  font-style: normal;
+  font-weight: 100;
+  font-size: 15px;
+
 }
