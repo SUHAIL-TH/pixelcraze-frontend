@@ -15,113 +15,69 @@
                 <div class="form-group">
                   <label for="exampleInputEmail1" style="color: black; font-weight: bold;">Name</label>
                   <input type="text" [ngClass]="{'is-invalid':submitform && bookingform.controls['name'].errors}" formControlName="name" class="form-control mt-2" id="name" name="name"  placeholder="Name goes here"  style="box-shadow: 0px 1px 4px rgb(87, 87, 87);">
-                  <div *ngIf="submitform && bookingform.controls['name'].errors" class="text-danger">
-                        
+                  <div *ngIf="submitform && bookingform.controls['name'].errors" class="text-danger">       
                     <small *ngIf="bookingform.controls['name'].errors['required']">Email is required </small>
                     <small *ngIf="bookingform.controls['name'].errors['leadingWhitespace']">Null values is not allowed</small>
-                   
-
                   </div>
-                 
                 </div>
-                
                 <div class="form-group">
                   <label  class="mt-3" style="color: black; font-weight: bold;">House Name</label>
                   <input type="text" [ngClass]="{'is-invalid':submitform && bookingform.controls['housename'].errors}" class="form-control" id="housename"  formControlName="housename" name="housename" placeholder="House Name goes here"  style="box-shadow: 0px 1px 4px rgb(87, 87, 87);" >
-                  <div *ngIf="submitform && bookingform.controls['housename'].errors" class="text-danger">
-                        
+                  <div *ngIf="submitform && bookingform.controls['housename'].errors" class="text-danger">     
                     <small *ngIf="bookingform.controls['housename'].errors['required']">House name is required </small>
                     <small *ngIf="bookingform.controls['housename'].errors['leadingWhitespace']">Null values is not allowed</small>
-                   
-
                   </div>
                 </div>  
                 <div class="form-group">
                     <label  class="mt-3" style="color: black; font-weight: bold;">Place</label>
                     <input type="text"  [ngClass]="{'is-invalid':submitform && bookingform.controls['place'].errors}" class="form-control" id="place"  formControlName="place" name="place" placeholder="Place goes here"  style="box-shadow: 0px 1px 4px rgb(87, 87, 87);">
-                    <div *ngIf="submitform && bookingform.controls['place'].errors" class="text-danger">
-                        
+                    <div *ngIf="submitform && bookingform.controls['place'].errors" class="text-danger">    
                       <small *ngIf="bookingform.controls['place'].errors['required']">Place  is required </small>
                       <small *ngIf="bookingform.controls['place'].errors['leadingWhitespace']">Null values is not allowed</small>
-  
                     </div>
                   </div>  
                   <div class="form-group">
                     <label  class="mt-3" style="color: black; font-weight: bold;">Phone</label>
                     <input type="number" [ngClass]="{'is-invalid':submitform && bookingform.controls['phone'].errors}" class="form-control" id="phone"  formControlName="phone" name="phone" placeholder="phone goes here"  style="box-shadow: 0px 1px 4px rgb(87, 87, 87);">
-                    <div *ngIf="submitform && bookingform.controls['phone'].errors" class="text-danger">
-                        
+                    <div *ngIf="submitform && bookingform.controls['phone'].errors" class="text-danger">  
                       <small *ngIf="bookingform.controls['phone'].errors['required']">Phone number is required </small>
                       <small *ngIf="bookingform.controls['phone'].errors['pattern']">Enter valid phone number</small>
-                     
-  
                     </div>
                   </div>  
                   <div class="form-group">
                     <label  class="mt-3" style="color: black; font-weight: bold;">Amount</label>
                     <input type="number" [ngClass]="{'is-invalid':submitform && bookingform.controls['amount'].errors}" class="form-control" id="amount"  formControlName="amount" name="amount" placeholder="Amount to be pay should goes here"  style="box-shadow: 0px 1px 4px rgb(87, 87, 87);">
-                    <div *ngIf="submitform && bookingform.controls['amount'].errors" class="text-danger">
-                        
+                    <div *ngIf="submitform && bookingform.controls['amount'].errors" class="text-danger">  
                       <small *ngIf="bookingform.controls['amount'].errors['required']">Amount filed is required </small>
-
                       <small *ngIf="bookingform.controls['amount'].errors['leadingWhitespace']">Null values is not allowed</small>
-                      
-                     
-  
                     </div>
                   </div>  
                   <div class="form-group">
                     <label  class="mt-3" style="color: black; font-weight: bold;">Event</label>
                     <input type="text" [ngClass]="{'is-invalid':submitform && bookingform.controls['event'].errors}" class="form-control" id="event"  formControlName="event" name="event" placeholder="Event goes here"  style="box-shadow: 0px 1px 4px rgb(87, 87, 87);">
-                    <div *ngIf="submitform && bookingform.controls['event'].errors" class="text-danger">
-                        
+                    <div *ngIf="submitform && bookingform.controls['event'].errors" class="text-danger">   
                       <small *ngIf="bookingform.controls['event'].errors['required']">Event is required </small>
                       <small *ngIf="bookingform.controls['event'].errors['leadingWhitespace']">Null values is not allowed</small>
-                     
-  
                     </div>
                   </div> 
                   <div class="form-group">
                     <label  class="mt-3" style="color: black; font-weight: bold;">Date</label>
                     <input type="date" [ngClass]="{'is-invalid':submitform && bookingform.controls['date'].errors}" class="form-control" id=""  formControlName="date" name="date" style="box-shadow: 0px 1px 4px rgb(87, 87, 87);">
-                    <div *ngIf="submitform && bookingform.controls['date'].errors" class="text-danger">
-                        
+                    <div *ngIf="submitform && bookingform.controls['date'].errors" class="text-danger">  
                       <small *ngIf="bookingform.controls['date'].errors['required']">Please select a date </small>
-                      <small *ngIf="bookingform.controls['date'].errors['pastOrCurrentDate']">Date is not valid</small>
-                     
-  
+                      <small *ngIf="bookingform.controls['date'].errors['pastOrCurrentDate']">Date is not valid</small>  
                     </div>
                   </div> 
-              
-                  <!-- <div class="mt-3">
-                    <label class="form-label" for="customFile" style="color: black; font-weight: bold;">Image</label>
-                    <input type="file" class="form-control" accept="image/*" name="image" formControlName="fileInput" (change)="uploadImage($event.target)" > 
-                    <div *ngIf="regsubmit && bannerform.controls['fileInput'].errors" class="text-danger">
-                        <div *ngIf="bannerform.controls['fileInput'].errors['required']">Image is required</div>
-                          
-                      </div>
-                  </div> -->
                 <div class="mt-3"> 
                     <button  type="submit" class="btn btn-success text-white fw-bold ">Submit</button>
                 </div>
-                
               </form>
-
         </div>
         <div class="col-md-6 mt-3 d-none d-lg-block d-md-block " >
           <div class="px-xl-5"  >
             <img src="../../../assets/icon/news_preview_mob_image__preview_14312.png" alt="" style="width: 550px; height: 550px; box-shadow: 0px 1px 5px rgb(67, 67, 67);">
           </div>
-        </div>
-        
-       
-            
-  
-          
-      
-        
-        
-        
+        </div>   
     </div>
   </div>
   <app-footer></app-footer>

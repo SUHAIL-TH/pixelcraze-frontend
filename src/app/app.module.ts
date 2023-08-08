@@ -22,6 +22,7 @@ import { FormsModule } from '@angular/forms';
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 import {MatButtonModule} from '@angular/material/button';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ServerSideErrorComponent } from './server-side-error/server-side-error.component';
 
 
 
@@ -36,6 +37,7 @@ const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
   declarations: [
     AppComponent,
     PageNotFoundComponent,
+    ServerSideErrorComponent,
    
  
     

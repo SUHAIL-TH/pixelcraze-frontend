@@ -3,28 +3,21 @@
     <div class="row px-xl-5 mt-2">
       <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
         <ol class="breadcrumb mt-2">
-          <li class="breadcrumb-item"><a routerLink="/professional/home" style="text-decoration: none; color: black;">Home</a></li>
-          
-          <li class="breadcrumb-item active" aria-current="page">professionals</li>
-          <li class="breadcrumb-item active" aria-current="page">profile</li>
-          <li class="breadcrumb-item active" aria-current="page">chat</li>
+          <li class="breadcrumb-item"><a routerLink="/professional/home" style="text-decoration: none; color: black;  font-family: 'Arizonia', cursive;font-size: 21px;">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page" style=" font-family: 'Arizonia', cursive;font-size: 21px;">professionals</li>
+          <li class="breadcrumb-item active" aria-current="page" style=" font-family: 'Arizonia', cursive;font-size: 21px;">profile</li>
+          <li class="breadcrumb-item active" aria-current="page" style=" font-family: 'Arizonia', cursive;font-size: 21px;">chat</li>
         </ol>
       </nav>
-    
-      <section style="background-color: #faf9f9; box-shadow: 0px 1px 5px black;" >
+      <section style="background-color: #fffcfc; " >
         <div class="container py-5">
-      
           <div class="row">
             <div class="col-md-12">
-      
               <div class="card" id="chat3" style="border-radius: 15px; box-shadow: 0px 1px 5px black;" >
                 <div class="card-body" >
-      
                   <div class="row">
                     <div class="col-md-6 col-lg-5 col-xl-4 mb-4 mb-md-0" style="box-shadow: 0px 1px 5px rgb(241, 70, 70);">
-      
                       <div class="p-3" >
-      
                         <div class="input-group rounded mb-3">
                           <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
                             aria-describedby="search-addon" />
@@ -32,24 +25,17 @@
                             <i class="fas fa-search"></i>
                           </span>
                         </div>
-      
                         <div data-mdb-perfect-scrollbar="true" style="position: relative; max-height: 400px; overflow-y: auto;">
                           <div >
                             <ul class="list-unstyled mb-0" *ngFor="let data of userdata" >
                               <app-contact [data]="data"></app-contact>
                               </ul>
+                        </div>  
                         </div>
-                          
-                        </div>
-      
                       </div>
-      
                     </div>
-      
                     <div class="col-md-6 col-lg-7 col-xl-8" >
                         <!-- this is the code for diplaying the image if user does not select anything  -->
-
-                        
                         <div *ngIf="!chatshow" style="position: relative; height: 450px; overflow-y: auto;">
                             <div class="d-flex justify-content-center items-center h-full rounded-r-lg mt-5" >
                             <img
@@ -58,20 +44,14 @@
                               alt=""
                               srcset=""
                               style="height: 300px; width: 300px;"
-                            />
-                            
-                           
+                            /> 
                           </div>
                           <div class="d-flex justify-content-center">
                             <p class="font-semibold text-lg mt-3 font-mono">
                                 Select a chat to start message :)
                               </p>
-
                         </div>
-
                         </div>
-                       
-      
                       <div class="pt-3 pe-3" data-mdb-perfect-scrollbar="true" *ngIf="chatshow"
                         style="position: relative; height: 450px; overflow-y: auto;" #chatContainer class="chat-container" >
                        <ng-container *ngFor="let chat of messages">
@@ -80,63 +60,39 @@
                             <img src="https://png.pngtree.com/png-vector/20220817/ourmid/pngtree-man-avatar-with-circle-frame-vector-ilustration-png-image_6110328.png"
                               alt="avatar 1" style="width: 45px; height: 100%;">
                             <div >
-                              <p class="small p-2 ms-3 mb-1 rounded-3 text-white" style="background-color: rgb(58, 57, 57); width: 200px;" >{{chat.message}}</p>
+                              <p class="small p-2 ms-3 mb-1  text-white" style="background-color: rgb(58, 57, 57); width: 200px; border-radius: 20px 10px 20px 0px; font-family: monospace;" >{{chat.message}}</p>
                               <p class="small ms-3 mb-3 rounded-3 text-muted float-start">{{chat.createdAt | date : "short"}}</p>
                             </div>
                           </div>
                           <div class="d-flex flex-row justify-content-end"  *ngIf="chat.to==viewerid" >
                             <div>
-                              <p class="small p-2 me-3 mb-1 text-white rounded-3 bg-success"  style="box-shadow: 0px 1px 3px black;">{{chat.message}} </p>
+                              <p class="small p-2 me-3 mb-1 text-white  bg-success"  style="box-shadow: 0px 1px 3px black; font-family: monospace; border-radius: 20px 0px 20px 10px;">{{chat.message}} </p>
                               <p class="small me-3 mb-3 rounded-3 text-muted">{{chat.createdAt | date : "short" }}</p>
                             </div>
                             <img src="https://png.pngtree.com/png-vector/20220817/ourmid/pngtree-man-avatar-with-circle-frame-vector-ilustration-png-image_6110328.png"
                               alt="avatar 1" style="width: 45px; height: 100%;">
                           </div>
-
                        </ng-container>
-                      
-                          
-                        
-                        
-
-      
                       </div>
-      
                       <form (ngSubmit)="submit()" *ngIf="chatshow">
                       <div class="text-muted d-flex justify-content-start align-items-center pe-3 pt-3 mt-2">
                             <img src="https://png.pngtree.com/png-vector/20220817/ourmid/pngtree-man-avatar-with-circle-frame-vector-ilustration-png-image_6110328.png"
                             alt="avatar 3" style="width: 40px; height: 100%;">
                           <input type="text" [(ngModel)]="message" name="message"  class="form-control " id="message" style=" box-shadow: 0px 1px 5px black;"
                             placeholder="Message....">
-                            <button class="ms-3 " type="submit" style="border-radius: 10px; background-color:green; height: 40px; width: 50px; border-color: rgb(248, 248, 248);"><i class="fas fa-paper-plane text-white  " style="text-decoration: none;"></i></button>
-                            
-                            
+                            <button class="ms-3 " type="submit" style="border-radius: 10px; background-color:green; height: 40px; width: 50px; border-color: rgb(248, 248, 248);"><i class="fas fa-paper-plane text-white  " style="text-decoration: none;"></i></button>    
                         </div>
                     </form>
-                    
                     <!-- <a class="ms-1 text-muted" href="#!"><i class="fas fa-paperclip"></i></a>
                     <a class="ms-3 text-muted" href="#!"><i class="fas fa-smile"></i></a> -->
                     </div>
                   </div>
-      
                 </div>
               </div>
-      
             </div>
           </div>
-      
         </div>
       </section>
-     
-      
-      
-      
-      
-    
-
-   </div>
-    
-    
+   </div> 
   </div>
-
   <app-footer></app-footer>
