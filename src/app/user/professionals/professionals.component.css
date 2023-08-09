@@ -5,9 +5,9 @@
     scale: 1.005;
 }
 .card:hover{
-    scale: 1.001;
-    border-color: rgb(39, 39, 39);
-    border-width: 2px;
+    scale: 1.0001;
+    border-color: rgb(16, 161, 5);
+    border-width: 1px;
 }
 
 .brands-text {

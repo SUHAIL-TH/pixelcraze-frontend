@@ -1,0 +1,94 @@
+<app-navbar></app-navbar>
+<div class="container-fluid" style="min-height: 100vh;">
+    
+    <div class="row px-xl-5" >
+        <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+            <ol class="breadcrumb mt-4">
+              <li class="breadcrumb-item"><a routerLink="/" style="text-decoration: none; color: black; font-family: 'Arizonia', cursive;font-size: 25px; font-weight: 500;">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page" style="font-family: 'Arizonia', cursive;font-size: 24px">About</li>
+            </ol>
+          </nav>
+          <hr>
+    </div>
+    <div class="px-xl-5">
+        <h4 class="name" style="text-decoration: underline;"> 
+            About
+        </h4>
+        <small style="font-family: monospace; font-size: 15px;">
+             Pixel Craze Photographers Community, a vibrant and passionate collective of visual storytellers and photography enthusiasts. Our community is a haven for those who find joy, inspiration, and creative fulfillment through the lens of a camera.
+
+At Pixel Craze, we believe that every photograph holds a unique narrative, a frozen moment in time that captures emotions, perspectives, and memories. Whether you're a seasoned professional, an aspiring artist, or simply someone who appreciates the art of photography, you'll find a warm and supportive environment here.
+
+What sets Pixel Craze apart is our commitment to nurturing both technical skills and artistic vision. Our diverse membership includes beginners eager to learn the ropes, experts willing to share their knowledge, and everyone in between. Through interactive workshops, photography challenges, and insightful discussions, we aim to elevate each other's craft and broaden our horizons.
+        </small>
+
+        <h6 class="name mt-4" style="text-decoration: underline;">Within our community, you'll have the chance to:</h6>
+        <dl>
+            <dt class="text-danger dl mt-2" >Share Your Story: </dt>
+            <dd class="dl" style="font-weight: 0;">Showcase your photographic creations, whether they're breathtaking landscapes, candid portraits, mesmerizing macro shots, or experimental abstracts. Receive constructive feedback and appreciation from fellow members who understand the intricacies of the art</dd>
+            <dt class="text-danger dl mt-2" >Connect and Collaborate:  </dt>
+            <dd class="dl" style="font-weight: 0;">Forge connections with like-minded individuals who share your passion for photography. Collaborate on projects, exchange ideas, and embark on photographic adventures together.</dd>
+            <dt class="text-danger dl mt-2">Inspire and Be Inspired: </dt>
+            <dd class="dl">Immerse yourself in a world of visual inspiration as you browse through the galleries of fellow members. Witness different perspectives and techniques that ignite your imagination and motivate you to refine your craft.</dd>
+        </dl>
+
+
+    </div>
+    <div class="px-xl-5">
+        <h5 class="name" style="text-decoration: underline;"> 
+            Contact
+        </h5>
+        <form  class="mt-3" [formGroup]="contactform" (ngSubmit)="submit()">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group"> 
+                        <label class="name" for="exampleInputEmail1" style="color: black; font-weight: bold;">Name</label>
+                        <input type="text"  [ngClass]="{'is-invalid':submitform && contactform.controls['name'].errors}" formControlName="name"   class="form-control mt-2 custom" id="name" name="name"  placeholder="Enter your name" style="box-shadow: 0px 1px 3px rgb(165, 165, 165);">
+                        <!-- <div *ngIf="submitform && reviewform.controls['review'].errors" class="text-danger">      
+                          <small *ngIf="reviewform.controls['review'].errors['required']">Review is required </small>
+                          <small *ngIf="reviewform.controls['review'].errors['leadingWhitespace']">Null values is not allowed</small>
+                        </div> -->
+                      </div>
+
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group"> 
+                        <label class="name" for="exampleInputEmail1" style="color: black; font-weight: bold;">Email</label>
+                        <input type="text"     class="form-control mt-2 custom" id="name" name="name"  placeholder="Enter your email" style="box-shadow: 0px 1px 3px rgb(165, 165, 165);">
+                        <!-- <div *ngIf="submitform && reviewform.controls['review'].errors" class="text-danger">      
+                          <small *ngIf="reviewform.controls['review'].errors['required']">Review is required </small>
+                          <small *ngIf="reviewform.controls['review'].errors['leadingWhitespace']">Null values is not allowed</small>
+                        </div> -->
+                      </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group"> 
+                        <label class="name" for="exampleInputEmail1" style="color: black; font-weight: bold;">Phone</label>
+                        <input type="text"     class="form-control mt-2 custom" id="name" name="name"  placeholder="Enter your email" style="box-shadow: 0px 1px 3px rgb(165, 165, 165);">
+                        <!-- <div *ngIf="submitform && reviewform.controls['review'].errors" class="text-danger">      
+                          <small *ngIf="reviewform.controls['review'].errors['required']">Review is required </small>
+                          <small *ngIf="reviewform.controls['review'].errors['leadingWhitespace']">Null values is not allowed</small>
+                        </div> -->
+                      </div>
+
+                </div>
+            </div>
+            <div class="mt-2">
+
+                <textarea name="" id="" class="form-control custom-textarea" cols="30" rows="7" style="box-shadow: 0px 1px 3px rgb(165, 165, 165);" placeholder="Enter your message"></textarea>
+            </div>
+            
+           
+             <div class="mt-3"> 
+                <button  type="submit" class="btn btn-success text-white fw-bold btn-sm ">Send</button>
+            </div>
+          </form>
+        
+
+
+    </div>
+  </div>
+  <app-footer></app-footer>
+

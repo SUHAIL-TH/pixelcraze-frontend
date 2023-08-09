@@ -9,19 +9,24 @@
     <div class="collapse navbar-collapse " id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0 ps-3">
         <li class="nav-item" >
-          <a class="nav-link  text-white" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" style="font-weight: 900 ; " routerLink="/">Home</a>
+          <a class="nav-link  text-white " routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" style="font-weight: 900  ; font-family: monospace; " routerLink="/">Home</a>
         </li>
        
         <li class="nav-item" *ngIf="authenticated">
-          <a class="nav-link text-white" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" style="font-weight: 900 ;  "  routerLink="/professionals">Professionals</a>
+          <a class="nav-link text-white" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" style="font-weight: 900 ; font-family: monospace;  "  routerLink="/professionals">Professionals</a>
          
         </li>
         <li class="nav-item" *ngIf="authenticated">
-          <a class="nav-link text-white" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" style="font-weight: 900 ;  "   routerLink="/bookings">Booking</a>
+          <a class="nav-link text-white" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" style="font-weight: 900 ; font-family: monospace;  "   routerLink="/bookings">Booking</a>
          
         </li>
         <li class="nav-item" *ngIf="authenticated">
-          <a class="nav-link text-white" routerLink="/about"  [routerLinkActiveOptions]="{exact: true}" style="font-weight: 900 ;  " routerLinkActive="active" >About</a>
+          <a class="nav-link text-white" routerLink="/chat"  [routerLinkActiveOptions]="{exact: true}" style="font-weight: 900 ; font-family: monospace;  " routerLinkActive="active" >Chat</a>
+
+          
+        </li>
+        <li class="nav-item" *ngIf="authenticated">
+          <a class="nav-link text-white" routerLink="/about"  [routerLinkActiveOptions]="{exact: true}" style="font-weight: 900 ; font-family: monospace;  " routerLinkActive="active" >About</a>
 
           
         </li>

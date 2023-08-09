@@ -6,43 +6,21 @@
     <div class="col-md-8 col-lg-8,col-12 mt-4">
         <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
-              <div class="carousel-item active">
+              <div class="carousel-item active"  *ngFor="let banner of bannerdata">
                 <img
               class="d-block w-100"
-              src="/assets/icon/3242564.jpg"
-              style="object-fit: cover"
+              [src]="getImageUrl(banner.image ? banner.image.toString() : '')"
+              style="object-fit: contain"
               alt="First slide"
               style="height: 525px"
             />
             <div class="carousel-caption d-none d-md-block">
-                <h5>Hiii</h5>
-                <p>...</p>
+                <h5 class="name">{{banner.heading}}</h5>
+                <p class="name">{{banner.subheading}}</p>
               </div>
               </div>
-              <div class="carousel-item">
-                <img
-              class="d-block w-100"
-              src="/assets/icon/bookworms-haven-flat-lay-illustration-generative-ai_549702-709 (1).jpg"
-              alt="Second slide"
-              style="height: 525px"
-            />
-            <div class="carousel-caption d-none d-md-block">
-                <h5>Hiii</h5>
-                <p>...</p>
-              </div>
-              </div>
-              <div class="carousel-item">
-                <img
-              class="d-block w-100"
-              src="/assets/icon/workplace-with-smartphone-laptop-black-table-top-view-copyspace-background.jpg"
-              alt="Third slide"
-              style="height: 525px"
-            />
-            <div class="carousel-caption d-none d-md-block">
-                <h5>Hiii</h5>
-                <p>...</p>
-              </div>
-              </div>
+             
+             
             </div>
           </div>
         
@@ -54,21 +32,21 @@
         <div class="d-flex flex-column col-md-4 col-12 col-lg-4">
           <div class=" mt-4 text " style="box-shadow: 1px 5px 5px black">
             <img class="w-100"
-              src="../../../assets/icon/bookworms-haven-flat-lay-illustration-generative-ai_549702-709 (1).jpg"
+              src="../../../assets/icon/dslr-camera-b1vchgvhwzk33x7v.jpg"
               
-              style="height: 250px; object-fit: cover; opacity: 0.9"
+              style="height: 250px; object-fit: cover; "
               alt=""
             />
             <div class="text-overlay">
-              <h2>Text Over Image</h2>
-              <p>Some description text</p>
+              <h5 style="font-family: monospace;">Every click tells a story</h5>
+              <p>Snapshots of life's journey.</p>
             </div>
           </div>
           <div class="mt-4 text" style="box-shadow: 1px 5px 6px black">
             <img class="w-100" src="../../../assets/icon/photo-1613047503507-b8d01ce6af26.jpeg" alt="" style="height: 250px; object-fit: cover;" >
             <div class="text-overlay">
-              <h2>Text Over Image</h2>
-              <p>Some description text</p>
+              <h5 style="font-family: monospace;">Through my lens, the world comes alive</h5>
+              <p>Snapshots of life's journey.</p>
             </div>
           </div>
         </div>
@@ -138,10 +116,27 @@
 
       </div>
     </div>
+    <div class="row mt-5">
+      <div class="col-md-6 mt-4">
+        <img class="w-100 imghome" src="../../../assets/icon/1688488116025-img3.jpg" alt="" style="height: 400px; object-fit: cover;  box-shadow: 5px 5px 5px #4d4c4c;" >
+
+
+      </div>
+      
+      <div class="col-md-6 mt-4 mb-4" >
+        <div class="mt-4 "><small class="mt-5" style="font-size: medium" style="font-size: 15px;font-family: monospace;"
+          >At Birthday Bliss Captures, we specialize in turning your precious moments into timeless memories. Our team of dedicated and passionate professional photographers is here to capture the joy, laughter, and love that radiates during your special birthday celebrations.
+
+          With a keen eye for detail and a knack for capturing candid moments, our camera wizards ensure that every smile, every hug, and every slice of cake is immortalized in stunning high-definition. We understand that birthdays are more than just dates on a calendar; they are cherished milestones that deserve to be remembered and celebrated for years to come.
+          
+          Whether it's a grand milestone birthday bash, an intimate family gathering, or a lively children's party, our experienced photographers blend seamlessly into the event, ensuring you can focus on enjoying the day while we capture the essence of the festivities. We believe that photographs have the power to transport you back to those wonderful moments, allowing you to relive the joy and excitement every time you glance at them.</small
+        ></div>
+      </div>
+    </div>
   </div>
   
  
 </div>
-
+</div>
 
 <app-footer></app-footer>

@@ -14,6 +14,7 @@ import { BookingComponent } from '../professional/booking/booking.component';
 import { BookingsComponent } from './bookings/bookings.component';
 import { ChatComponent } from './chat/chat.component';
 import { AddreviewComponent } from './addreview/addreview.component';
+import { AboutComponent } from './about/about.component';
 
 const routes: Routes = [
   {path:"",component:HomeComponent,canActivate:[ConsecutiveGuard]},
@@ -29,7 +30,8 @@ const routes: Routes = [
   {path:'bookingform',component:BookingformComponent,canActivate:[UserGuardGuard,ConsecutiveGuard]},
   {path:'bookings',component:BookingsComponent,canActivate:[UserGuardGuard,ConsecutiveGuard]},
   {path:"chat",component:ChatComponent,canActivate:[UserGuardGuard,ConsecutiveGuard]},
-  {path:"addreview",component:AddreviewComponent,canActivate:[UserGuardGuard,ConsecutiveGuard]}
+  {path:"addreview",component:AddreviewComponent,canActivate:[UserGuardGuard,ConsecutiveGuard]},
+  {path:'about',component:AboutComponent,canActivate:[UserGuardGuard,ConsecutiveGuard]}
 
 
  

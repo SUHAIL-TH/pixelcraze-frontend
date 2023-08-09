@@ -21,6 +21,7 @@ import { ChatComponent } from './chat/chat.component';
 import { ContactComponent } from './chat/contact/contact.component';
 import { AddreviewComponent } from './addreview/addreview.component';
 import { ProfessionalpipePipe } from '../pipes/professionallistsearch/professionalpipe.pipe';
+import { AboutComponent } from './about/about.component';
 
 
 
@@ -43,7 +44,8 @@ import { ProfessionalpipePipe } from '../pipes/professionallistsearch/profession
     ChatComponent,
     ContactComponent,
     AddreviewComponent,
-    ProfessionalpipePipe
+    ProfessionalpipePipe,
+    AboutComponent
 
   ],
   imports: [
