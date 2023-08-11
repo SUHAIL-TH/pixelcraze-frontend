@@ -38,8 +38,8 @@ export class BookingformComponent implements OnInit {
       phone: ['', [Validators.required,Validators.pattern(/^(\+\d{1,3}[- ]?)?\d{10}$/)]],
       place: ['', [Validators.required,this.noLeadingWhitespaceValidator]],
       date: ['', [Validators.required, this.notPastOrCurrentDateValidator]],
+      amount: ['', [Validators.required,this.noLeadingWhitespaceValidator]],
       event: ['', [Validators.required,this.noLeadingWhitespaceValidator]],
-      amount: ['', [Validators.required,this.noLeadingWhitespaceValidator]]
     });
   }
 
@@ -71,7 +71,7 @@ export class BookingformComponent implements OnInit {
       datas.housename === '' ||
       datas.event === '' ||
       datas.phone === '' ||
-      datas.place === ''||datas.date==''
+      datas.place === ''||datas.date=='' ||datas.amount==''
     ) {
       this.submitform = true;
       this.toaster.error('Please fill the fields', '', { progressBar: true });
@@ -92,9 +92,6 @@ export class BookingformComponent implements OnInit {
           if (response.razorpay_payment_id) {
             datas.paymentid=response.razorpay_payment_id
             datas.professional=this.professionalId
-            
-           
-           
             this.userservice.booking(datas).subscribe(()=>{
               this.toaster.success('Registered Successfully','',{progressBar:true})
               this.router.navigate(['/bookings'])

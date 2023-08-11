@@ -10,7 +10,7 @@ import { Socket } from "ngx-socket-io";
   styleUrls: ['./chat.component.css']
 })
 export class ChatComponent  implements OnInit{
-  userdata:any
+  userdata:string=''
   viewerid:string=''
   chatshow:boolean=false
   messages:any=[]

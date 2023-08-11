@@ -51,7 +51,7 @@ p {
   }
   .custom {
     box-shadow: 0px 1px 3px rgb(0, 0, 0);
-    font-size: 15px; /* Adjust this value to change the placeholder font size */
+    font-size: 14px; /* Adjust this value to change the placeholder font size */
     font-family: monospace;
     font-weight: 400;
     

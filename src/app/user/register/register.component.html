@@ -34,7 +34,7 @@
                   <div class="form-outline mb-2">
                     <label class="form-label text-white fw-bolder mt-2" for="form2Example17"  style="text-shadow: 0px 1px 0px black;">Email</label>
                    
-                  <input type="text" [ngClass]="{'is-invalid':regsubmit && registerform.controls['email'].errors}" name="email" formControlName="email" id="email" class="form-control " placeholder="Enter the Email"/>
+                  <input type="email" [ngClass]="{'is-invalid':regsubmit && registerform.controls['email'].errors}" name="email" formControlName="email" id="email" class="form-control " placeholder="Enter the Email"/>
                   <div *ngIf="regsubmit && registerform.controls['email'].errors" class="text-danger">
                       
                     <small *ngIf="registerform.controls['email'].errors['required']">Email is required </small>
@@ -46,7 +46,7 @@
                 <div class="form-outline mb-2">
                   <label class="form-label text-white fw-bolder mt-2" for="form2Example17"  style="text-shadow: 0px 1px 0px black;">Phone</label>
                  
-                <input type="text" [ngClass]="{'is-invalid':regsubmit && registerform.controls['phone'].errors}" name="phone" formControlName="phone" id="phone" class="form-control " placeholder="Enter the Phone number"/>
+                <input type="number" [ngClass]="{'is-invalid':regsubmit && registerform.controls['phone'].errors}" name="phone" formControlName="phone" id="phone" class="form-control " placeholder="Enter the Phone number"/>
                 <div *ngIf="regsubmit && registerform.controls['phone'].errors" class="text-danger">
                       
                   <small *ngIf="registerform.controls['phone'].errors['required']">phone is required </small>

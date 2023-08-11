@@ -66,4 +66,9 @@ export class UserServiceService {
   resendotp(data:any){
     return this.http.post(`${this.user_api}/resentotp`,data,{withCredentials:true})
   }
+  contactsubmit(data:object){
+    console.log(data);
+    
+    return this.http.post(`${this.user_api}/contactform`,data,{withCredentials:true})
+  }
 }
