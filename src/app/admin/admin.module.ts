@@ -17,6 +17,7 @@ import { ProfessionalsearchPipe } from '../pipes/professionalsearch.pipe';
 import { ChartModule } from 'angular-highcharts';
 import { HighchartsChartModule } from 'highcharts-angular';
 import { BookingsComponent } from './bookings/bookings.component';
+import { ContactdataComponent } from './contactdata/contactdata.component';
 
 
 
@@ -35,6 +36,7 @@ import { BookingsComponent } from './bookings/bookings.component';
     UsersearchPipe,
     ProfessionalsearchPipe,
     BookingsComponent,
+    ContactdataComponent,
     
   ],
   imports: [

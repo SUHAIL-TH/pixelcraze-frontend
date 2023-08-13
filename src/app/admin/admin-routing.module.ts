@@ -10,6 +10,7 @@ import { AddbannerComponent } from './addbanner/addbanner.component';
 import { ProfessinalrequestComponent } from './professinalrequest/professinalrequest.component';
 import { AdminGuard, ConsecutiveGuard } from '../guard/admin.guard';
 import { BookingsComponent } from './bookings/bookings.component';
+import { ContactdataComponent } from './contactdata/contactdata.component';
 
 
 
@@ -22,7 +23,8 @@ const routes: Routes = [
   {path:"professionals",component:ProfessionalsComponent,canActivate:[AdminGuard,ConsecutiveGuard]},
   {path:"addbanner",component:AddbannerComponent,canActivate:[AdminGuard,ConsecutiveGuard]},
   {path:"professionalrequest",component:ProfessinalrequestComponent,canActivate:[AdminGuard,ConsecutiveGuard]},
-  {path:'booking',component:BookingsComponent,canActivate:[AdminGuard,ConsecutiveGuard]}
+  {path:'booking',component:BookingsComponent,canActivate:[AdminGuard,ConsecutiveGuard]},
+  {path:'contact',component:ContactdataComponent,canActivate:[AdminGuard,ConsecutiveGuard]}
 ];
 
 @NgModule({

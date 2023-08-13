@@ -56,4 +56,7 @@ export class AdminService {
   bookingdata(){
     return this.http.get<bookingdata[]>(`${this.adminurl}/admin/bookingdata`)
   }
+  contactdata(){
+    return this.http.get(`${this.adminurl}/admin/contacteddata`)
+  }
 }
