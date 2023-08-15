@@ -90,6 +90,8 @@ export class BookingformComponent implements OnInit {
         handler: (response: any) => {
           // Handle payment response here
           if (response.razorpay_payment_id) {
+            console.log(response);
+            
             datas.paymentid=response.razorpay_payment_id
             datas.professional=this.professionalId
             this.userservice.booking(datas).subscribe(()=>{
@@ -102,6 +104,7 @@ export class BookingformComponent implements OnInit {
             this.toaster.error('Somthing went Wrong','Error',{progressBar:true})
             // Payment failed or canceled
             console.log("payment has failed")
+            
           }
         },
         prefill: {
