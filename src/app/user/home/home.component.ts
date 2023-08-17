@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/app/environments/environments';
 import { UserServiceService } from 'src/app/service/user/user-service.service';
 
 @Component({
@@ -19,7 +20,7 @@ export class HomeComponent  implements OnInit{
     })
   }
   getImageUrl(image: string): string {
-    return `http://localhost:3000/public/images/${image}`;
+    return `${environment.api}/public/images/${image}`;
    
     
   }

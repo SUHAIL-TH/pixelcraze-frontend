@@ -4,6 +4,7 @@ import { selectBannerLoaded, selectBannerLoading, selectBanners,  } from '../sta
 import { loadbanner } from '../state/user/user.action';
 import { ToastrService } from 'ngx-toastr';
 import { AdminService } from 'src/app/service/admin/admin.service';
+import { environment } from 'src/app/environments/environments';
 
 
 
@@ -21,7 +22,7 @@ export class BannerComponent implements OnInit {
     this.store.dispatch(loadbanner())
   }
   getImageUrl(image: string): string {
-    return `http://localhost:3000/public/images/${image}`;
+    return `${environment.api}/public/images/${image}`;
    
     
   }

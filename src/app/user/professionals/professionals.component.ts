@@ -3,6 +3,7 @@ import { Store, select } from '@ngrx/store';
 import { loadprofessional } from '../state/userstate/userstate.action';
 import { selectProfessionallist, selectProfessionallistState, selectProfessionallistloaded, selectProfessionallistloading } from '../state/userstate/userstate.selector';
 import { Router } from '@angular/router';
+import { environment } from 'src/app/environments/environments';
 
 @Component({
   selector: 'app-professionals',
@@ -27,7 +28,7 @@ export class ProfessionalsComponent  implements OnInit{
   
   }
   getImageUrl(image: string): string {
-    return `http://localhost:3000/public/images/${image}`;
+    return `${environment.api}/public/images/${image}`;
    
     
   }

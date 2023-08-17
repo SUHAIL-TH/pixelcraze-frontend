@@ -2,14 +2,14 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, delay } from 'rxjs';
 import { User ,Banner, Professional, bookingdata} from 'src/app/admin/state/types/user.type';
-
+import { environment } from 'src/app/environments/environments';
 @Injectable({
   providedIn: 'root'
 })
 export class AdminService {
 
   constructor(private http:HttpClient) { }
-  private adminurl="http://localhost:3000"
+  private adminurl=environment.api
   
   getUser() : Observable<User[]>{
     return this.http.get<User[]>(`${this.adminurl}/admin/getusers`)

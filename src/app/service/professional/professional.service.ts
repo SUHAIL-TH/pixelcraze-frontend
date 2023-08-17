@@ -2,14 +2,14 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { booking } from 'src/app/professional/types/professional.type';
-
+import { environment } from 'src/app/environments/environments';
 @Injectable({
   providedIn: 'root'
 })
 export class ProfessionalService {
 
   constructor(private http:HttpClient) { }
-  private professionalUrl="http://localhost:3000"
+  private professionalUrl=environment.api
 
   professionalSignup(data:any){
     return this.http.post(`${this.professionalUrl}/professional/postsignup`,data)

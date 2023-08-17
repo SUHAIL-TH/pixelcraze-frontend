@@ -23,10 +23,10 @@ import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 import {MatButtonModule} from '@angular/material/button';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ServerSideErrorComponent } from './server-side-error/server-side-error.component';
+import { environment } from './environments/environments';
 
 
-
-const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
+const config: SocketIoConfig = { url: `${environment.api}`, options: {} };
 
 
 

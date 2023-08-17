@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-
+import { environment } from 'src/app/environments/environments';
 import { Professional, bookings } from 'src/app/user/state/usertypes/usertypes';
 
 @Injectable({
@@ -10,7 +10,7 @@ import { Professional, bookings } from 'src/app/user/state/usertypes/usertypes';
 export class UserServiceService {
   constructor(private http: HttpClient) {}
 
-  user_api = 'http://localhost:3000';
+  user_api = environment.api
 
   userLogin(data: FormData): Observable<any> {
     return this.http.post<FormData>(`${this.user_api}/postlogin`, data);

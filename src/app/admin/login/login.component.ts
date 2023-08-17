@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-
+import { environment } from 'src/app/environments/environments';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -39,7 +39,7 @@ export class LoginComponent {
       progressBar: true
     })
     }else {
-      this.http.post("http://localhost:3000/admin/postlogin",user,{
+      this.http.post(`${environment.api}/admin/postlogin`,user,{
         withCredentials:true
       }).subscribe((res:any)=>{
       

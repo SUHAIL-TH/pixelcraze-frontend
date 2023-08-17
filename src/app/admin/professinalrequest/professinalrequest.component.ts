@@ -4,7 +4,7 @@ import { loadbanner, loadprofessional } from '../state/user/user.action';
 import { selectBannerLoaded, selectProfessionalState, selectProfessionals, selectProfessionalsloaded, selectProfessionalsloading } from '../state/user/user.selector';
 import { AdminService } from 'src/app/service/admin/admin.service';
 import { ToastrService } from 'ngx-toastr';
-
+import { environment } from 'src/app/environments/environments';
 @Component({
   selector: 'app-professinalrequest',
   templateUrl: './professinalrequest.component.html',
@@ -33,7 +33,7 @@ export class ProfessinalrequestComponent implements OnInit {
 
   }
   getImageUrl(image: string): string {
-    return `http://localhost:3000/public/images/${image}`;
+    return `${environment.api}/public/images/${image}`;
    
     
   }
