@@ -3,8 +3,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { UserServiceService } from 'src/app/service/user/user-service.service';
-import Swal from 'sweetalert2';
+import { UserServiceService } from 'src/app/service/user/user-service.service'
+
+import { PasswordStrengthValidator } from './validator';
 
 @Component({
   selector: 'app-register',
@@ -33,10 +34,12 @@ export class RegisterComponent implements OnInit {
       password: [
         '',
         [
-          Validators.required,
-          Validators.pattern(
-            '^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-zd$@$!%*?&].{8,}$'
-          ),
+          Validators.required, 
+          PasswordStrengthValidator,
+          // Validators.pattern(
+          //   '^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-zd$@$!%*?&].{8,}$'
+          // ),
+          Validators.minLength(8)
         ],
       ],
       cpassword: ['', [Validators.required]],
@@ -50,12 +53,16 @@ export class RegisterComponent implements OnInit {
       user.email == '' ||
       user.password == '' ||
       user.phone == ''
+      
     ) {
+     
+      
       this.regsubmit = true;
       this.toastr.error('Please fill the fileds', '', {
         progressBar: true,
       });
     } else {
+     
       this.userService.userSignup(user).subscribe(
         (res: any) => {
           this.toastr.success('OTP has sent', 'Successfully', {

@@ -50,7 +50,8 @@
                 <div *ngIf="regsubmit && registerform.controls['phone'].errors" class="text-danger">
                       
                   <small *ngIf="registerform.controls['phone'].errors['required']">phone is required </small>
-                  <small *ngIf="registerform.controls['phone'].errors['pattern']">Enter valid phone number</small>
+                  <small *ngIf="registerform.controls['phone'].errors['minlength']">Minimun 8 character required</small>
+                  <small *ngIf="registerform.controls['phone'].errors['passwordStrength']">Enter valid phone number</small>
 
                 </div>
                
@@ -67,13 +68,6 @@
               </div>
              
             </div>
-
-                  
-
-
-         
-                 
-                  
                   <div class="pt-1 mb-4">
                     <button class="btn btn-success  btn-block" type="=submit" style="font-weight: bolder;">Sign Up</button>
                    
@@ -95,110 +89,3 @@
  
   
 </section> 
-  <!-- <section class="" style="background-color: #ffffff;">
-
-    <div class="container py-5 h-100" >
-      <div class="row d-flex justify-content-center align-items-center h-100">
-        <div class="col col-xl-10">
-          <div class="card" style="border-radius: 1rem;">
-            <div class="row g-0" style="box-shadow: 0px 2px 19px rgb(0, 0, 0);">
-             
-              
-              <div class="col-md-6 col-lg-7 d-flex align-items-center">
-                <small class="vertical-line"></small>
-                <div class="card-body p-4 p-lg-5 text-black">
-  
-                  <form  [formGroup]="registerform" (ngSubmit)="onsubmit() " >
-  
-                    <div class="d-flex align-items-center mb-3 pb-1">
-                        <img src="/se" style="height: 20px; width: 120px;" alt="Logo goes here">
-                      
-                    </div>
-  
-                    <h4 class="fw-normal mb-3 pb-3 text-success fw-bold" style=" letter-spacing: 1px; text-shadow: 0px 1px 2px rgb(15, 14, 14);  ">Sign UP</h4>
-  
-                    <div class="form-outline mb-2">
-                        <label class="form-label text-dark fw-bolder mt-2" for="form2Example17"  style="text-shadow: 0px 1px 0px black;">Name</label>
-                       
-                      <input type="text" [ngClass]="{'is-invalid':regsubmit && registerform.controls['name'].errors}" name="name" formControlName="name" id="name" class="form-control " placeholder="Enter the Name"/>
-                      <div *ngIf="regsubmit && registerform.controls['name'].errors" class="text-danger">
-                        
-                        <small *ngIf="registerform.controls['name'].errors['required']">Name  is required </small>
-                      </div>
-                     
-                    </div>
-                    <div class="form-outline mb-2">
-                      <label class="form-label text-dark fw-bolder mt-2" for="form2Example17"  style="text-shadow: 0px 1px 0px black;">Email</label>
-                     
-                    <input type="text" [ngClass]="{'is-invalid':regsubmit && registerform.controls['email'].errors}" name="email" formControlName="email" id="email" class="form-control " placeholder="Enter the Email"/>
-                    <div *ngIf="regsubmit && registerform.controls['email'].errors" class="text-danger">
-                        
-                      <small *ngIf="registerform.controls['email'].errors['required']">Email is required </small>
-                      <small *ngIf="registerform.controls['email'].errors['email']">Email should be valid</small>
-
-                    </div>
-                   
-                  </div>
-                  <div class="form-outline mb-2">
-                    <label class="form-label text-dark fw-bolder mt-2" for="form2Example17"  style="text-shadow: 0px 1px 0px black;">Phone</label>
-                   
-                  <input type="text" [ngClass]="{'is-invalid':regsubmit && registerform.controls['phone'].errors}" name="phone" formControlName="phone" id="phone" class="form-control " placeholder="Enter the Phone number"/>
-                  <div *ngIf="regsubmit && registerform.controls['phone'].errors" class="text-danger">
-                        
-                    <small *ngIf="registerform.controls['phone'].errors['required']">phone is required </small>
-                    <small *ngIf="registerform.controls['phone'].errors['pattern']">Enter valid phone number</small>
-
-                  </div>
-                 
-                </div>
-                <div class="form-outline mb-4">
-                  <label class="form-label text-dark fw-bolder mt-2" for="form2Example17"  style="text-shadow: 0px 1px 0px black;">Password</label>
-                 
-                <input type="text" [ngClass]="{'is-invalid':regsubmit && registerform.controls['password'].errors}" name="password" formControlName="password" id="password" class="form-control " placeholder="Enter the Email"/>
-                <div *ngIf="regsubmit && registerform.controls['password'].errors" class="text-danger">
-                        
-                  <small *ngIf="registerform.controls['password'].errors['required']">password is required </small>
-                  <small *ngIf="registerform.controls['password'].errors['minlength']">Minimum 6 character required</small>
-
-                </div>
-               
-              </div>
-  
-                    
-
-
-           
-                   
-                    
-                    <div class="pt-1 mb-4">
-                      <button class="btn btn-dark  btn-block" type="=submit" style="font-weight: bolder;">Sign Up</button>
-                     
-                    </div>
-                    <hr>
-                    <p class="mt-3 pb-lg-2" style="color: #393f81;">Already have an account? <a routerLink="/login"  class=""
-                        style="text-decoration: none; color: #89170c;">Login here</a></p>
-                        
-                  </form> -->
-                  <!-- <div class="col s12 m6 offset-m3 center-align " >
-                    <a class="oauth-container btn darken-4 white black-text d-flex border border-black" href="/users/google-oauth/" style="text-transform:none">
-                        <div class="left ms-5">
-                            <img width="20px" style="margin-top:7px; margin-right:8px" alt="Google sign-in" 
-                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
-                        </div>
-                        Login with Google
-                    </a>
-                </div> -->
-  
-                <!-- </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css"> -->
-
-<!-- Compiled and minified JavaScript -->
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script> -->
-    
-  <!-- </section> -->

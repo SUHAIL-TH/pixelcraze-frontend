@@ -26,8 +26,8 @@ import { ServerSideErrorComponent } from './server-side-error/server-side-error.
 import { environment } from './environments/environments';
 
 
-const config: SocketIoConfig = { url: `${environment.api}`, options: {} };
 
+const config: SocketIoConfig = { url: `${environment.api}`, options: {} };
 
 
 

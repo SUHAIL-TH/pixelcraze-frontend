@@ -41,7 +41,6 @@ export class AddreviewComponent implements OnInit {
     if (inputValue.trimStart() !== inputValue) {
       return { leadingWhitespace: true };
     }
-
     return null;
   }
   submit(){
