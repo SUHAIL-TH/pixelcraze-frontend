@@ -26,7 +26,7 @@ export class RegisterComponent {
       ownername:["",Validators.required],
       email:["",[Validators.required,Validators.email]],
         phone:["",[Validators.required, Validators.pattern(/^(\+\d{1,3}[- ]?)?\d{10}$/)]],
-        password: ["", [Validators.required, Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}$')]],
+        password: ["", [Validators.required, Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}$'),Validators.minLength(8)]],
         fileInput: [null, [Validators.required]],
         place:['',Validators.required],
         fileInputcertificate: [null, [Validators.required]],
@@ -55,7 +55,7 @@ export class RegisterComponent {
     
     
     
-    if(user.name==''||user.email==''||user.password==""||user.phone==''||user.nameowner==''){
+    if(!this.registerform.valid){
       this.regsubmit=true
       this.toastr.error('Please fill the fileds' ,'', {
       progressBar: true

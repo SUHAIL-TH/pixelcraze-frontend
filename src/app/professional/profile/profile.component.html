@@ -121,10 +121,18 @@
                        style=" height: auto;">
                 </div>
                 <div class="modal-footer d-flex justify-content-start">
-                  <small style="font-family: monospace; font-weight: 500;">{{img.discription}}</small>
+                  <div >
+
+                    <small style="font-family: monospace ; font-weight: 500;">{{img.discription}}</small>
+                  </div>
+                </div>
+                <div class="ms-5 mb-2">
+
+                  <i (click)="deleteimage(img._id)" data-bs-dismiss="modal" aria-label="Close" class="fas fa-trash text-danger"></i>
                 </div>
               </div>
             </div>
+           
           </div>
         </ng-container>
           

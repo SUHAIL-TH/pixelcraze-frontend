@@ -1,7 +1,7 @@
 import { formatDate } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-
+import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Observable } from 'rxjs';
@@ -53,6 +53,28 @@ export class ProfileComponent implements OnInit {
       this.ngOnInit()
     },(err)=>{
 
+    })
+  }
+  deleteimage(id:string){
+    console.log(id)
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+
+        this.service.deleteimage(id).subscribe(()=>{
+          this.taoster.success("Image removed successfully","",{progressBar:true})
+          this.ngOnInit()
+        })
+      }else{
+        return
+      }
     })
   }
 }

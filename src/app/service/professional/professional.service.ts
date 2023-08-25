@@ -24,8 +24,6 @@ export class ProfessionalService {
     return (`${this.professionalUrl}/public/images/${image}`)
   }
   changeprofile(data:any){
-    console.log(data);
-    
     return this.http.post(`${this.professionalUrl}/professional/changeprofile`,data)
   }
   posteditprofile(data:any){
@@ -44,8 +42,9 @@ export class ProfessionalService {
     return this.http.get(`${this.professionalUrl}/professional/findchat/${id}`)
   }
   sentmessage(data:object){
-    console.log(data)
     return this.http.post(`${this.professionalUrl}/professional/message`,data)
-
+  }
+  deleteimage(id:string){
+    return this.http.post(`${this.professionalUrl}/professional/deleteimage/${id}`,null)
   }
 }
