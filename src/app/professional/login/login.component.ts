@@ -31,9 +31,9 @@ export class LoginComponent {
     
     
    
-    if(professionalData.email==''||professionalData.password==''){
+    if(!this.loginforms.valid){
       this.submit=true
-      this.toaster.error('Please fill the fields','',{progressBar:true})
+      this.toaster.error('Fields must be valid','',{progressBar:true})
     }else{
      this.professionalService.postlogin(professionalData).subscribe((res:any)=>{
         const jwtToken =res.token;

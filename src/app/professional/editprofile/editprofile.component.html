@@ -12,27 +12,25 @@
         <div class="form-group">
           <label for="exampleInputEmail1" style="color: black; font-weight: bold; text-shadow: 0px 1px 2px black;">Name</label>
           <input type="text" formControlName="name" [ngClass]="{'is-invalid':submit && editform.controls['name'].errors}"  class="form-control mt-2"  id="name" name="name"  placeholder="Name goes here" style="border-color: rgba(82, 82, 82, 0.379); box-shadow: 0px 1px 4px rgb(141, 141, 141);"  >
-          <div *ngIf="submit && editform.controls['name'].errors" class="text-danger">
-                        
-            <small *ngIf="editform.controls['name'].errors['required']">Name is required </small>
-           
-            
+          <div *ngIf="submit && editform.controls['name'].errors" class="text-danger">          
+            <small *ngIf="editform.controls['name'].errors['required']">Name is required </small>    
           </div>
         </div>
         <div class="mt-3">
           <div class="row">
               <div class="col-md-6">
                 <label  class="mt-3" style="color: black; font-weight: bold; text-shadow: 0px 1px 2px black;">Owner Name</label>
-                <input type="text"  formControlName="ownername" class="form-control mt-2" id="subheading"   name="subheading" placeholder="Owner name goes here" style="border-color: rgba(82, 82, 82, 0.379); box-shadow: 0px 1px 4px rgb(141, 141, 141);"  >
-            
-                  
+                <input type="text"   formControlName="ownername" [ngClass]="{'is-invalid':submit && editform.controls['ownername'].errors}" class="form-control mt-2" id="subheading"   name="subheading" placeholder="Owner name goes here" style="border-color: rgba(82, 82, 82, 0.379); box-shadow: 0px 1px 4px rgb(141, 141, 141);"  >
+                  <div *ngIf="submit && editform.controls['ownername'].errors" class="text-danger">
+                    <small *ngIf="editform.controls['ownername'].errors['required']">Owner name is required</small>
+                  </div>
               </div>
-
               <div class="col-md-6">
                 <label class="form-label" for="customFile" style="color: black; font-weight: bold; text-shadow: 0px 1px 2px black;">Specialized</label>
-                <input type="text" formControlName="specialized"  class="form-control mt-2" name="specialized"    style="border-color: rgba(82, 82, 82, 0.379); box-shadow: 0px 1px 4px rgb(141, 141, 141);"  > 
-                
-                
+                <input type="text" formControlName="specialized" [ngClass]="{'is-invalid':submit && editform.controls['specialized'].errors}"  class="form-control mt-2" name="specialized"    style="border-color: rgba(82, 82, 82, 0.379); box-shadow: 0px 1px 4px rgb(141, 141, 141);"  >   
+                <div *ngIf="submit && editform.controls['specialized'].errors" class="text-danger">
+                  <small *ngIf="editform.controls['specialized'].errors['required']">specialized field is required</small>
+                </div> 
             </div>
              
           </div>
@@ -46,13 +44,20 @@
             <div class="row">
                 <div class="col-md-6">
                     <label class="form-label" for="customFile" style="color: black; font-weight: bold; text-shadow: 0px 1px 2px black;">Email</label>
-                      <input type="text" formControlName="email" class="form-control mt-2" name="email"  placeholder="Email  goes here" style="border-color: rgba(82, 82, 82, 0.379);box-shadow: 0px 1px 4px rgb(141, 141, 141);"    > 
+                      <input type="text" formControlName="email" [ngClass]="{'is-invalid':submit && editform.controls['email'].errors}"  class="form-control mt-2" name="email"  placeholder="Email  goes here" style="border-color: rgba(82, 82, 82, 0.379);box-shadow: 0px 1px 4px rgb(141, 141, 141);"    > 
+                      <div *ngIf="submit && editform.controls['email'].errors" class="text-danger">
+                        <small *ngIf="editform.controls['email'].errors['required']">email field is required</small>
+                        <small *ngIf="editform.controls['email'].errors['email']">Email is not valid</small>
+                      </div>
 
                 </div>
                 <div class="col-md-6">
                     <label class="form-label" for="customFile" style="color: black; font-weight: bold; text-shadow: 0px 1px 2px black;">Phone</label>
-            <input type="number" formControlName="phone" class="form-control mt-2" name="phone"   placeholder="Phone number goes here"  style="border-color: rgba(82, 82, 82, 0.379); box-shadow: 0px 1px 4px rgb(141, 141, 141);"   > 
-
+            <input type="number" formControlName="phone" [ngClass]="{'is-invalid':submit && editform.controls['phone'].errors}"  class="form-control mt-2" name="phone"   placeholder="Phone number goes here"  style="border-color: rgba(82, 82, 82, 0.379); box-shadow: 0px 1px 4px rgb(141, 141, 141);"   > 
+            <div *ngIf="submit && editform.controls['phone'].errors" class="text-danger">
+              <small *ngIf="editform.controls['phone'].errors['required']">phone field is required</small>
+              <small *ngIf="editform.controls['phone'].errors['pattern']">Please enter a valid phone number</small>
+            </div>
                 </div>
             </div>
             
@@ -62,14 +67,18 @@
             <div class="row">
                 <div class="col-md-6">
                     <label class="form-label" for="customFile" style="color: black; font-weight: bold; text-shadow: 0px 1px 2px black;">Place</label>
-                    <input type="text" formControlName="place" class="form-control mt-2" name="place"   placeholder="Place name goes here" style="border-color: rgba(82, 82, 82, 0.379); box-shadow: 0px 1px 4px rgb(141, 141, 141);"  > 
-                    
+                    <input type="text" formControlName="place" [ngClass]="{'is-invalid':submit && editform.controls['place'].errors}"  class="form-control mt-2" name="place"   placeholder="Place name goes here" style="border-color: rgba(82, 82, 82, 0.379); box-shadow: 0px 1px 4px rgb(141, 141, 141);"  > 
+                    <div *ngIf="submit && editform.controls['place'].errors" class="text-danger">
+                      <small *ngIf="editform.controls['place'].errors['required']">place field is required</small>
+                    </div>
                     
                 </div>
                 <div class="col-md-6">
                   <label class="form-label" for="customFile" style="color: black; font-weight: bold; text-shadow: 0px 1px 2px black;">Experinces</label>
-                  <input type="number" formControlName="experinces"  class="form-control mt-2" name="experinces"    style="border-color: rgba(82, 82, 82, 0.379); box-shadow: 0px 1px 4px rgb(141, 141, 141);"  > 
-                  
+                  <input type="number" formControlName="experinces" [ngClass]="{'is-invalid':submit && editform.controls['experinces'].errors}"   class="form-control mt-2" name="experinces"    style="border-color: rgba(82, 82, 82, 0.379); box-shadow: 0px 1px 4px rgb(141, 141, 141);"  > 
+                  <div *ngIf="submit && editform.controls['experinces'].errors" class="text-danger">
+                    <small *ngIf="editform.controls['experinces'].errors['required']">experinces field is required</small>
+                  </div>
                   
               </div>
                
@@ -84,8 +93,10 @@
           
           <div class="mt-3">
             <label class="form-label" for="customFile" style="color: black; font-weight: bold; text-shadow: 0px 1px 2px black;">About us</label>
-            <textarea id="aboutUsInput" formControlName="aboutus" formControlName="aboutus" class="form-control" rows="5"  style="border-color: rgba(82, 82, 82, 0.379); box-shadow: 0px 1px 4px rgb(141, 141, 141);"></textarea>
-            
+            <textarea id="aboutUsInput" formControlName="aboutus" [ngClass]="{'is-invalid':submit && editform.controls['aboutus'].errors}"    formControlName="aboutus" class="form-control" rows="5"  style="border-color: rgba(82, 82, 82, 0.379); box-shadow: 0px 1px 4px rgb(141, 141, 141);"></textarea>
+            <div *ngIf="submit && editform.controls['aboutus'].errors" class="text-danger">
+              <small *ngIf="editform.controls['aboutus'].errors['required']">About field is required</small>
+            </div>
           </div>
         <div class="mt-3"> 
             <button  type="submit"  class="btn btn-success btn-sm " style="font-weight: bold;">Submit</button>

@@ -1,6 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ProfessionalService } from 'src/app/service/professional/professional.service';
 import { Socket } from "ngx-socket-io";
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-chat',
   templateUrl: './chat.component.html',
@@ -14,17 +15,11 @@ export class ChatComponent implements OnInit {
   connectionId: string = '';
   professionalId:string=''
   professionalchatdata:any
-  constructor(private professional: ProfessionalService,private socket:Socket) {}
+  constructor(private professional: ProfessionalService,private socket:Socket,private toaster:ToastrService) {}
   ngOnInit(): void {
     this.getchatlist()
-    this.socket.on('message recieved',(newMessage:any)=>{     
-      console.log(newMessage);
-      console.log(this.userid);
-      
-             
+    this.socket.on('message recieved',(newMessage:any)=>{      
       if (this.userid==newMessage.from) {
-        console.log("hiii");
-        
         this.messages.push(newMessage);
 
       }
@@ -62,18 +57,24 @@ export class ChatComponent implements OnInit {
     });
   }
   submit(){
-  
-    const data={
-      connectionid:this.connectionId,
-      from:this.professionalId,
-      to:this.userid,
-      message:this.message
-    }
-    this.professional.sentmessage(data).subscribe((res)=>{
-      this.message=''
-      this.messages.push(res);
-      this.socket.emit('chatMessage',res)
+
+    if(this.message.trim()==''){
       
-    })
+      this.toaster.error("Message field cannot be empty","",{progressBar:true})
+    }else{
+
+      const data={
+        connectionid:this.connectionId,
+        from:this.professionalId,
+        to:this.userid,
+        message:this.message
+      }
+      this.professional.sentmessage(data).subscribe((res)=>{
+        this.message=''
+        this.messages.push(res);
+        this.socket.emit('chatMessage',res)
+        
+      })
+    }
   }
 }

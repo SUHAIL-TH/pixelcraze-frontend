@@ -39,7 +39,7 @@ export class UserServiceService {
   getbookindgdatas() {
     return this.http.get<bookings[]>(`${this.user_api}/getbookingdatas`);
   }
-  chatconnection(id: any) {
+  chatconnection(id: string) {
     return this.http.post(`${this.user_api}/chatconnection/${id}`, null);
   }
   userchatlist() {
@@ -66,9 +66,7 @@ export class UserServiceService {
   resendotp(data:any){
     return this.http.post(`${this.user_api}/resentotp`,data,{withCredentials:true})
   }
-  contactsubmit(data:object){
-    console.log(data);
-    
+  contactsubmit(data:object){    
     return this.http.post(`${this.user_api}/contactform`,data,{withCredentials:true})
   }
 }

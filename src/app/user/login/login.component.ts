@@ -75,8 +75,6 @@ export class LoginComponent implements OnInit {
              this.toaster.error(err.error.message,'',{progressBar:true})
 
           }
-         
-     
         })
     }
     

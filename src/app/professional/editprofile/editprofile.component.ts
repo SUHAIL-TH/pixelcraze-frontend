@@ -14,13 +14,13 @@ export class EditprofileComponent implements OnInit {
   editform!: FormGroup;
   profileData:any
   submit=false;
-  constructor(private router:Router,private service:ProfessionalService,private http:HttpClient,private FormBuilder:FormBuilder,private toaster:ToastrService){}
+  constructor(private router:Router,private service:ProfessionalService,private http:HttpClient,private formBuilder:FormBuilder,private toaster:ToastrService){}
   ngOnInit(): void {
-    this.editform=this.FormBuilder.group({
+    this.editform=this.formBuilder.group({
       name:["",Validators.required],
       ownername:["",Validators.required],
       email:["",[Validators.required,Validators.email]],
-        phone:["",[Validators.required, Validators.pattern(/^(\+\d{1,3}[- ]?)?\d{10}$/)]],
+        phone:["",[Validators.required,Validators.pattern(/^[0-9]{10}$/)]],
         place:['',Validators.required],
         experinces:['',Validators.required],
         aboutus:['',Validators.required],
@@ -35,7 +35,7 @@ export class EditprofileComponent implements OnInit {
   loadprofile() {
     this.service.getprofiledata().subscribe((res: any) => {
       this.profileData = res;
-     
+      console.log(res);
       
       this.editform.patchValue({
         name: res.name,
@@ -46,8 +46,6 @@ export class EditprofileComponent implements OnInit {
         aboutus:res.aboutus,
         email:res.email,
         specialized:res.specialized
-        
-
       });
       
     });
@@ -57,7 +55,11 @@ export class EditprofileComponent implements OnInit {
   
     
     let data=this.editform.getRawValue()
-   
+   if(!this.editform.valid){
+    this.submit=true
+    this.toaster.error("Fields must be valid",'',{progressBar:true})
+   }
+   else{
     
     this.service.posteditprofile(data).subscribe(()=>{
       this.toaster.success('success','',{progressBar:true})
@@ -65,6 +67,10 @@ export class EditprofileComponent implements OnInit {
     },(err)=>{
       this.toaster.error('somthing went wrong','',{progressBar:true})
     })
+
+   }
+    
+    
     
   }
   

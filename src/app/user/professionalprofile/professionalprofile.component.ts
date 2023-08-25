@@ -26,7 +26,6 @@ export class ProfessionalprofileComponent implements OnInit {
   getprofessionalData(id: string) {
     this.service.getdetailsprofessional(id).subscribe(
       (res) => {
-        console.log(res)
         this.professionaldata = res;
        
         
@@ -36,7 +35,7 @@ export class ProfessionalprofileComponent implements OnInit {
       }
     );
   }
-  chatconnection(id:any){
+  chatconnection(id:string){
     this.service.chatconnection(id).subscribe(()=>{
       this.router.navigate(['/chat'])
     })

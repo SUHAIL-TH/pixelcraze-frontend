@@ -76,10 +76,6 @@ export class BookingformComponent implements OnInit {
       this.submitform = true;
       this.toaster.error('Please fill the fields', '', { progressBar: true });
     } else {
-   
-    
-      
-      // formdata.append('proff_id',id)
       const options = {
         key: 'rzp_test_JDlClODKCsuMM1',
         amount: datas.amount*100,

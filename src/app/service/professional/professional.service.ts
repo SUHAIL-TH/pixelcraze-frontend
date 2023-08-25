@@ -15,8 +15,6 @@ export class ProfessionalService {
     return this.http.post(`${this.professionalUrl}/professional/postsignup`,data)
   }
   postlogin(data:object){
-    
-    
     return this.http.post(`${this.professionalUrl}/professional/postlogin`,data)
   }
   getprofiledata(){
@@ -34,11 +32,9 @@ export class ProfessionalService {
     return this.http.post(`${this.professionalUrl}/professional/posteditprofile`,data)
   }
   addphoto(data:object){
-    
     return this.http.post(`${this.professionalUrl}/professional/postaddimage`,data)
-
   }
-  bookingdate(){
+  bookingdate():Observable<booking[]>{
     return this.http.get<booking[]>(`${this.professionalUrl}/professional/getbookingdata`)
   }
   professionalchatlist(){
