@@ -14,6 +14,8 @@ import { BookingComponent } from './booking/booking.component';
 import { AddphotosComponent } from './addphotos/addphotos.component';
 import { ChatComponent } from './chat/chat.component';
 import { ContactComponent } from './chat/contact/contact.component';
+import { BookingsearchPipe } from '../pipes/bookingsearch.pipe';
+
 
 
 
@@ -30,7 +32,8 @@ import { ContactComponent } from './chat/contact/contact.component';
     BookingComponent,
     AddphotosComponent,
     ChatComponent,
-    ContactComponent
+    ContactComponent,
+    BookingsearchPipe
   ],
   imports: [
     CommonModule,

@@ -49,10 +49,7 @@ export class RegisterComponent implements OnInit {
     let user = this.registerform.getRawValue();
 
     if (
-      user.name == '' ||
-      user.email == '' ||
-      user.password == '' ||
-      user.phone == ''
+    !this.registerform.valid
       
     ) {
      

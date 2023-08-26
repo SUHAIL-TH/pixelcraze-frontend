@@ -27,6 +27,7 @@ import { environment } from './environments/environments';
 
 
 
+
 const config: SocketIoConfig = { url: `${environment.api}`, options: {} };
 
 
@@ -38,6 +39,7 @@ const config: SocketIoConfig = { url: `${environment.api}`, options: {} };
     AppComponent,
     PageNotFoundComponent,
     ServerSideErrorComponent,
+   
    
  
     
