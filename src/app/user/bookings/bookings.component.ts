@@ -14,6 +14,7 @@ import { DatePipe } from '@angular/common';
 })
 export class BookingsComponent implements OnInit {
   bookingdata:bookings[] |undefined
+  searchText:string=""
   currentDate: string =''// Initialize currentDate with the current date
 
 
@@ -33,7 +34,7 @@ export class BookingsComponent implements OnInit {
   getdatas(){
     this.userservice.getbookindgdatas().subscribe((res)=>{
       this.bookingdata=res
-      console.log(res);
+    
       
     },(err)=>{
       this.toaster.error('Somthing went wrong','',{progressBar:true})

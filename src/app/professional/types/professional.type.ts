@@ -7,6 +7,5 @@ export interface booking{
     status?:boolean,
     phone?:number,
     date?:string
-    professional?: {name : string, ownername:string,phone:number}
     
   }

@@ -1,12 +1,12 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'bookingsearch'
+  name: 'bookingsearchuser'
 })
-export class BookingsearchPipe implements PipeTransform {
+export class BookingsearchuserPipe implements PipeTransform {
 
-  transform(item:any[],searchText:string): any {
-     if (!item) {
+  transform(item:any[],searchText:string):any {
+    if (!item) {
       return [];
     }
     if (!searchText) {
@@ -15,11 +15,10 @@ export class BookingsearchPipe implements PipeTransform {
      searchText = searchText.toLowerCase();
      return item.filter(item => {
       return item.name.toLowerCase().includes(searchText) ||
-             item.housename.toLowerCase().includes(searchText) ||
+             item.professional.name.toLowerCase().includes(searchText) ||
              item.event.toLowerCase().includes(searchText) ||
-             item.place.toLowerCase().includes(searchText);
+             item.professional.ownername.toLowerCase().includes(searchText);
     });
-
   }
 
 }

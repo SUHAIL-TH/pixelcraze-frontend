@@ -57,13 +57,12 @@ export class ChatComponent  implements OnInit{
       this.messages=res.result
       this.connectionId=res.cid
       this.userid=res.userid
-      
     })
    }
 
    submit(){
 
-    if(this.message==''){
+    if(this.message.trim()==''){
       this.toaster.error("Please type message",'',{progressBar:true})
     }else{
       const data={

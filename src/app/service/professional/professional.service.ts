@@ -32,9 +32,12 @@ export class ProfessionalService {
   addphoto(data:object){
     return this.http.post(`${this.professionalUrl}/professional/postaddimage`,data)
   }
-  bookingdate():Observable<booking[]>{
+   bookingdate(){
     return this.http.get<booking[]>(`${this.professionalUrl}/professional/getbookingdata`)
   }
+  // bookingdate(){
+  //   return this.http.get(`${this.professionalUrl}/professional/getbookingdata`)
+  // }
   professionalchatlist(){
     return this.http.get(`${this.professionalUrl}/professional/professionalchatlist`)
   }

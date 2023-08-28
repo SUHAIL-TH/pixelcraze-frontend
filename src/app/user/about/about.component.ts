@@ -34,7 +34,7 @@ export class AboutComponent implements OnInit {
   submit(){
     let data=this.contactform?.getRawValue()
     
-    if(data.name=='' || data.email==''||data.phone==''||data.message==''){
+    if(!this.contactform.valid){
       this.submitform=true
       this.taoster.error('Please fill the filed','',{progressBar:true})
       

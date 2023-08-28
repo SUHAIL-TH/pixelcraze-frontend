@@ -23,6 +23,9 @@ import { AddreviewComponent } from './addreview/addreview.component';
 import { ProfessionalpipePipe } from '../pipes/professionallistsearch/professionalpipe.pipe';
 import { AboutComponent } from './about/about.component';
 
+import { BookingsearchuserPipe } from '../pipes/bookingsearchuser.pipe';
+
+
 
 
 
@@ -45,7 +48,8 @@ import { AboutComponent } from './about/about.component';
     ContactComponent,
     AddreviewComponent,
     ProfessionalpipePipe,
-    AboutComponent
+    AboutComponent,
+    BookingsearchuserPipe,
 
   ],
   imports: [

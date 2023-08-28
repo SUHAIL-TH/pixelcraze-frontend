@@ -3,21 +3,19 @@
     <div class="row px-xl-5 mt-2">
       <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
         <ol class="breadcrumb mt-2">
-          <li class="breadcrumb-item"><a routerLink="/professional/home" style="text-decoration: none; color: black;">Home</a></li>
+          <li class="breadcrumb-item"><a routerLink="/professional/home" style="text-decoration: none; color: black; font-family: 'Arizonia', cursive;font-size: 21px">Home</a></li>
           
-          <li class="breadcrumb-item active" aria-current="page">Booking</li>
+          <li class="breadcrumb-item active" aria-current="page" style="font-family: 'Arizonia', cursive;font-size: 21px">Booking</li>
         </ol>
       </nav>
+      <div class=" d-flex justify-content-end"> 
+        <div style="width: 160px;">
 
+          <input type="text" [(ngModel)]="searchText"  style="box-shadow: 0px 1px 5px black;" class="form-control form-control-sm" placeholder="Search...">
+        </div>
+      </div>
       <div class="col-md-12">
         <h4 style="color: black;" *ngIf="false">.....</h4>
-        <div class=" d-felx justify-content-end"> 
-            <div style="width: 160px;">
-
-              <input type="text"  style="box-shadow: 0px 1px 5px black;" class="form-control form-control-sm" placeholder="Search...">
-            </div>
-        </div>
-        
         <div class="table-responsive mt-3" *ngIf="true" style="box-shadow: 0px 2px 5px black; border-radius: 10px;">
           <table class="table align-middle mb-0 bg-white">
            
@@ -33,16 +31,16 @@
                   <th>Amount</th>
                 </tr>
               </thead>
-              <tbody *ngFor="let book of bookingdata;let i=index">
-                <tr >
+              <tbody *ngIf="bookingdata">
+                <tr *ngFor="let book of bookingdata | bookingsearch:searchText; let i=index" >
                   <td style="font-family: monospace;">{{i+1}}</td>
                   <td style="font-family: monospace;">{{book?.name}}</td>
                   <td style="font-family: monospace;">{{book?.housename}}</td>
-                  <td style="font-family: monospace;">{{book.phone}}</td>
-                  <td style="font-family: monospace;">{{book.place}}</td>
-                  <td style="font-family: monospace;">{{book.event}}</td>
-                 <td style="font-family: monospace;">{{book.date | date:'shortDate'}}</td>
-                 <td style="font-family: monospace;">{{book.amount}}</td>
+                  <td style="font-family: monospace;">{{book?.phone}}</td>
+                  <td style="font-family: monospace;">{{book?.place}}</td>
+                  <td style="font-family: monospace;">{{book?.event}}</td>
+                 <td style="font-family: monospace;">{{book?.date | date:'shortDate'}}</td>
+                 <td style="font-family: monospace;">{{book?.amount}}</td>
                 </tr>
                 
               </tbody>

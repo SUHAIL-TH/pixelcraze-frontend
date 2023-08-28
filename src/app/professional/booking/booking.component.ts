@@ -11,13 +11,16 @@ import { booking } from '../types/professional.type';
 })
 
 export class BookingComponent implements OnInit {
-  bookingdata:booking[]|undefined
+  bookingdata!:booking[] |undefined
+  searchText:string =''
   constructor(private service:ProfessionalService,private http:HttpClient,private toaster:ToastrService){}
   ngOnInit(): void {
     this.getbookingdate()
   }
   getbookingdate(){
     this.service.bookingdate().subscribe((res)=>{
+     
+      
       this.bookingdata=res
       
     },(err)=>{
