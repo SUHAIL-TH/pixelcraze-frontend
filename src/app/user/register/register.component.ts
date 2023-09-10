@@ -61,7 +61,7 @@ export class RegisterComponent implements OnInit {
     } else {
      
       this.userService.userSignup(user).subscribe(
-        (res: any) => {
+        (res) => {
           this.toastr.success('OTP has sent', 'Successfully', {
             progressBar: true,
           });

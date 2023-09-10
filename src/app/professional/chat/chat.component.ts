@@ -18,7 +18,9 @@ export class ChatComponent implements OnInit {
   constructor(private professional: ProfessionalService,private socket:Socket,private toaster:ToastrService) {}
   ngOnInit(): void {
     this.getchatlist()
-    this.socket.on('message recieved',(newMessage:any)=>{      
+    this.socket.on('message recieved',(newMessage:any)=>{ 
+    
+           
       if (this.userid==newMessage.from) {
         this.messages.push(newMessage);
 

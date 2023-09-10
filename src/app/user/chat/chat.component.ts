@@ -25,7 +25,7 @@ export class ChatComponent  implements OnInit{
     this.socket.on('message recieved',(newMessage:any)=>{   
 
       
-      if (this.viewerid==newMessage.from) {
+      if (this.viewerid==newMessage.from){
         this.messages.push(newMessage);
       }
     })
