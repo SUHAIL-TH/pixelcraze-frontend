@@ -19,7 +19,10 @@ export class ErrorpagesInterceptor implements HttpInterceptor {
     return next.handle(request).pipe(
       catchError((error:HttpErrorResponse)=>{
         if(error.status===500){
-
+          
+        }
+        if(error.status===400){
+          this.router.navigate([""])
         }
         return throwError(error) 
       })
