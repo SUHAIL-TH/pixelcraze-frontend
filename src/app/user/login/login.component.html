@@ -38,7 +38,7 @@
                   <div class="form-outline mb-4">
                     <label class="form-label text-white fw-bolder mt-2" for="form2Example17"  style="text-shadow: 0px 1px 0px black;">Password</label>
                    
-                  <input type="password" [ngClass]="{'is-invalid':submit && loginform.controls['password'].errors}" name="password" formControlName="password" id="password" class="form-control " placeholder="Enter the Email"/>
+                  <input type="password" [ngClass]="{'is-invalid':submit && loginform.controls['password'].errors}" name="password" formControlName="password" id="password" class="form-control " placeholder="Enter the password"/>
                   <div *ngIf="submit && loginform.controls['password'].errors" class="text-danger">
                           
                     <small *ngIf="loginform.controls['password'].errors['required']">password is required </small>
