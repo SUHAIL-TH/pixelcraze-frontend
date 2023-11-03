@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+  import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { selectBannerLoaded, selectBannerLoading, selectBanners,  } from '../state/user/user.selector';
 import { loadbanner } from '../state/user/user.action';

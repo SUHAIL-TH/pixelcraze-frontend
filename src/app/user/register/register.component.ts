@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { UserServiceService } from 'src/app/service/user/user-service.service'
+import { UserServiceService } from 'src/app/service/user/user-service.service';
 
 import { PasswordStrengthValidator } from './validator';
 
@@ -34,32 +34,27 @@ export class RegisterComponent implements OnInit {
       password: [
         '',
         [
-          Validators.required, 
+          Validators.required,
           PasswordStrengthValidator,
           // Validators.pattern(
           //   '^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-zd$@$!%*?&].{8,}$'
           // ),
-          Validators.minLength(8)
+          Validators.minLength(8),
         ],
       ],
-      cpassword: ['', [Validators.required]],
+      // cpassword: ['', [Validators.required]],
     });
   }
   onsubmit() {
     let user = this.registerform.getRawValue();
-
-    if (
-    !this.registerform.valid
-      
-    ) {
-     
-      
+    console.log(user)
+    console.log(this.registerform.valid)
+    if (!this.registerform.valid) {
       this.regsubmit = true;
       this.toastr.error('Please fill the fileds', '', {
         progressBar: true,
       });
     } else {
-     
       this.userService.userSignup(user).subscribe(
         (res) => {
           this.toastr.success('OTP has sent', 'Successfully', {

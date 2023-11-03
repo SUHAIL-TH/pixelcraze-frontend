@@ -57,7 +57,6 @@ export class AddreviewComponent implements OnInit {
         this.toaster.success('Review added Successfully','',{progressBar:true})
         this.router.navigate(['/bookings'])
       })
-
     }
    
    
