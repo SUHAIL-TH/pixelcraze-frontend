@@ -11,6 +11,7 @@ import { error } from 'highcharts';
 import { Router } from '@angular/router';
 
 @Injectable()
+  //interceptor
 export class ErrorpagesInterceptor implements HttpInterceptor {
 
   constructor(private router:Router) {}
